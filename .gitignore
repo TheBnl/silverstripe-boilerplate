@@ -1,4 +1,5 @@
 _ss_environment.php
+silverstripe.log
 /assets/*
 /tools/phing-metadata
 /silverstripe-cache
