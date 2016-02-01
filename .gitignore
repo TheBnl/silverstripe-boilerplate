@@ -1,5 +1,4 @@
 /assets/*
-_ss_environment.php
 /tools/phing-metadata
 /silverstripe-cache
 /.buildpath
@@ -10,6 +9,8 @@ _ss_environment.php
 /tools/phing-metadata/
 /vendor/
 /*.iml
+
+# composer modules
 /framework
 /cms
 /buildtools

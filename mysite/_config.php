@@ -16,7 +16,7 @@ i18n::set_locale('en_US');
 // Force redirect to www
 //Director::forceWWW();
 
-define('PROJECT_THIRDPARTY_DIR', project() . '/thirdparty');
+define('PROJECT_THIRDPARTY_DIR', project() . '/javascript/thirdparty');
 define('PROJECT_THIRDPARTY_PATH', project() . '/' . PROJECT_THIRDPARTY_DIR);
 
 // it is suggested to set SS_ERROR_LOG in _ss_environment.php to enable logging,

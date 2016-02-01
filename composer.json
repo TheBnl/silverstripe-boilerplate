@@ -1,12 +1,27 @@
 {
-	"name": "zauberfisch/silverstripe-boilerplate",
-	"description": "Boilerplate template to quickly kick off a new SilverStripe project",
+	"name": "TheBnl/silverstripe-boilerplate",
+	"description": "Boilerplate template to quickly kick off a new SilverStripe project, forked from zauberfisch",
 	"require": {
 		"php": ">=5.3.2",
 		"silverstripe/cms": "3.x@stable",
 		"silverstripe/framework": "3.x@stable",
 		"silverstripe/googlesitemaps": "*",
-		"lrc/silverstripe-link-field": "*"
+		"silverstripe-australia/gridfieldextensions": "*",
+		"lrc/silverstripe-link-field": "*",
+		"unclecheese/betterbuttons": "*",
+		"unclecheese/display-logic": "*",
+		"colymba/gridfield-bulk-editing-tools": "*",
+		"mobiledetect/mobiledetectlib": "*",
+		"heyday/silverstripe-versioneddataobjects": "*",
+		"heyday/silverstripe-gridfieldversionedorderablerows": "*",
+		"jonom/focuspoint": "*",
+		"jonom/silverstripe-tinytidy": "*",
+		"jonom/silverstripe-share-care": "*",
+		"littlegiant/silverstripe-catalogmanager": "*",
+		"littlegiant/silverstripe-seo-editor": "*",
+		"littlegiant/silverstripe-singlepageadmin": "*",
+		"tractorcow/silverstripe-opengraph": "*",
+		"gdmedia/ss-auto-git-ignore": "*"
 	},
 	"require-dev": {
 		"silverstripe/docsviewer": "*",

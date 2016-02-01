@@ -20,8 +20,8 @@ class Page extends SiteTree {
 
 	public function getSettingsFields() {
 		$fields = parent::getSettingsFields();
-		// Hide ShowInSearch checkbox if we don't have a search
-		$fields->removeByName('ShowInSearch');
+		// Hide ShowInSearch checkbox if we don"t have a search
+		$fields->removeByName("ShowInSearch");
 		return $fields;
 	}
 }
@@ -36,44 +36,33 @@ class Page_Controller extends ContentController {
 
 	public function init() {
 		parent::init();
-		Requirements::set_combined_files_folder(project() . '/_combinedfiles');
-		Requirements::combine_files('main.js', array(
-			THIRDPARTY_DIR . '/jquery/jquery.min.js',
-			// THIRDPARTY_DIR . '/jquery-ui/jquery-ui.min.js',
-			THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js',
-			PROJECT_THIRDPARTY_DIR . '/magnific-popup/jquery.magnific-popup.min.js',
-			project() . '/javascript/plugins.js',
-			project() . '/javascript/timer.js',
-			project() . '/javascript/main.js',
+		Requirements::set_combined_files_folder(project() . "/_combinedfiles");
+		Requirements::combine_files("app.js", array(
+			PROJECT_THIRDPARTY_DIR . "/jquery/dist/jquery.min.js",
+			PROJECT_THIRDPARTY_DIR . "/Swiper/dist/js/swiper.jquery.min.js",
+			project() . "/javascript/app.js",
 		));
-		// insert modernizr into <head> for html5shiv to work
-		Requirements::insertHeadTags(sprintf(
-			'<script src="%s"></script>',
-			PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
+		
+		Requirements::insertHeadTags(sprintf( "<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . "/modernizr/modernizr.min.js" ));
+
+//		Requirements::insertHeadTags(sprintf(
+//			"<script>
+//				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//
+//				ga('create', '%s', 'auto');
+//				ga('send', 'pageview');
+//
+//			</script>",
+//			"UA-XXXXX-X"
+//		));
+
+		Requirements::combine_files("main.css", array(
+			// include any javascript library css like this
+			PROJECT_THIRDPARTY_DIR . "/Swiper/dist/css/swiper.min.css",
+			project() . "/css/app.css"
 		));
-		// insert google analytics into <head> to also track visitors that cancle the pageload before it completed
-		//Requirements::insertHeadTags(sprintf(
-		//	"<script>
-		//		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		//		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		//		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		//		e.src='//www.google-analytics.com/analytics.js';
-		//		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		//		ga('create','%s');ga('send','pageview');
-		//	</script>",
-		//	'UA-XXXXX-X'
-		//));
-		Requirements::combine_files('main.css', array(
-			PROJECT_THIRDPARTY_DIR . '/normalize-css/normalize.css',
-			PROJECT_THIRDPARTY_DIR . '/magnific-popup/magnific-popup.css',
-			project() . '/css/screen.css',
-			project() . '/css/typography.css',
-			project() . '/css/form.css',
-			project() . '/css/header.css',
-			project() . '/css/footer.css',
-			project() . '/css/layout.css',
-			project() . '/css/legacy.css',
-		));
-		Requirements::css(project() . '/css/print.css', 'print');
 	}
 }

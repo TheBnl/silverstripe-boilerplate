@@ -1,5 +1,6 @@
 # compass / scss config file
 # see http://compass-style.org/help/tutorials/configuration-reference/ for documentation
+require "zurb-foundation"
 
 # possible values: :development, :production
 environment = :development

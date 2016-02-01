@@ -1,0 +1,28 @@
+{
+  "name": "mysite",
+  "homepage": "https://github.com/TheBnl/silverstripe-boilerplate",
+  "authors": [
+    "Bram de Leeuw <bram-de-leeuw@hotmail.com>"
+  ],
+  "description": "basic silverstripe boiler palte",
+  "main": "app.js",
+  "moduleType": [],
+  "keywords": [
+    "silverstripe",
+    "boilerpalte"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "javascripts/thirdparty",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "Swiper": "swiper#^3.3.0"
+  }
+}
