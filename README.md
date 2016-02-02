@@ -6,16 +6,19 @@ It is just a collection of config defaults, tools and modules (sass, _ss_environ
 
 As of SilverStripe 3.1 this boilerplate requieres [composer](http://getcomposer.org/).
 
-# Maintainers
-- Zauberfisch <admin@zauberfisch.at> [@Zauberfisch](http://twitter.com/Zauberfisch)
+## Maintainers
+- Bram de Leeuw [@bramdeleeuw](http://twitter.com/bramdeleeuw)
 
-# how to install
+### Original Fork
+- [Zauberfisch/silverstripe-boilerplate](https://github.com/Zauberfisch/silverstripe-boilerplate) [@Zauberfisch](http://twitter.com/Zauberfisch)
+
+## how to install
 
     git clone https://github.com/Zauberfisch/silverstripe-boilerplate.git "myNewProject"
     cd myNewProject/
     composer update
 
-# configuration (with `_ss_environment.php`)
+## configuration (with `_ss_environment.php`)
 
 create a file named `_ss_environment.php`, you can place that inside the repo, parent folder or in the parent parent folder.  
 the file should look like this (more infos at http://doc.silverstripe.org/sapphire/en/topics/environment-management)
@@ -60,7 +63,7 @@ there are 2 ways of setting a database name:
 
 **now just run mysite.com/dev/build and you are done, no further setup required, you are ready to go**
     
-# how to use
+## how to use
 
 This boilerplate is based on the assumption that the project will be a customized website/webapp.
 So you might notice there is no theme in the themes folder, the plan is to add all templates, javascript and css/scss into mysite.
