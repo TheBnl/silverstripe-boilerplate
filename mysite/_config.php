@@ -11,7 +11,7 @@ global $databaseConfig;
 $databaseConfig['database'] = str_replace('SS_', '', $databaseConfig['database']);
 
 // set default language
-i18n::set_locale('en_US');
+i18n::set_locale('nl_NL');
 
 // Force redirect to www
 //Director::forceWWW();

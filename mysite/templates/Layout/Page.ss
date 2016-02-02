@@ -1,5 +1,11 @@
-<div class="content typography">
-	<h2>$Title</h2>
-	$Content
-	$Form
-</div>
+<% cached "page", $ID, $LastEdited, $ContentLocale %>
+<article class="row">
+	<header class="large-12 columns">
+		<h2>$Title</h2>
+	</header>
+	<section class="large-12 columns">
+		$Content
+		$Form
+	</section>
+</article>
+<% end_cached %>
