@@ -7,6 +7,8 @@
 		"silverstripe/framework": "3.x@stable",
 		"silverstripe/googlesitemaps": "*",
 		"silverstripe-australia/gridfieldextensions": "*",
+		"silverstripe-australia/grouped-cms-menu": "*",
+		"exadium/breadcrumbnavigation": "*",
 		"lrc/silverstripe-link-field": "*",
 		"unclecheese/betterbuttons": "*",
 		"unclecheese/display-logic": "*",
@@ -26,6 +28,9 @@
 	"require-dev": {
 		"silverstripe/docsviewer": "*",
 		"phpunit/phpunit": "3.7.*"
+	},
+	"scripts": {
+		"post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
 	},
 	"minimum-stability": "dev"
 }

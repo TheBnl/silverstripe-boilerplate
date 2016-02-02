@@ -1,0 +1,23 @@
+---
+Name: cmsmenu
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+LeftAndMain:
+  menu_groups:
+    Content:
+      Items:
+        - CMSPagesController
+        - AssetAdmin
+        - CommentAdmin
+      Icon:
+        - ''
+    Settings:
+      Items:
+        - ReportAdmin
+        - CMSSettingsController
+        - SecurityAdmin
+        - SEOEditorAdmin
+      Icon:
+        - ''

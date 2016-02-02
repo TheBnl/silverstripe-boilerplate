@@ -13,6 +13,10 @@ class Page extends SiteTree {
 	private static $searchable_fields = array();
 	private static $summary_fields = array();
 
+	private static $is_mobile = 0;
+	private static $is_phone = 0;
+	private static $is_tablet = 0;
+
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 		return $fields;
@@ -36,6 +40,14 @@ class Page_Controller extends ContentController {
 
 	public function init() {
 		parent::init();
+
+		require_once Director::baseFolder() ."/vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php";
+		$detect = new Mobile_Detect;
+
+		Config::inst()->update("Page", "is_mobile", $detect->isMobile());
+		Config::inst()->update("Page", "is_phone", $detect->isMobile() && !$detect->isTablet());
+		Config::inst()->update("Page", "is_tablet", $detect->isTablet());
+
 		Requirements::set_combined_files_folder(project() . "/_combinedfiles");
 		Requirements::combine_files("app.js", array(
 			PROJECT_THIRDPARTY_DIR . "/jquery/dist/jquery.min.js",
@@ -43,7 +55,13 @@ class Page_Controller extends ContentController {
 			project() . "/javascript/app.js",
 		));
 		
-		Requirements::insertHeadTags(sprintf( "<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . "/modernizr/modernizr.min.js" ));
+		Requirements::insertHeadTags(sprintf(
+			"<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . "/modernizr/modernizr.min.js"
+		));
+
+//		Requirements::insertHeadTags(sprintf(
+//			"<script src='https://use.typekit.net/%s.js'></script><script>try{Typekit.load({ async: true });}catch(e){}</script>", "TYPEKIT_ID"
+//		));
 
 //		Requirements::insertHeadTags(sprintf(
 //			"<script>
@@ -64,5 +82,37 @@ class Page_Controller extends ContentController {
 			PROJECT_THIRDPARTY_DIR . "/Swiper/dist/css/swiper.min.css",
 			project() . "/css/app.css"
 		));
+	}
+
+	/**
+	 * Check if the user is on a mobile device
+	 * @return array|scalar
+	 */
+	public function IsMobile() {
+		return Config::inst()->get("Page", "is_mobile");
+	}
+
+	/**
+	 * Check if the user is on a phone
+	 * @return array|scalar
+	 */
+	public function IsPhone() {
+		return Config::inst()->get("Page", "is_phone");
+	}
+
+	/**
+	 * Check if the user is on a tablet device
+	 * @return array|scalar
+	 */
+	public function IsTablet() {
+		return Config::inst()->get("Page", "is_tablet");
+	}
+
+	/**
+	 * Return true for all environments except live
+	 * @return bool
+	 */
+	public function IsDev() {
+		return !Director::isLive();
 	}
 }

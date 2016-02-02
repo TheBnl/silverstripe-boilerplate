@@ -6,6 +6,7 @@
 <!--[if !IE]><!-->
 <html class="no-js no-ie" lang="$ContentLocale"> <!--<![endif]-->
 <head>
+	<% if $IsDev %><meta name="robots" content="noindex, nofollow"><% end_if %>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title>$Title &raquo; $SiteConfig.Title <% if $SiteConfig.Tagline %> | $SiteConfig.Tagline<% end_if %></title>
 	<% base_tag %>

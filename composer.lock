@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "941fbb786f0eea74c096f62a9bf405d2",
-    "content-hash": "042187bfd0971601a417ba5383f0cd17",
+    "hash": "697ef26fa76c278625b18fb8b9462b8d",
+    "content-hash": "dbc49a19b1b5495c4457d51d82e65577",
     "packages": [
         {
             "name": "colymba/gridfield-bulk-editing-tools",
@@ -146,6 +146,43 @@
                 "zikula"
             ],
             "time": "2016-01-27 12:54:22"
+        },
+        {
+            "name": "exadium/breadcrumbnavigation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marijnkampf/Silverstripe-Module-BreadcrumbNavigation.git",
+                "reference": "d557dcf1b24cbdabde078221e806895d2caad576"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marijnkampf/Silverstripe-Module-BreadcrumbNavigation/zipball/d557dcf1b24cbdabde078221e806895d2caad576",
+                "reference": "d557dcf1b24cbdabde078221e806895d2caad576",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "3.*"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Marijn Kampf",
+                    "email": "info@exadium.com",
+                    "homepage": "http://www.exadium.com"
+                }
+            ],
+            "description": "Self contained Breadcrum Navigation module, allowing you to control the breadcrumbs look and feel using templates, and add additional levels of bread crumbs for e.g. dataobjects.",
+            "keywords": [
+                "bread crumb navigation",
+                "bread crumbs",
+                "breadcrumb",
+                "module",
+                "navigation",
+                "silverstripe"
+            ],
+            "time": "2014-07-17 13:27:14"
         },
         {
             "name": "gdmedia/ss-auto-git-ignore",
@@ -655,6 +692,52 @@
                 "silverstripe"
             ],
             "time": "2016-02-02 00:28:09"
+        },
+        {
+            "name": "silverstripe-australia/grouped-cms-menu",
+            "version": "dev-master",
+            "target-dir": "grouped-cms-menu",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-australia/silverstripe-grouped-cms-menu.git",
+                "reference": "a5d105c2b80a2a4adac799ceeba01cf301bffee2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-grouped-cms-menu/zipball/a5d105c2b80a2a4adac799ceeba01cf301bffee2",
+                "reference": "a5d105c2b80a2a4adac799ceeba01cf301bffee2",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^3.2",
+                "silverstripe/framework": "^3.2"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "grouped-cms-menu",
+                "branch-alias": {
+                    "dev-master": "2.2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstripe.com.au"
+                }
+            ],
+            "description": "Allows you to group CMS menu items.",
+            "homepage": "https://github.com/silverstripe-australia/silverstripe-grouped-cms-menu",
+            "keywords": [
+                "cms",
+                "menu",
+                "module",
+                "silverstripe"
+            ],
+            "time": "2016-01-29 01:49:33"
         },
         {
             "name": "silverstripe/cms",
@@ -1541,12 +1624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "ccbaef96e6595df28d040f6bb18d946e574badf8"
+                "reference": "33fd1b2cfdde601704665fad343014bba04b0753"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ccbaef96e6595df28d040f6bb18d946e574badf8",
-                "reference": "ccbaef96e6595df28d040f6bb18d946e574badf8",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/33fd1b2cfdde601704665fad343014bba04b0753",
+                "reference": "33fd1b2cfdde601704665fad343014bba04b0753",
                 "shasum": ""
             },
             "require": {
@@ -1582,7 +1665,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-24 11:06:16"
+            "time": "2016-02-02 09:49:18"
         }
     ],
     "aliases": [],
