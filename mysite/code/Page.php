@@ -18,6 +18,11 @@ class Page extends SiteTree {
 	private static $is_tablet = 0;
 
 	public function getCMSFields() {
+		// Use beforeUpdateCMSFields so fluent can add a label and icon
+		$this->beforeUpdateCMSFields(function($fields) {
+			// Fields here
+		});
+
 		$fields = parent::getCMSFields();
 		return $fields;
 	}
