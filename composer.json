@@ -6,6 +6,7 @@
 		"silverstripe/cms": "3.x@stable",
 		"silverstripe/framework": "3.x@stable",
 		"silverstripe/googlesitemaps": "*",
+		"silverstripe/userforms": "*",
 		"silverstripe-australia/gridfieldextensions": "*",
 		"silverstripe-australia/grouped-cms-menu": "*",
 		"exadium/breadcrumbnavigation": "*",
