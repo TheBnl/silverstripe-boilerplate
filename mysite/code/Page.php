@@ -5,7 +5,11 @@
  */
 class Page extends SiteTree {
 	private static $db = array();
-	private static $has_one = array();
+
+	private static $has_one = array(
+			"OpenGraphImage" => "Image"
+	);
+
 	private static $has_many = array();
 	private static $many_many = array();
 	private static $defaults = array();
@@ -18,9 +22,11 @@ class Page extends SiteTree {
 	private static $is_tablet = 0;
 
 	public function getCMSFields() {
-		// Use beforeUpdateCMSFields so fluent can add a label and icon
 		$this->beforeUpdateCMSFields(function($fields) {
-			// Fields here
+			$openGraphImage = new UploadField("OpenGraphImage", "Social media image");
+			$openGraphImage->setDescription("Add an image to display on Facebook and Twitter");
+
+			$fields->addFieldToTab("Root.Main.Metadata", $openGraphImage);
 		});
 
 		$fields = parent::getCMSFields();
@@ -32,6 +38,19 @@ class Page extends SiteTree {
 		// Hide ShowInSearch checkbox if we don"t have a search
 		$fields->removeByName("ShowInSearch");
 		return $fields;
+	}
+
+	/**
+	 * Override the default Open Graph Image
+	 * @return mixed
+	 */
+	function getOGImage() {
+		if ($this->OpenGraphImage()->exists()) {
+			$image = $this->OpenGraphImage();
+		} else {
+			$image = Director::absoluteURL(OpenGraphObjectExtension::$default_image);
+		}
+		return $image;
 	}
 }
 
