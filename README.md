@@ -14,7 +14,7 @@ As of SilverStripe 3.1 this boilerplate requieres [composer](http://getcomposer.
 
 ## how to install
 
-    git clone https://github.com/Zauberfisch/silverstripe-boilerplate.git "myNewProject"
+    git clone https://github.com/TheBnl/silverstripe-boilerplate.git "myNewProject"
     cd myNewProject/
     composer update
 
@@ -81,6 +81,7 @@ Which has the benefit of having the whole project at one place, not separated in
     |-- thirdparty // all thirdparty code goes in here (jquery plugins)
     |-- .gitignore
     |-- _config.php
+    |-- Gemfile // all gem requirements to work with compass and foundaton
     |-- config.rb // config file for sass
 
 ### SASS / SCSS
@@ -88,7 +89,8 @@ Which has the benefit of having the whole project at one place, not separated in
 This boilerplate is prepared for being used with sass (http://sass-lang.com/) and compass (http://compass-style.org/)
 Once you have installed compass (see http://compass-style.org/install/) run the following command in your mysite folder:
 
-    compass watch .
+    bundle install
+    bundle exec compass watch .
  
 which will tell compass to watch for any file changes inside /mysite/scss    
 To generate minified css for production, set the `environment = :production` in [mysite/config.rb](mysite/config.rb).
