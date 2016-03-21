@@ -28,5 +28,7 @@ SiteConfig:
   extensions:
     - 'mysiteSiteConfigExtension'
 LeftAndMain:
+  extra_requirements_css:
+    - 'mysite/css/cms.css'
   extensions:
     - 'mysiteLeftAndMainExtension'
