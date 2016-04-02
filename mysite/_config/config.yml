@@ -15,7 +15,7 @@ SiteTree:
   nested_urls: true
   # create_default_pages: false
 Email:
-  admin_email: 'bram-de-leeuw@hotmail.com'
+  admin_email: 'mail@mysite.com'
 OpenGraph:
   application_id: 'SiteConfig'  # Or set the application id
   admin_id: 'SiteConfig'        # Or set the admin id
