@@ -99,7 +99,7 @@ To generate minified css for production, set the `environment = :production` in 
 
 This boilerplate comes packed with a bower dependency on [Lazy Load XT](https://github.com/ressio/lazy-load-xt), to easily add lazy loaded images to your templates use the following method:
  
-    $OpenGraphImage.Lazy('Fill', 600, 200)
+    $Image.Lazy('Fill', 600, 200)
 
 This method produces the following code with fallbacks for non JS browsers:
 
