@@ -4,8 +4,6 @@
 		<h2>$Title</h2>
 	</header>
 	<section class="large-12 columns">
-		$OpenGraphImage.Lazy('Fill', 600, 200)
-		$OpenGraphImage
 		$Content
 		$Form
 	</section>
