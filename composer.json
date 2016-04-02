@@ -27,7 +27,8 @@
 		"littlegiant/silverstripe-seo-editor": "*",
 		"littlegiant/silverstripe-singlepageadmin": "*",
 		"tractorcow/silverstripe-opengraph": "*",
-		"gdmedia/ss-auto-git-ignore": "*"
+		"gdmedia/ss-auto-git-ignore": "*",
+		"zurb/foundation": "*"
 	},
 	"require-dev": {
 		"silverstripe/docsviewer": "*",

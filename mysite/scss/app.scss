@@ -1,9 +1,13 @@
 // Import foundation
-@import "normalize", "settings", "foundation";
+@import "settings", "../../vendor/zurb/foundation/scss/foundation";
+
+// Get everything or only the modules you need
+@include foundation-everything;
 
 // Modules
 @import "modules/header";
 @import "modules/footer";
+@import "modules/forms";
 
 // Layout
 @import "layout/page";

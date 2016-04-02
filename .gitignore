@@ -16,6 +16,7 @@ silverstripe.log
 /betterbuttons
 /breadcrumbnavigation
 /cms
+/copybutton
 /display_logic
 /docsviewer
 /focuspoint
@@ -27,7 +28,10 @@ silverstripe.log
 /metatitle
 /opengraph
 /reports
+/secureassets
+/segment-field
 /share-care
+/silverstripe-cacheinclude
 /silverstripe-catalogmanager
 /silverstripe-gridfieldversionedorderablerows
 /silverstripe-link-field
@@ -37,4 +41,5 @@ silverstripe.log
 /siteconfig
 /sortablegridfield
 /tinytidy
+/userforms
 # END of GitIgnoreEditor

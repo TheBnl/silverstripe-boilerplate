@@ -15,7 +15,7 @@ SiteTree:
   nested_urls: true
   # create_default_pages: false
 Email:
-  admin_email: 'myEmail@mysite.com'
+  admin_email: 'bram-de-leeuw@hotmail.com'
 OpenGraph:
   application_id: 'SiteConfig'  # Or set the application id
   admin_id: 'SiteConfig'        # Or set the admin id
@@ -23,12 +23,6 @@ OpenGraph:
   default_tagbuilder: 'OpenGraphBuilder'
 ShareCare:
   twitter_username: 'your-username'
-
-SiteConfig:
-  extensions:
-    - 'mysiteSiteConfigExtension'
 LeftAndMain:
   extra_requirements_css:
     - 'mysite/css/cms.css'
-  extensions:
-    - 'mysiteLeftAndMainExtension'

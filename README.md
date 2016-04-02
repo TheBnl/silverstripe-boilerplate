@@ -94,3 +94,14 @@ Once you have installed compass (see http://compass-style.org/install/) run the 
  
 which will tell compass to watch for any file changes inside /mysite/scss    
 To generate minified css for production, set the `environment = :production` in [mysite/config.rb](mysite/config.rb).
+
+### Lazy Loading Images
+
+This boilerplate comes packed with a bower dependency on [Lazy Load XT](https://github.com/ressio/lazy-load-xt), to easily add lazy loaded images to your templates use the following method:
+ 
+    $OpenGraphImage.Lazy('Fill', 600, 200)
+
+This method produces the following code with fallbacks for non JS browsers:
+
+     <img class="lazy" data-src="image.jpg" alt="image title" width="image_width" height="image_height">
+     <noscript><img src="image.jpg" alt="image title" width="image_width" height="image_height"></noscript>

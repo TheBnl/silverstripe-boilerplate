@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "jquery": "~2.2.0",
-    "Swiper": "swiper#^3.3.0"
+    "Swiper": "swiper#^3.3.0",
+    "lazyloadxt": "^1.0.5"
   }
 }

@@ -1,0 +1,15 @@
+---
+Name: extensions
+After:
+  - 'framework/*'
+  - 'cms/*'
+---
+Image:
+  extensions:
+    - mysiteImageExtension
+LeftAndMain:
+  extensions:
+    - mysiteLeftAndMainExtension
+SiteConfig:
+  extensions:
+    - mysiteSiteConfigExtension

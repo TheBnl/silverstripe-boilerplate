@@ -30,6 +30,7 @@ class Page extends SiteTree {
 		});
 
 		$fields = parent::getCMSFields();
+		$fields->removeByName(array("ExtraMeta"));
 		return $fields;
 	}
 
@@ -75,6 +76,7 @@ class Page_Controller extends ContentController {
 		Requirements::set_combined_files_folder(project() . "/_combinedfiles");
 		Requirements::combine_files("app.js", array(
 			PROJECT_THIRDPARTY_DIR . "/jquery/dist/jquery.min.js",
+			PROJECT_THIRDPARTY_DIR . "/lazyloadxt/dist/jquery.lazyloadxt.min.js",
 			PROJECT_THIRDPARTY_DIR . "/Swiper/dist/js/swiper.jquery.min.js",
 			project() . "/javascript/app.js",
 		));

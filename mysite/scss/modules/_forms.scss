@@ -1,0 +1,10 @@
+#UserForm_Form {
+  ul.optionset {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+
+input[type="submit"] {
+  @include button;
+}
