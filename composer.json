@@ -18,7 +18,6 @@
 		"colymba/gridfield-bulk-editing-tools": "*",
 		"mobiledetect/mobiledetectlib": "*",
 		"heyday/silverstripe-versioneddataobjects": "*",
-		"heyday/silverstripe-gridfieldversionedorderablerows": "*",
 		"heyday/silverstripe-cacheinclude": "*",
 		"jonom/focuspoint": "*",
 		"jonom/silverstripe-tinytidy": "*",
