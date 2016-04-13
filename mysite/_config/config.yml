@@ -26,3 +26,6 @@ ShareCare:
 LeftAndMain:
   extra_requirements_css:
     - 'mysite/css/cms.css'
+DataObject:
+  extensions:
+    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
