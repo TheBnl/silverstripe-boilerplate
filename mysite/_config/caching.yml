@@ -1,0 +1,12 @@
+---
+After: 'silverstripe-cacheinclude/*'
+---
+Injector:
+  CacheIncludeConfig:
+    class: Heyday\CacheInclude\Configs\ArrayConfig
+    properties:
+      Config:
+        MainMenu:
+          contains:
+            - SiteTree
+          context: page
