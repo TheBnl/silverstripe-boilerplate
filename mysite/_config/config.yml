@@ -2,7 +2,7 @@
 # See http://doc.silverstripe.org/framework/en/topics/configuration
 # Caution: Indentation through two spaces, not tabs
 Name: mysite
-After: 'framework/*','cms/*'
+After: 'framework/*','cms/*','silverstripe-cacheinclude/*'
 ---
 SSViewer:
   source_file_comments: true
