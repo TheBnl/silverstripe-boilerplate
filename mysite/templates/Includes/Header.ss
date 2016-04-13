@@ -1,4 +1,4 @@
-<% cached "siteheader", $SiteConfig.LastEdited, $ID, $ContentLocale %>
+<% cache "MainMenu" %>
 <header class="site-header">
     <div class="row">
         <div class="large-12 columns">
@@ -17,4 +17,4 @@
         </div>
     </div>
 </header>
-<% end_cached %>
+<% end_cache %>
