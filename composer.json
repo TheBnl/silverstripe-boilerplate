@@ -22,6 +22,7 @@
 		"jonom/focuspoint": "*",
 		"jonom/silverstripe-tinytidy": "*",
 		"jonom/silverstripe-share-care": "*",
+		"jonom/silverstripe-betternavigator": "*",
 		"littlegiant/silverstripe-catalogmanager": "*",
 		"littlegiant/silverstripe-seo-editor": "*",
 		"littlegiant/silverstripe-singlepageadmin": "*",
