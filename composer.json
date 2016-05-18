@@ -8,6 +8,7 @@
 		"silverstripe/googlesitemaps": "*",
 		"silverstripe/userforms": "*",
 		"silverstripe/secureassets": "*",
+		"silverstripe/redirectedurls": "*",
 		"silverstripe-australia/gridfieldextensions": "*",
 		"silverstripe-australia/grouped-cms-menu": "*",
 		"exadium/breadcrumbnavigation": "*",
