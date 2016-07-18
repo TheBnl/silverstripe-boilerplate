@@ -6,18 +6,16 @@ After:
 ---
 LeftAndMain:
   menu_groups:
-    Content:
-      Items:
-        - CMSPagesController
-        - AssetAdmin
-        - CommentAdmin
-      Icon:
-        - ''
+    CMSPagesController:
+      - CMSPagesController
+    AssetAdmin:
+      - AssetAdmin
+    SEOEditorAdmin:
+      - SEOEditorAdmin
     Settings:
-      Items:
-        - ReportAdmin
-        - CMSSettingsController
-        - SecurityAdmin
-        - SEOEditorAdmin
-      Icon:
-        - ''
+      icon: 'cmssettingscontroller'
+      - ReportAdmin
+      - CMSSettingsController
+      - SecurityAdmin
+      - SEOEditorAdmin
+      - RedirectedURLAdmin
