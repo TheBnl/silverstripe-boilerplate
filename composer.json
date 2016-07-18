@@ -9,6 +9,7 @@
 		"silverstripe/userforms": "*",
 		"silverstripe/secureassets": "*",
 		"silverstripe/redirectedurls": "*",
+		"silverstripe/spamprotection": "*",
 		"silverstripe-australia/gridfieldextensions": "*",
 		"silverstripe-australia/grouped-cms-menu": "*",
 		"exadium/breadcrumbnavigation": "*",
@@ -28,6 +29,7 @@
 		"littlegiant/silverstripe-seo-editor": "*",
 		"littlegiant/silverstripe-singlepageadmin": "*",
 		"tractorcow/silverstripe-opengraph": "*",
+		"undefinedoffset/silverstripe-nocaptcha": "*",
 		"gdmedia/ss-auto-git-ignore": "*",
 		"zurb/foundation": "*"
 	},

@@ -28,6 +28,11 @@ ShareCare:
 LeftAndMain:
   extra_requirements_css:
     - 'mysite/css/cms.css'
+FormSpamProtectionExtension:
+  default_spam_protector: NocaptchaProtector
+NocaptchaField:
+  site_key: "YOUR_SITE_KEY"
+  secret_key: "YOUR_SECRET_KEY"
 DataObject:
   extensions:
     - Heyday\CacheInclude\SilverStripe\InvalidationExtension
