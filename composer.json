@@ -12,6 +12,7 @@
 		"silverstripe/spamprotection": "*",
 		"silverstripe-australia/gridfieldextensions": "*",
 		"silverstripe-australia/grouped-cms-menu": "*",
+		"silverstripe-australia/addressable": "*",
 		"exadium/breadcrumbnavigation": "*",
 		"unisolutions/silverstripe-copybutton": "*",
 		"lrc/silverstripe-link-field": "*",
