@@ -13,3 +13,5 @@ LeftAndMain:
 SiteConfig:
   extensions:
     - mysiteSiteConfigExtension
+    - Addressable
+#   - Geocodable
