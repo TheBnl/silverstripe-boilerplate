@@ -53,6 +53,35 @@ class Page extends SiteTree {
 		}
 		return $image;
 	}
+	
+	/**
+	 * Generate a json breadcrumb list to be used by google
+	 * @return string
+	 */
+	public function getJSONBreadcrumbs() {
+		$breadcrumbs = $this->getBreadcrumbItems()->toArray();
+		
+		$itemListElement = array();
+		foreach($breadcrumbs as $crumb) {
+			$listItem = array(
+				"@type" => "ListItem",
+				"position" => $crumb->getPageLevel(),
+				"item" => array(
+					"@id" => $crumb->AbsoluteLink(),
+					"name" => $crumb->Title
+				)
+			);
+			$itemListElement[] = $listItem;
+		}
+
+		$breadcrumbs = array(
+			"@context" => "http://schema.org",
+			"@type" => "BreadcrumbList",
+			"itemListElement" => $itemListElement
+		);
+
+		return json_encode($breadcrumbs);
+	}
 }
 
 /**
@@ -83,6 +112,11 @@ class Page_Controller extends ContentController {
 		
 		Requirements::insertHeadTags(sprintf(
 			"<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
+		));
+		
+		Requirements::insertHeadTags(sprintf(
+			"<script type='application/ld+json'>%s</script>",
+			$this->getJSONBreadcrumbs()
 		));
 
 //		Requirements::insertHeadTags(sprintf(
