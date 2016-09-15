@@ -10,7 +10,7 @@ SSViewer:
 MySQLDatabase:
   connection_charset: 'utf8'
 GDBackend:
-  default_quality: 100
+  default_quality: 80
 SiteTree:
   nested_urls: true
 Email:
