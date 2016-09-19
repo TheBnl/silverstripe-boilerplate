@@ -1,4 +1,3 @@
-<% cached "page", $ID, $LastEdited, $ContentLocale %>
 <article class="row">
 	<header class="large-12 columns">
 		<h2>$Title</h2>
@@ -8,4 +7,3 @@
 		$Form
 	</section>
 </article>
-<% end_cached %>
