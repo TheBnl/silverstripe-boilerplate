@@ -1,9 +1,7 @@
-<% cache "MainMenu" %>
 <header class="site-header">
     <div class="row">
         <div class="large-12 columns">
             <h1>$SiteConfig.Title</h1>
-            <% cached "mainnavigation", $List("SiteTree").max("LastEdited"), $List("SiteTree").count(), $ID, $ContentLocale %>
             <nav>
                 <ul>
                     <% loop $Menu('1') %>
@@ -13,8 +11,6 @@
                     <% end_loop %>
                 </ul>
             </nav>
-            <% end_cached %>
         </div>
     </div>
 </header>
-<% end_cache %>
