@@ -100,12 +100,12 @@ Once you have installed compass (see http://compass-style.org/install/) run the 
     bundle install
     bundle exec compass watch .
  
+which will tell compass to watch for any file changes inside /mysite/scss    
+To generate minified css for production, set the `environment = :production` in [mysite/config.rb](mysite/config.rb).
+
 ### Javascript
 
 Compiling JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`. 
-
-which will tell compass to watch for any file changes inside /mysite/scss    
-To generate minified css for production, set the `environment = :production` in [mysite/config.rb](mysite/config.rb).
 
 ### Lazy Loading Images
 
