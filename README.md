@@ -14,9 +14,17 @@ As of SilverStripe 3.1 this boilerplate requieres [composer](http://getcomposer.
 
 ## how to install
 
+    # clone the project
     git clone https://github.com/TheBnl/silverstripe-boilerplate.git "myNewProject"
+    
+    # install composer modules
     cd myNewProject/
     composer update
+    
+    # install js modules
+    cd myNewProject/mysite
+    npm install
+    
 
 ## configuration (with `_ss_environment.php`)
 

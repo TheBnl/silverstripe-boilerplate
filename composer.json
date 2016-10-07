@@ -32,6 +32,8 @@
 		"tractorcow/silverstripe-opengraph": "*",
 		"undefinedoffset/silverstripe-nocaptcha": "*",
 		"gdmedia/ss-auto-git-ignore": "*",
+		"bramdeleeuw/silverstripe-pageslices": "*",
+		"bramdeleeuw/silverstripe-pageslices-userform": "*",
 		"zurb/foundation": "*"
 	},
 	"require-dev": {
