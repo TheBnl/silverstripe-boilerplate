@@ -29,6 +29,7 @@ if (!Director::isLive()) {
 	// set settings that should only be in dev and test
 	// IMPORTANT: as of 3.1 you can *NOT* set display_errors inside _config.php
 	// use the php ini, htaccess or _ss_environment.php to set display_errors
+	Email::send_all_emails_to(ADMIN_EMAIL);
 } else {
 	// we are in live mode, send errors per email
 	SS_Log::add_writer(new SS_LogEmailWriter('myEmail@mysite.com'), SS_Log::ERR);
