@@ -4,12 +4,12 @@
   "authors": [
     "Bram de Leeuw <bram-de-leeuw@hotmail.com>"
   ],
-  "description": "basic silverstripe boiler palte",
+  "description": "basic silverstripe boiler plate",
   "main": "app.js",
   "moduleType": [],
   "keywords": [
     "silverstripe",
-    "boilerpalte"
+    "boilerplate"
   ],
   "license": "MIT",
   "private": true,
