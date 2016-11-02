@@ -1,7 +1,49 @@
-#UserForm_Form {
+.field {
+  &.optionset legend.left,
+  &.nocaptcha label.left,
+  &.optionset label.left {
+    display: block;
+    float: none;
+  }
   ul.optionset {
     list-style: none;
-    margin-left: 0;
+    margin: 0 0 $global-margin 0;
+  }
+}
+
+span,
+label,
+legend {
+  &.error {
+    font-size: $small-font-size;
+    background-color: $alert-color;
+    color: $white;
+    margin-bottom: 1rem;
+    padding: .15rem .5rem;
+    line-height: 1.8;
+    display: block;
+  }
+}
+
+label,
+legend {
+  font-size: $small-font-size;
+}
+
+textarea,
+input {
+  &.error {
+    border-color: $alert-color;
+    margin-bottom: 0;
+  }
+}
+
+form {
+  h1,h2,h3,h4,h5,h6 {
+    margin-top: 2.25rem;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
