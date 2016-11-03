@@ -172,7 +172,7 @@ class Page_Controller extends ContentController
 
         Requirements::combine_files('app.css', array(
             // include any javascript library css like this
-            PROJECT_THIRDPARTY_DIR . '/Swiper/dist/css/swiper.min.css',
+            PROJECT_THIRDPARTY_DIR . '/swiper/dist/css/swiper.min.css',
             project() . '/css/app.css'
         ));
 

@@ -5,7 +5,7 @@ const uglify = require('gulp-uglify');
 const pump = require('pump');
 const babel = require('gulp-babel');
 const bundle = require('./javascript/bundle.js');
-var sass = require('gulp-sass');
+const sass = require('gulp-sass');
 
 gulp.task('default', function(cb) {
     return doBuild(cb);
