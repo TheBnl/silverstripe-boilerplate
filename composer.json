@@ -33,8 +33,7 @@
 		"undefinedoffset/silverstripe-nocaptcha": "*",
 		"gdmedia/ss-auto-git-ignore": "*",
 		"bramdeleeuw/silverstripe-pageslices": "*",
-		"bramdeleeuw/silverstripe-pageslices-userform": "*",
-		"zurb/foundation": "*"
+		"bramdeleeuw/silverstripe-pageslices-userform": "*"
 	},
 	"require-dev": {
 		"silverstripe/docsviewer": "*",
