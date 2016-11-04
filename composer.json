@@ -32,6 +32,7 @@
 		"tractorcow/silverstripe-opengraph": "*",
 		"undefinedoffset/silverstripe-nocaptcha": "*",
 		"gdmedia/ss-auto-git-ignore": "*",
+		"bramdeleeuw/silverstripe-schema": "*",
 		"bramdeleeuw/silverstripe-pageslices": "*",
 		"bramdeleeuw/silverstripe-pageslices-userform": "*"
 	},

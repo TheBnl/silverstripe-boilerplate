@@ -1,0 +1,10 @@
+---
+Name: mySchemaConfig
+---
+Schema:
+  logo: '/favicon-152.png'
+  config:
+    'Page':
+      - WebsiteSchemaBuilder
+      - BreadcrumbsSchemaBuilder
+      - OrganizationSchemaBuilder

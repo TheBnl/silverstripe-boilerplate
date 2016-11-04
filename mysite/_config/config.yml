@@ -24,9 +24,9 @@ OpenGraph:
   default_locale: 'nl_NL'
   default_tagbuilder: 'OpenGraphBuilder'
 ShareCare:
-  twitter_username: 'your-username'
+  twitter_username: 'YOUR_USERNAME'
 #GoogleGeocoding:
-#  google_api_key: {your_google_server_api_key}
+#  google_api_key: 'YOUR_GOOGLE_SERVER_API_KEY'
 Addressable:
   set_postcode_regex: '/^[0-9A-Za-z]+$/'
 LeftAndMain:
@@ -35,8 +35,5 @@ LeftAndMain:
 FormSpamProtectionExtension:
   default_spam_protector: NocaptchaProtector
 NocaptchaField:
-  site_key: "YOUR_SITE_KEY"
-  secret_key: "YOUR_SECRET_KEY"
-DataObject:
-  extensions:
-    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
+  site_key: 'YOUR_SITE_KEY'
+  secret_key: 'YOUR_SECRET_KEY'

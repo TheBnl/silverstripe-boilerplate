@@ -61,88 +61,8 @@ class Page extends SiteTree
         }
         return $image;
     }
-
-
-    /**
-     * Generate a json breadcrumb list to be used by google
-     * @return string
-     */
-    public function getJSONBreadcrumbs()
-    {
-        $breadcrumbs = $this->getBreadcrumbItems()->toArray();
-
-        $itemListElement = array();
-        foreach ($breadcrumbs as $crumb) {
-            $listItem = array(
-                "@type" => "ListItem",
-                "position" => $crumb->getPageLevel(),
-                "item" => array(
-                    "@id" => $crumb->AbsoluteLink(),
-                    "name" => $crumb->Title
-                )
-            );
-            $itemListElement[] = $listItem;
-        }
-
-        $breadcrumbs = array(
-            "@context" => "http://schema.org",
-            "@type" => "BreadcrumbList",
-            "itemListElement" => $itemListElement
-        );
-
-        return json_encode($breadcrumbs);
-    }
-
-
-    /**
-     * Render Organization data for Google Knowledge Graph
-     *
-     * @return string
-     */
-    public function getOrganizationJSON()
-    {
-        $siteConfig = SiteConfig::current_site_config();
-
-        $organization = array(
-            "@context" => "http://schema.org",
-            "@type" => "LocalBusiness",
-            "@id" => Director::absoluteBaseURL(),
-            "name" => $siteConfig->getField('Title'),
-            "url" => Director::absoluteBaseURL(),
-            "logo" => Director::absoluteBaseURL() . project() . "/images/bosmanvos-logo.png",
-            "address" => array(
-                "@type" => "PostalAddress",
-                "streetAddress" => $siteConfig->getField('Address'),
-                "addressLocality" => $siteConfig->getField('Suburb'),
-                "postalCode" => $siteConfig->getField('Postcode'),
-                "addressCountry" => $siteConfig->getField('Country')
-            ),
-            "geo" => array(
-                "@type" => "GeoCoordinates",
-                "latitude" => $siteConfig->getField('Lat'),
-                "longitude" => $siteConfig->getField('Lng')
-            ),
-            "telephone" => $siteConfig->getField('TelephoneNumber'),
-            "contactPoint" => array(
-                array(
-                    "@type" => "ContactPoint",
-                    "telephone" => $siteConfig->getField('TelephoneNumber'),
-                    "contactType" => "customer service"
-                )
-            )
-        );
-
-        if ($siteConfig->SocialMediaPlatforms()->Count()) {
-            $sameAs = Array();
-            foreach ($siteConfig->SocialMediaPlatforms() as $platform) {
-                array_push($sameAs, $platform->URL);
-            }
-            $organization["sameAs"] = $sameAs;
-        }
-
-        return json_encode($organization);
-    }
 }
+
 
 /**
  * Class Page_Controller
@@ -185,16 +105,6 @@ class Page_Controller extends ContentController
 
         Requirements::insertHeadTags(sprintf(
             "<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
-        ));
-
-        Requirements::insertHeadTags(sprintf(
-            "<script type='application/ld+json'>%s</script>",
-            $this->getJSONBreadcrumbs()
-        ));
-
-        Requirements::insertHeadTags(sprintf(
-            "<script type='application/ld+json'>%s</script>",
-            $this->getOrganizationJSON()
         ));
 
 //		Requirements::insertHeadTags(sprintf(

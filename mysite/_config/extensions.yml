@@ -4,6 +4,9 @@ After:
   - 'framework/*'
   - 'cms/*'
 ---
+DataObject:
+  extensions:
+    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
 Image:
   extensions:
     - mysiteImageExtension
