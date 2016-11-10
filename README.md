@@ -92,20 +92,9 @@ Which has the benefit of having the whole project at one place, not separated in
     |-- Gemfile // all gem requirements to work with compass and foundaton
     |-- config.rb // config file for sass
 
-### SASS / SCSS
+### SASS / SCSS / Javascript
 
-This boilerplate is prepared for being used with sass (http://sass-lang.com/) and compass (http://compass-style.org/)
-Once you have installed compass (see http://compass-style.org/install/) run the following command in your mysite folder:
-
-    bundle install
-    bundle exec compass watch .
- 
-which will tell compass to watch for any file changes inside /mysite/scss    
-To generate minified css for production, set the `environment = :production` in [mysite/config.rb](mysite/config.rb).
-
-### Javascript
-
-Compiling JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`. 
+Compiling SASS and JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`. To restart automatically when bundle.js is updated please use gulper watch (https://www.npmjs.com/package/gulper). 
 
 ### Lazy Loading Images
 
