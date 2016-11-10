@@ -7,6 +7,6 @@ module.exports = {
         third_party_dir + '/jquery/dist/jquery.min.js',
         third_party_dir + '/lazyloadxt/dist/jquery.lazyloadxt.min.js',
         third_party_dir + '/Swiper/dist/js/swiper.jquery.min.js',
-        js_dir + '/app.js'
+        js_dir + '/app/**/*.js'
     ]
 };
