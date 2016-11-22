@@ -77,10 +77,7 @@ class Page_Controller extends ContentController
     {
         parent::init();
 
-        // Include Mobile Detect
-        require_once Director::baseFolder() . '/vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php';
-        $detect = new Mobile_Detect;
-
+        $detect = new Mobile_Detect();
         Config::inst()->update('Page', 'is_mobile', $detect->isMobile());
         Config::inst()->update('Page', 'is_phone', $detect->isMobile() && !$detect->isTablet());
         Config::inst()->update('Page', 'is_tablet', $detect->isTablet());
@@ -97,42 +94,42 @@ class Page_Controller extends ContentController
         ));
 
         Requirements::insertHeadTags(sprintf(
-            "<script>window.isMobile=%s;window.isTablet=%s;window.isPhone=%s;</script>",
+            '<script>window.isMobile=%s;window.isTablet=%s;window.isPhone=%s;</script>',
             (int)$this->IsMobile(),
             (int)$this->IsTablet(),
             (int)$this->IsPhone()
         ));
 
         Requirements::insertHeadTags(sprintf(
-            "<script src='%s'></script>", PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
+            '<script src="%s"></script>', PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
         ));
 
-//		Requirements::insertHeadTags(sprintf(
-//			'<script src='https://use.typekit.net/%s.js'></script><script>try{Typekit.load({ async: true });}catch(e){}</script>', 'TYPEKIT_ID'
-//		));
+//        Requirements::insertHeadTags(sprintf(
+//            '<script src="https://use.typekit.net/%s.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>', 'TYPEKIT_ID'
+//        ));
 
-//		Requirements::insertHeadTags(sprintf(
-//			"<script src='https://use.fontawesome.com/%s.js'></script>", 'FONTAWESOME_ID'
-//		));
+//        Requirements::insertHeadTags(sprintf(
+//            '<script src="https://use.fontawesome.com/%s.js"></script>', 'FONTAWESOME_ID'
+//        ));
 
-//		Requirements::insertHeadTags(sprintf(
-//			'<script>
-//				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-//				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-//				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-//				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//        Requirements::insertHeadTags(sprintf(
+//            "<script>
+//                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 //
-//				ga('create', '%s', 'auto');
-//				ga('send', 'pageview');
+//                ga('create', '%s', 'auto');
+//                ga('send', 'pageview');
 //
-//			</script>',
-//			'UA-XXXXX-X'
-//		));
+//            </script>",
+//            'UA-XXXXX-X'
+//        ));
     }
 
     /**
      * Check if the user is on a mobile device
-     * @return array|scalar
+     * @return boolean
      */
     public function IsMobile()
     {
@@ -141,7 +138,7 @@ class Page_Controller extends ContentController
 
     /**
      * Check if the user is on a phone
-     * @return array|scalar
+     * @return boolean
      */
     public function IsPhone()
     {
@@ -150,7 +147,7 @@ class Page_Controller extends ContentController
 
     /**
      * Check if the user is on a tablet device
-     * @return array|scalar
+     * @return boolean
      */
     public function IsTablet()
     {
