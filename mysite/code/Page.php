@@ -26,7 +26,9 @@ class Page extends SiteTree
 
     public function getCMSFields()
     {
-        $this->beforeUpdateCMSFields(function ($fields) {
+        $self =& $this;
+
+        $this->beforeUpdateCMSFields(function ($fields) use ($self) {
             $openGraphImage = new UploadField('OpenGraphImage', 'Social media image');
             $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
 
