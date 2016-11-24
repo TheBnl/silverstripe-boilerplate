@@ -18,6 +18,8 @@ class SocialMediaPlatform extends DataObject {
 		'URL' => 'Varchar(255)'
 	);
 
+	private static $default_sort = 'Sort DESC';
+	
 	private static $has_one = array(
 		'SiteConfig' => 'SiteConfig'
 	);
