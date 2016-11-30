@@ -5,7 +5,6 @@ Name: mysite
 After: 'framework/*','cms/*','silverstripe-cacheinclude/*'
 ---
 SSViewer:
-  source_file_comments: true
   theme_enabled: false
 MySQLDatabase:
   connection_charset: 'utf8'
