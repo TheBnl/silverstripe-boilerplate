@@ -35,39 +35,28 @@ the file should look like this (more infos at http://doc.silverstripe.org/sapphi
     
     <?php
     
-    define('SS_DATABASE_SERVER', 'localhost');
-    define('SS_DATABASE_USERNAME', 'YOUR_DATABASE_USERNAME');
-    define('SS_DATABASE_PASSWORD', 'YOUR_DATABASE_PASSWORD');
-    // define('SS_DATABASE_NAME', 'YOUR_DATABASE_NAME');
-    define('SS_DATABASE_CHOOSE_NAME', 2);
-    
+    <?php
+    // What kind of environment is this: development, test, or live (ie, production)?
     define('SS_ENVIRONMENT_TYPE', 'dev');
-    define('SS_ERROR_LOG', '/silverstripe.log');
-    
-    define('SS_DEFAULT_ADMIN_USERNAME', 'YOUR_EMAIL');
-    define('SS_DEFAULT_ADMIN_PASSWORD', 'YOUR_PASSWORD');
-    
-    ini_set('display_errors', 1);
-    
+    define('GA_CODE', 'GOOGLE_ANALYTICS_CODE');
+    // (Set these in your local environment)
+    ini_set("display_errors", 1);
+    ini_set("display_startup_errors", 1);
+
+
+    // Database connection
+    define('SS_DATABASE_SERVER', 'localhost');
+    define('SS_DATABASE_USERNAME', 'YOUR_DB_USER');
+    define('SS_DATABASE_PASSWORD', 'YOUR_DB_USER_PASSWORD');
+    define('SS_DATABASE_NAME', 'YOUR_DB_NAME');
+
+    // Configure a default username and password to access the CMS on all sites in this environment.
+    define('SS_DEFAULT_ADMIN_USERNAME', 'YOUR_ADMIN_NAME');
+    define('SS_DEFAULT_ADMIN_PASSWORD', 'YOUR_ADMIN_PASSWORD');
+
     global $_FILE_TO_URL_MAPPING;
-    $_FILE_TO_URL_MAPPING['/var/www/'] = 'http://127.0.0.1';
-    
-    if (defined('SS_ENVIRONMENT_TYPE') && SS_ENVIRONMENT_TYPE != 'live') {
-        // turn on display_errors if we are in dev
-        // NOTE: no need for setting error_reporting, this is done by SilverStripe
-        ini_set('display_errors', 1);
-	}
-    
-there are 2 ways of setting a database name:    
+    $_FILE_TO_URL_MAPPING['/path/to/your/site/httpdocs'] = 'http://hostename.wherever/';
 
-- you can set the database name via `SS_DATABASE_NAME` ( **recommended for live environement** )
-- or you can let SilverStripe automaticly select a database name for you, using `SS_DATABASE_CHOOSE_NAME` SilverStripe will call the database after the project folder name (You can also set it to use the parent folder or the parent parent folder name for the database name) (if silverstripe has permissions on the database server, it will even create them for you)
-    Example for the folder `/var/www/myWebsite/httpdocs`
-    - `define('SS_DATABASE_CHOOSE_NAME', 1);` => will make the database "httpdocs"
-    - `define('SS_DATABASE_CHOOSE_NAME', 2);` => will make the database "myWebsite"
-    - `define('SS_DATABASE_CHOOSE_NAME', 3);` => will make the database "www"
-
-`$_FILE_TO_URL_MAPPING` is used to tell SilverStripe which folder has which URL when using the SilverStripe commandline tool "sake"
 
 **now just run mysite.com/dev/build and you are done, no further setup required, you are ready to go**
     
@@ -94,7 +83,7 @@ Which has the benefit of having the whole project at one place, not separated in
 
 ### SASS / SCSS / Javascript
 
-Compiling SASS and JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`. To restart automatically when bundle.js is updated please use gulper watch (https://www.npmjs.com/package/gulper). 
+Compiling SASS and JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`.
 
 ### Lazy Loading Images
 
