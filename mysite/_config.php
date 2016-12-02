@@ -22,10 +22,10 @@ require_once "code/config/HTMLEditorConfig.php";
 // you should define a admin email in you _ss_environment
 if (!Director::isLive()) {
     // Catch all email in dev mode
-    Email::send_all_emails_to(ADMIN_EMAIL);
+    Email::send_all_emails_to(Email::config()->get('admin_email'));
     // Set source comments in dev mode
     Config::inst()->update('SSViewer', 'source_file_comments', true);
 } else {
-    SS_Log::add_writer(new SS_LogEmailWriter(ADMIN_EMAIL), SS_Log::ERR);
+    SS_Log::add_writer(new SS_LogEmailWriter(Email::config()->get('admin_email')), SS_Log::ERR);
     Director::forceWWW();
 }
