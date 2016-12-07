@@ -8,7 +8,7 @@ class mysiteSiteConfigExtension extends DataExtension
 {
 
     private static $db = array(
-        'Phone' => 'Varchar(10)',
+        'Phone' => 'Varchar(25)',
         'Email' => 'Varchar(255)'
     );
 
