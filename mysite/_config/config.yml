@@ -27,7 +27,7 @@ ShareCare:
 #GoogleGeocoding:
 #  google_api_key: 'YOUR_GOOGLE_SERVER_API_KEY'
 Addressable:
-  set_postcode_regex: '/^[0-9A-Za-z]+$/'
+  set_postcode_regex: '/^[0-9A-Za-z\s]+$/'
 LeftAndMain:
   extra_requirements_css:
     - 'mysite/css/cms.css'
