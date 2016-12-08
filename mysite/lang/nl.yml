@@ -1,4 +1,6 @@
 nl:
   CLASS:
-    KEY: "test tekst"
-    AnotherKEY: "nog een tekst"
+    KEY: test tekst
+    AnotherKEY: nog een tekst
+  NocaptchaField:
+    EMPTY: Beantwoord de captcha om het formulier te verzenden
