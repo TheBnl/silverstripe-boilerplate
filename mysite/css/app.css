@@ -3518,12 +3518,17 @@ table.hover tbody tr:nth-of-type(even):hover {
   display: block;
   float: none; }
 
+.field.nocaptcha {
+  margin-bottom: 1rem; }
+
 .field ul.optionset {
   list-style: none;
   margin: 0 0 1rem 0; }
 
-span.error,
+span.validation, span.error,
+label.validation,
 label.error,
+legend.validation,
 legend.error {
   font-size: 80%;
   background-color: #ec5840;
@@ -3532,6 +3537,14 @@ legend.error {
   padding: .15rem .5rem;
   line-height: 1.8;
   display: block; }
+
+span.validation,
+label.validation,
+legend.validation {
+  background-color: #ffae00;
+  display: inline-block;
+  border-radius: 3px;
+  margin: .5rem 0; }
 
 label,
 legend {
