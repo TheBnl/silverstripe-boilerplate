@@ -26,9 +26,9 @@ class GridFieldConfig_VersionedSortable extends GridFieldConfig
         $this->addComponent(new GridFieldAddNewButton('toolbar-header-right'));
         $this->addComponent(new GridFieldDataColumns());
         $this->addComponent(new VersionedDataObjectDetailsForm());
+        $this->addComponent(new GridFieldEditButton());
         $this->addComponent(new VersionedGridFieldDeleteAction());
         $this->addComponent(new VersionedGridFieldOrderableRows($sortField));
-        $this->addComponent(new GridFieldEditButton());
         $this->addComponent($pagination = new GridFieldPaginator($itemsPerPage));
 
         $pagination->setThrowExceptionOnBadDataType(false);
