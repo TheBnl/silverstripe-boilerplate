@@ -10,6 +10,12 @@ MySQLDatabase:
   connection_charset: 'utf8'
 GDBackend:
   default_quality: 80
+i18n:
+  default_locale: 'nl_NL'
+Date:
+  nice_format: 'd-m-Y'
+SS_Datetime:
+  nice_format: 'd-m-Y G:i'
 SiteTree:
   nested_urls: true
 Email:
