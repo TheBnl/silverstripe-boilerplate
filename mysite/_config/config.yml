@@ -20,7 +20,6 @@ SiteTree:
   nested_urls: true
 Email:
   admin_email: 'mail@mysite.com'
-  bcc_all_emails_to: 'bram@xd.nl'
 SmtpMailer:
   host: mail.mysite.nl
   user: mail@mysite.nl
@@ -28,8 +27,8 @@ SmtpMailer:
   encryption: tls
   charset: UTF-8
 BetterNavigator:
-    developers:
-      - 'mail@mysite.com'
+  developers:
+    - 'mail@mysite.com'
 OpenGraph:
   application_id: ''  # Give application id or set this to 'SiteConfig' so the cms user can set this value
   admin_id: ''        # Give admin id or set this to 'SiteConfig' so the cms user can set this value
