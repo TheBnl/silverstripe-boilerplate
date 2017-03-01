@@ -20,6 +20,13 @@ SiteTree:
   nested_urls: true
 Email:
   admin_email: 'mail@mysite.com'
+  bcc_all_emails_to: 'bram@xd.nl'
+SmtpMailer:
+  host: mail.mysite.nl
+  user: mail@mysite.nl
+  password: password
+  encryption: tls
+  charset: UTF-8
 BetterNavigator:
     developers:
       - 'mail@mysite.com'
@@ -42,3 +49,7 @@ FormSpamProtectionExtension:
 NocaptchaField:
   site_key: 'YOUR_SITE_KEY'
   secret_key: 'YOUR_SECRET_KEY'
+Page:
+  default_image: '/favicon-152.png'
+  default_slices:
+    - PageContentSlice

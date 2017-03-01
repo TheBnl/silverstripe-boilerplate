@@ -16,7 +16,10 @@
 
 span,
 label,
-legend {
+legend,
+.middleColumn {
+  + .message.bad,
+  + .message.required,
   &.validation,
   &.error {
     font-size: $small-font-size;
@@ -26,6 +29,8 @@ legend {
     padding: .15rem .5rem;
     line-height: 1.8;
     display: block;
+    border-radius: 0 0 $global-radius $global-radius;
+    border: none;
   }
   &.validation {
     background-color: $warning-color;
@@ -35,16 +40,36 @@ legend {
   }
 }
 
+[type='checkbox'],
+[type='radio'] {
+  &.error {
+    margin: 0 0 $global-margin;
+  }
+  + label[for].error {
+    display: none !important;
+    + label[for] {
+      color: $alert-color;
+      display: inline-block;
+      margin-left: $global-margin/2;
+      margin-right: $global-margin;
+      margin-bottom: 0;
+    }
+  }
+}
+
 label,
 legend {
   font-size: $small-font-size;
 }
 
 textarea,
+select,
 input {
+  &.holder-bad,
   &.error {
     border-color: $alert-color;
     margin-bottom: 0;
+    border-radius: $global-radius $global-radius 0 0;
   }
 }
 
@@ -57,6 +82,11 @@ form {
   }
 }
 
+button,
 input[type="submit"] {
   @include button;
+  &.ajax-loading:not(.error),
+  &.loading {
+    // loading style
+  }
 }

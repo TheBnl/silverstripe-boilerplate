@@ -21,6 +21,7 @@ silverstripe.log
 /copybutton
 /display_logic
 /docsviewer
+/email-helpers
 /focuspoint
 /framework
 /googlesitemaps
@@ -37,6 +38,7 @@ silverstripe.log
 /schema
 /secureassets
 /segment-field
+/seo
 /share-care
 /silverstripe-cacheinclude
 /silverstripe-catalogmanager

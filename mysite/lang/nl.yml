@@ -1,6 +1,7 @@
 nl:
-  CLASS:
-    KEY: test tekst
-    AnotherKEY: nog een tekst
+  General:
+    READ_MORE: 'Lees meer'
+    GOOLGE_MAPS: 'Bekijk {site} op Google Maps'
+    SOCIAL_MEDIA: 'Volg {site} op {platform}'
   NocaptchaField:
     EMPTY: Beantwoord de captcha om het formulier te verzenden

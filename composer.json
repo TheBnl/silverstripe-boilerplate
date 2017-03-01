@@ -34,7 +34,9 @@
 		"gdmedia/ss-auto-git-ignore": "*",
 		"bramdeleeuw/silverstripe-schema": "*",
 		"bramdeleeuw/silverstripe-pageslices": "*",
-		"bramdeleeuw/silverstripe-pageslices-userform": "*"
+		"bramdeleeuw/silverstripe-pageslices-userform": "*",
+		"markguinn/silverstripe-email-helpers": "*",
+		"hubertusanton/silverstripe-seo": "*"
 	},
 	"require-dev": {
 		"silverstripe/docsviewer": "*",

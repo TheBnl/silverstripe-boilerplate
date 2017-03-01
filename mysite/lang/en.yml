@@ -1,6 +1,7 @@
 en:
-  CLASS:
-    KEY: test text
-    AnotherKEY: another text
+  General:
+    READ_MORE: 'Read more'
+    GOOLGE_MAPS: 'See {site} on Google Maps'
+    SOCIAL_MEDIA: 'Follow {site} on {platform}'
   NocaptchaField:
     EMPTY: Please answer the captcha, if you do not see the captcha you must enable JavaScript

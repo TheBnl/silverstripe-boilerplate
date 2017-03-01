@@ -6,9 +6,8 @@ $project = 'mysite';
 // use the _ss_environment.php file for configuration
 require_once('conf/ConfigureFromEnv.php');
 
-// remove the auto generated SS_ prefix that gets added if database is auto detected
-global $databaseConfig;
-$databaseConfig['database'] = str_replace('SS_', '', $databaseConfig['database']);
+// Add the html editor configuration
+require_once "code/config/HTMLEditorConfig.php";
 
 // set default language
 i18n::set_locale('nl_NL');
@@ -16,8 +15,9 @@ i18n::set_locale('nl_NL');
 define('PROJECT_THIRDPARTY_DIR', project() . '/javascript/thirdparty');
 define('PROJECT_THIRDPARTY_PATH', project() . '/' . PROJECT_THIRDPARTY_DIR);
 
-// Add the html editor configuration
-require_once "code/config/HTMLEditorConfig.php";
+if (SmtpMailer::config()->get('user') && SmtpMailer::config()->get('password')) {
+    Injector::inst()->registerService(new SmtpMailer(), 'Mailer');
+}
 
 // you should define a admin email in you _ss_environment
 if (!Director::isLive()) {
@@ -28,4 +28,5 @@ if (!Director::isLive()) {
 } else {
     SS_Log::add_writer(new SS_LogEmailWriter(Email::config()->get('admin_email')), SS_Log::ERR);
     Director::forceWWW();
+    //Director::forceSSL();
 }
