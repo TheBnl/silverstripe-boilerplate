@@ -31,8 +31,8 @@ BetterNavigator:
     developers:
       - 'mail@mysite.com'
 OpenGraph:
-  application_id: ''  # Give application id set this to 'SiteConfig' so the cms user can set this value
-  admin_id: ''        # Give admin id set this to 'SiteConfig' so the cms user can set this value
+  application_id: ''  # Give application id or set this to 'SiteConfig' so the cms user can set this value
+  admin_id: ''        # Give admin id or set this to 'SiteConfig' so the cms user can set this value
   default_locale: 'nl_NL'
   default_tagbuilder: 'OpenGraphBuilder'
 ShareCare:
