@@ -7,14 +7,17 @@ After:
 DataObject:
   extensions:
     - Heyday\CacheInclude\SilverStripe\InvalidationExtension
+Controller:
+  extensions:
+    - MobileDetectExtension
 Image:
   extensions:
-    - mysiteImageExtension
+    - ImageExtension
 LeftAndMain:
   extensions:
-    - mysiteLeftAndMainExtension
+    - MyLeftAndMainExtension
 SiteConfig:
   extensions:
-    - mysiteSiteConfigExtension
+    - SiteConfigExtension
     - Addressable
 #   - Geocodable

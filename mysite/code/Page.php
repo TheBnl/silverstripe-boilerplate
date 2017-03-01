@@ -20,22 +20,18 @@ class Page extends SiteTree
     private static $searchable_fields = array();
     private static $summary_fields = array();
 
-    private static $is_mobile = 0;
-    private static $is_phone = 0;
-    private static $is_tablet = 0;
-
     public function getCMSFields()
     {
         $self =& $this;
 
-        $this->beforeUpdateCMSFields(function ($fields) use ($self) {
-            $openGraphImage = new UploadField('OpenGraphImage', 'Social media image');
-            $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
-
-            $fields->addFieldToTab('Root.Main.Metadata', $openGraphImage);
-        });
+        $this->beforeUpdateCMSFields(function ($fields) use ($self) {});
 
         $fields = parent::getCMSFields();
+
+        $openGraphImage = new UploadField('OpenGraphImage', 'Social media image');
+        $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
+        $fields->addFieldToTab('Root.SEO', $openGraphImage, 'MetaDescription');
+
         $fields->removeByName(array('ExtraMeta'));
         return $fields;
     }
@@ -79,11 +75,6 @@ class Page_Controller extends ContentController
     {
         parent::init();
 
-        $detect = new Mobile_Detect();
-        Config::inst()->update('Page', 'is_mobile', $detect->isMobile());
-        Config::inst()->update('Page', 'is_phone', $detect->isMobile() && !$detect->isTablet());
-        Config::inst()->update('Page', 'is_tablet', $detect->isTablet());
-
         Requirements::set_combined_files_folder(project() . '/_combinedfiles');
         Requirements::combine_files('app.js', array(
             project() . '/javascript/dist/bundle.js',
@@ -93,13 +84,6 @@ class Page_Controller extends ContentController
             // include any javascript library css like this
             PROJECT_THIRDPARTY_DIR . '/swiper/dist/css/swiper.min.css',
             project() . '/css/app.css'
-        ));
-
-        Requirements::insertHeadTags(sprintf(
-            '<script>window.isMobile=%s;window.isTablet=%s;window.isPhone=%s;</script>',
-            (int)$this->IsMobile(),
-            (int)$this->IsTablet(),
-            (int)$this->IsPhone()
         ));
 
         Requirements::insertHeadTags(sprintf(
@@ -127,41 +111,5 @@ class Page_Controller extends ContentController
 //            </script>",
 //            'UA-XXXXX-X'
 //        ));
-    }
-
-    /**
-     * Check if the user is on a mobile device
-     * @return boolean
-     */
-    public function IsMobile()
-    {
-        return Config::inst()->get('Page', 'is_mobile');
-    }
-
-    /**
-     * Check if the user is on a phone
-     * @return boolean
-     */
-    public function IsPhone()
-    {
-        return Config::inst()->get('Page', 'is_phone');
-    }
-
-    /**
-     * Check if the user is on a tablet device
-     * @return boolean
-     */
-    public function IsTablet()
-    {
-        return Config::inst()->get('Page', 'is_tablet');
-    }
-
-    /**
-     * Return true for all environments except live
-     * @return bool
-     */
-    public function IsDev()
-    {
-        return !Director::isLive();
     }
 }

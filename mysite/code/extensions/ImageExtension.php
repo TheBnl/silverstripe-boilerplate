@@ -6,7 +6,7 @@
  * Time: 13:49
  */
 
-class mysiteImageExtension extends DataExtension {
+class ImageExtension extends DataExtension {
 
 	/**
 	 * Returns a lazy image tag with the desired method
