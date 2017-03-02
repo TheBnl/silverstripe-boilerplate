@@ -61,6 +61,21 @@ class Page extends SiteTree
         }
         return $image;
     }
+
+
+    /**
+     * Make sure a meta description tag is set even if no description is given
+     * @param bool $includeTitle
+     *
+     * @return string
+     */
+    public function MetaTags($includeTitle = true)
+    {
+        if (!$this->MetaDescription) {
+            $this->MetaDescription = $this->dbObject('Content')->Summary(25);
+        }
+        return parent::MetaTags($includeTitle);
+    }
 }
 
 
