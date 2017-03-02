@@ -20,6 +20,8 @@ class Page extends SiteTree
     private static $searchable_fields = array();
     private static $summary_fields = array();
 
+    private static $default_image = '/favicon-152.png';
+
     public function getCMSFields()
     {
         $self =& $this;
@@ -55,7 +57,7 @@ class Page extends SiteTree
         if ($this->OpenGraphImage()->exists()) {
             $image = $this->OpenGraphImage();
         } else {
-            $image = Director::absoluteURL(OpenGraphObjectExtension::$default_image);
+            $image = Director::absoluteURL(self::config()->get('default_image'));
         }
         return $image;
     }
