@@ -14,6 +14,7 @@ i18n::set_locale('nl_NL');
 
 define('PROJECT_THIRDPARTY_DIR', project() . '/javascript/thirdparty');
 define('PROJECT_THIRDPARTY_PATH', project() . '/' . PROJECT_THIRDPARTY_DIR);
+define('USERFORMS_THIRDPARTY_DIR', 'userforms/thirdparty');
 
 if (SmtpMailer::config()->get('user') && SmtpMailer::config()->get('password')) {
     Injector::inst()->registerService(new SmtpMailer(), 'Mailer');
