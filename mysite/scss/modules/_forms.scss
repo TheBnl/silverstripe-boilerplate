@@ -29,7 +29,7 @@ legend,
     padding: .15rem .5rem;
     line-height: 1.8;
     display: block;
-    border-radius: 0 0 $global-radius $global-radius;
+    border-radius: 0 0 $input-radius $input-radius;
     border: none;
   }
   &.validation {
@@ -69,7 +69,7 @@ input {
   &.error {
     border-color: $alert-color;
     margin-bottom: 0;
-    border-radius: $global-radius $global-radius 0 0;
+    border-radius: $input-radius $input-radius 0 0;
   }
 }
 
