@@ -1,7 +1,7 @@
 (($) => {
     'use strict';
 
-    $.validator.addMethod("password", function (value) {
+    $.validator.addMethod("password", (value) => {
         return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
             && /[a-z]/.test(value) // has a lowercase letter
             && /\d/.test(value); // has a digit
@@ -72,7 +72,7 @@
         let navigation = $('.your-nav-class');
         let navigationActive = 'your-nav-class--active';
 
-        hamburger.on('click', function () {
+        hamburger.on('click', () => {
             hamburger.toggleClass('is-active');
             navigation.toggleClass(navigationActive);
         });

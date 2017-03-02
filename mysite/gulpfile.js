@@ -7,6 +7,7 @@ const babel = require('gulp-babel');
 const bundle = require('./javascript/bundle.js');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
+const es2015 = require('babel-preset-es2015');
 
 const config = {
     browserSyncProxy: 'kobus.local',
@@ -15,7 +16,7 @@ const config = {
 };
 
 const paths = {
-    js: 'javascript/app/**/*.js',
+    js: 'javascript/**/*.js',
     jsDist: 'javascript/dist',
     sass: 'scss/**/*.scss',
     css: 'css',
@@ -66,7 +67,7 @@ function doScripts(cb, quick) {
     var buildPipes = [];
     buildPipes.push(gulp.src(bundle.BUNDLE));
     buildPipes.push(babel({
-        presets: ['es2015']
+        presets: [es2015]
     }));
     buildPipes.push(concat(config.jsDistFile));
 
