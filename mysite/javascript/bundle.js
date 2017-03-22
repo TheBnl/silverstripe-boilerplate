@@ -1,3 +1,5 @@
+'use strict';
+
 let js_dir = 'javascript',
     third_party_dir = 'javascript/thirdparty',
     foundation_dir = 'node_modules/foundation-sites/js',

@@ -33,7 +33,7 @@
 		"undefinedoffset/silverstripe-nocaptcha": "*",
 		"gdmedia/ss-auto-git-ignore": "*",
 		"bramdeleeuw/silverstripe-schema": "*",
-		"bramdeleeuw/silverstripe-pageslices": "dev-master",
+		"bramdeleeuw/silverstripe-pageslices": "*",
 		"bramdeleeuw/silverstripe-pageslices-userform": "*",
 		"markguinn/silverstripe-email-helpers": "*",
 		"hubertusanton/silverstripe-seo": "*"

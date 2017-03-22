@@ -1,0 +1,10 @@
+@import '../node_modules/foundation-sites/scss/util/util';
+@import "settings";
+@import "../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-typography;
+
+body {
+  font-size: 14px;
+  color: $body-font-color;
+}

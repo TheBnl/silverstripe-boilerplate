@@ -24,7 +24,8 @@ $formats = array(
 );
 
 //Set the dropdown menu options
-HtmlEditorConfig::get('cms')->setOption('style_formats',$formats);
+// HtmlEditorConfig::get('cms')->setOption('style_formats',$formats);
+HtmlEditorConfig::get('cms')->setOption('content_css', project() . "/css/editor.css");
 // Reconstruct editor toolbar with less buttons
 HtmlEditorConfig::get('cms')->setButtonsForLine(1,
 	'pastetext',
