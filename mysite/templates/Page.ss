@@ -26,6 +26,7 @@
 		$Layout
 	</div>
 	<% include Footer %>
+	$BetterNavigator
 </div>
 </body>
 </html>

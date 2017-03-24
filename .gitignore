@@ -49,6 +49,7 @@ silverstripe.log
 /siteconfig
 /sortablegridfield
 /spamprotection
+/text-target-length
 /tinytidy
 /userforms
 # END of GitIgnoreEditor

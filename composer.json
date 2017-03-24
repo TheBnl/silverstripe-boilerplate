@@ -26,6 +26,7 @@
 		"jonom/silverstripe-tinytidy": "*",
 		"jonom/silverstripe-share-care": "*",
 		"jonom/silverstripe-betternavigator": "*",
+		"jonom/silverstripe-text-target-length": "*",
 		"littlegiant/silverstripe-catalogmanager": "*",
 		"littlegiant/silverstripe-seo-editor": "*",
 		"littlegiant/silverstripe-singlepageadmin": "*",
@@ -34,7 +35,7 @@
 		"gdmedia/ss-auto-git-ignore": "*",
 		"bramdeleeuw/silverstripe-schema": "*",
 		"bramdeleeuw/silverstripe-pageslices": "*",
-		"bramdeleeuw/silverstripe-pageslices-userform": "*",
+		"bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
 		"markguinn/silverstripe-email-helpers": "*",
 		"hubertusanton/silverstripe-seo": "*"
 	},

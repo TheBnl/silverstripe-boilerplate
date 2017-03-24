@@ -5,3 +5,9 @@ nl:
     SOCIAL_MEDIA: 'Volg {site} op {platform}'
   NocaptchaField:
     EMPTY: Beantwoord de captcha om het formulier te verzenden
+  TextTargetLength:
+    LengthTarget: "Doellengte: <b>{value}%</b> <i>{remark}</i>"
+    LengthTooShort: "Blijf doorgaan!"
+    LengthTooLong: "Te lang"
+    LengthAdequate: "Oké"
+    LengthIdeal: "Perfect!"

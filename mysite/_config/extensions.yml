@@ -21,3 +21,6 @@ SiteConfig:
     - SiteConfigExtension
     - Addressable
 #   - Geocodable
+Page:
+  extensions:
+    - Broarm\Silverstripe\PageSlices\PageSlicesExtension
