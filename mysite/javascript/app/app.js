@@ -1,12 +1,15 @@
 (($) => {
     'use strict';
 
+    /* FIXME: Should only be used in password creation
+     * /
     $.validator.addMethod("password", (value) => {
         return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
             && /[a-z]/.test(value) // has a lowercase letter
             && /\d/.test(value); // has a digit
         // TODO: take the string from a lang file
     }, 'Het wachtwoord moet minstens één letter en één cijfer bevatten.');
+    */
 
     const forms = {
         'MemberLoginForm_LoginForm_action_dologin': 'MemberLoginForm_LoginForm',
