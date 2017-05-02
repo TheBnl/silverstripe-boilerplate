@@ -34,8 +34,9 @@ class Page extends SiteTree
         $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
         $fields->addFieldToTab('Root.SEO', $openGraphImage, 'MetaDescription');
 
-        $metaDescription = $fields->fieldByName('Root.SEO.MetaDescription');
-        $metaDescription->setTargetLength(150, 130, 160);
+        if ($metaDescription = $fields->fieldByName('Root.SEO.MetaDescription')) {
+            $metaDescription->setTargetLength(150, 130, 160);
+        }
 
         $fields->removeByName(array('ExtraMeta'));
         return $fields;
