@@ -58,12 +58,14 @@ class Page extends SiteTree
      */
     function getOGImage()
     {
-        if ($this->OpenGraphImage()->exists()) {
-            $image = $this->OpenGraphImage();
+        $this->extend('updateOGImage', $image);
+        if (isset($image)) {
+            return $image;
+        } if ($this->OpenGraphImage()->exists()) {
+            return $this->OpenGraphImage();
         } else {
-            $image = Director::absoluteURL(self::config()->get('default_image'));
+            return Director::absoluteURL(self::config()->get('default_image'));
         }
-        return $image;
     }
 
 
