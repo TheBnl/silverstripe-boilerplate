@@ -16,7 +16,7 @@ const config = {
 };
 
 const paths = {
-    js: 'javascript/**/*.js',
+    js: 'javascript/app/*.js',
     jsDist: 'javascript/dist',
     sass: 'scss/**/*.scss',
     css: 'css',
