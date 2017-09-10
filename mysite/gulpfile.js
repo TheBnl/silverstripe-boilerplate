@@ -1,91 +1,77 @@
 const gulp = require('gulp');
-const gutil = require('gulp-util');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const gulpUtil = require('gulp-util');
+const webpack = require('webpack');
 const pump = require('pump');
-const babel = require('gulp-babel');
-const bundle = require('./javascript/bundle.js');
 const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
-const es2015 = require('babel-preset-es2015');
+const webpackConfig = require('./javascript/config/webpack.config');
 
-const config = {
-    browserSyncProxy: 'kobus.local',
-    jsDistFolder: 'javascript/dist',
-    jsDistFile: 'bundle.js'
-};
+gulp.task('default', ['webpack']);
 
-const paths = {
-    js: 'javascript/app/*.js',
-    jsDist: 'javascript/dist',
-    sass: 'scss/**/*.scss',
-    css: 'css',
-    ss: 'templates/**/*.ss',
-};
-
-// default task falls back to watch
-gulp.task('default', ['watch']);
-
-// set up browser sync and watch for changes
-gulp.task('serve', ['setupSync', 'watch']);
-
-// compile and minify a distribution
-gulp.task('build', ['scripts', 'sass']);
-
-// watch fot changes and if browser sync is enabled reload/stream
-gulp.task('watch', ['scripts:quick', 'sass'], cb => {
-    gulp.watch(paths.js, ['scripts:quick']);
-    gulp.watch(paths.sass, ['sass']);
-    gulp.watch(paths.ss).on('change', browserSync.reload);
+gulp.task('watch', ['webpack:watch', 'sass:watch'], cb => {
+    gulp.watch('javascript/app/*.js', ['webpack:watch']);
+    gulp.watch('scss/**/*.scss', ['sass:watch']);
 });
 
+gulp.task('build', ['webpack:build', 'sass:build']);
 
-gulp.task('scripts:quick', cb => {
-    return doScripts(cb, true);
+gulp.task('sass:watch', cb => {
+    return doSass(cb, false);
 });
 
-
-gulp.task('scripts', cb => {
-    return doScripts(cb, false);
+gulp.task('sass:build', cb => {
+    return doSass(cb, true);
 });
 
-
-gulp.task('sass', cb => {
-    return doSass(cb);
+gulp.task('webpack:watch', cb => {
+    return doPack(cb, false);
 });
 
+gulp.task('webpack:build', cb => {
+    return doPack(cb, true);
+});
 
-gulp.task('setupSync', cb => {
-    browserSync.init({
-        proxy: config.browserSyncProxy
+/**
+ * Combine the JS
+ * If build mode is on, uglify the JS
+ *
+ * @param cb
+ * @param build
+ */
+const doPack = (cb, build) => {
+    gulpUtil.log((build ? 'build' : 'pack'), 'js');
+    const config = Object.create(webpackConfig);
+    if (build) {
+        config.plugins = [
+            new webpack.optimize.UglifyJsPlugin()
+        ];
+    }
+
+    webpack(config, function (err, stats) {
+        if (err) throw new gulpUtil.PluginError('webpack', err);
+        gulpUtil.log('[webpack]', stats.toString({
+            colors: true,
+            progress: true
+        }));
+        cb();
     });
-});
+};
 
+/**
+ * Compile the sass
+ * If build mode is on, minify the output
+ *
+ * @param cb
+ */
+const doSass = (cb, build) => {
+    gulpUtil.log((build ? 'build' : 'update'), 'scss');
+    const config = {};
+    if (build) {
+        config.outputStyle = 'compressed';
+    }
 
-function doScripts(cb, quick) {
-    gutil.log('update js', quick ? 'fast' : '');
-    var buildPipes = [];
-    buildPipes.push(gulp.src(bundle.BUNDLE));
-    buildPipes.push(babel({
-        presets: [es2015]
-    }));
-    buildPipes.push(concat(config.jsDistFile));
-
-    // if were doing a quick build skip uglify
-    if (!quick) buildPipes.push(uglify());
-
-    buildPipes.push(gulp.dest(config.jsDistFolder));
-    buildPipes.push(browserSync.stream());
-    pump(buildPipes, cb);
-}
-
-
-function doSass(cb) {
-    gutil.log('update scss');
     pump([
-        gulp.src(paths.sass),
-        sass().on('error', sass.logError),
-        gulp.dest(paths.css),
-        browserSync.stream()
+        gulp.src('scss/**/*.scss'),
+        sass(config).on('error', sass.logError),
+        gulp.dest('css'),
     ], cb);
-}
+};

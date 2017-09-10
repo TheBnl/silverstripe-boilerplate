@@ -1,3 +1,7 @@
+require('jquery-validation');
+const $ = require('jquery');
+global.jQuery = $;
+
 (($) => {
     'use strict';
 
@@ -25,13 +29,12 @@
         initNavigation();
     });
 
-
     /**
      * Bootstraps the forms
      *
      * @param forms
      */
-    function bootstrapForms(forms) {
+    const bootstrapForms = (forms) => {
         $.each(forms, (button, form) => {
             let buttonID = '#' + button;
             let formID = '#' + form;
@@ -43,15 +46,14 @@
                 $(formID).validate();
             }
         });
-    }
-
+    };
 
     /**
      * Pretend to do ajax sending
      *
      * @param formID
      */
-    function pretendToSend(formID) {
+    const pretendToSend = (formID) => {
         let form = $(formID);
         let input = form.find('input[type="submit"]');
 
@@ -64,14 +66,13 @@
         }
 
         return false;
-    }
-
+    };
 
     /**
      * Toggle the active class on the hamburger
      * Set navigation and navigationActive strings to your used classes
      */
-    function initNavigation() {
+    const initNavigation = () => {
         let hamburger = $('.c-hamburger');
         let navigation = $('.your-nav-class');
         let navigationActive = 'your-nav-class--active';
@@ -80,6 +81,6 @@
             hamburger.toggleClass('is-active');
             navigation.toggleClass(navigationActive);
         });
-    }
+    };
 
 })(jQuery);
