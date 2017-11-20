@@ -3,8 +3,8 @@
 	"description": "Boilerplate template to quickly kick off a new SilverStripe project, forked from zauberfisch",
 	"require": {
 		"php": ">=5.3.2",
-		"silverstripe/cms": "3.x@stable",
-		"silverstripe/framework": "3.x@stable",
+		"silverstripe/cms": "4.x@stable",
+		"silverstripe/framework": "4.x@stable",
 		"silverstripe/googlesitemaps": "*",
 		"silverstripe/userforms": "*",
 		"silverstripe/secureassets": "*",
@@ -12,18 +12,17 @@
 		"silverstripe/spamprotection": "*",
 		"symbiote/silverstripe-gridfieldextensions": "*",
 		"symbiote/silverstripe-grouped-cms-menu": "*",
-		"symbiote/silverstripe-addressable": "dev-master",
+		"symbiote/silverstripe-addressable": "*",
 		"exadium/breadcrumbnavigation": "*",
 		"unisolutions/silverstripe-copybutton": "*",
 		"lrc/silverstripe-link-field": "*",
-		"unclecheese/betterbuttons": "1.2.8",
+		"unclecheese/betterbuttons": "*",
 		"unclecheese/display-logic": "*",
 		"colymba/gridfield-bulk-editing-tools": "*",
 		"mobiledetect/mobiledetectlib": "*",
-		"heyday/silverstripe-versioneddataobjects": "1.4.0",
-		"heyday/silverstripe-cacheinclude": "4.0.5",
+		"heyday/silverstripe-versioneddataobjects": "*",
+		"heyday/silverstripe-cacheinclude": "*",
 		"jonom/focuspoint": "*",
-		"jonom/silverstripe-tinytidy": "*",
 		"jonom/silverstripe-share-care": "*",
 		"jonom/silverstripe-betternavigator": "*",
 		"jonom/silverstripe-text-target-length": "*",
@@ -46,6 +45,9 @@
 	"scripts": {
 		"post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
 	},
-	"minimum-stability": "dev", 
-	"prefer-stable": true
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+  "bak": {
+    	"jonom/silverstripe-tinytidy": "*"
+  }
 }
