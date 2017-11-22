@@ -12,8 +12,6 @@
     "symbiote/silverstripe-gridfieldextensions": "*",
     "unclecheese/betterbuttons": "*",
     "mobiledetect/mobiledetectlib": "*",
-    "heyday/silverstripe-versioneddataobjects": "*",
-    "jonom/silverstripe-betternavigator": "*",
     "undefinedoffset/silverstripe-nocaptcha": "*",
     "gdmedia/ss-auto-git-ignore": "*",
     "bramdeleeuw/silverstripe-schema": "*",
@@ -46,6 +44,8 @@
   "prefer-stable": true,
 
   "bak": {
+    "heyday/silverstripe-versioneddataobjects": "*",
+    "jonom/silverstripe-betternavigator": "*",
     "littlegiant/silverstripe-catalogmanager": "*",
     "tractorcow/silverstripe-opengraph": "*",
     "colymba/gridfield-bulk-editing-tools": "*",
