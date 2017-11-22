@@ -34,6 +34,7 @@
       "mysite/*",
       ".gitignore",
       ".htaccess",
+      "_ss_environment.php",
       "favicon.ico",
       "favicon-144.png",
       "favicon-152.png",
