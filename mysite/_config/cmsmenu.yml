@@ -4,18 +4,18 @@ After:
   - 'framework/*'
   - 'cms/*'
 ---
-LeftAndMain:
-  menu_groups:
-    CMSPagesController:
-      - CMSPagesController
-    AssetAdmin:
-      - AssetAdmin
-    SEOEditorAdmin:
-      - SEOEditorAdmin
-    Settings:
-      icon: 'cmssettingscontroller'
-      - ReportAdmin
-      - CMSSettingsController
-      - SecurityAdmin
-      - SEOEditorAdmin
-      - RedirectedURLAdmin
+#SilverStripe\Admin\LeftAndMain:
+#  menu_groups:
+#    CMSPagesController:
+#      - CMSPagesController
+#    AssetAdmin:
+#      - AssetAdmin
+#    SEOEditorAdmin:
+#      - SEOEditorAdmin
+#    Settings:
+#      icon: 'cmssettingscontroller'
+#      - ReportAdmin
+#      - CMSSettingsController
+#      - SecurityAdmin
+#      - SEOEditorAdmin
+#      - RedirectedURLAdmin

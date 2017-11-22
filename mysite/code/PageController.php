@@ -1,6 +1,7 @@
 <?php
 
 use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\View\Requirements;
 
 class PageController extends ContentController
 {
@@ -30,10 +31,6 @@ class PageController extends ContentController
         Requirements::set_combined_files_folder(project() . '/_combinedfiles');
         Requirements::javascript(project() . '/javascript/dist/app.bundle.js');
         Requirements::css(project() . '/css/app.css');
-
-        Requirements::insertHeadTags(sprintf(
-            '<script src="%s"></script>', PROJECT_THIRDPARTY_DIR . '/modernizr/modernizr.min.js'
-        ));
 
 //        Requirements::insertHeadTags(sprintf(
 //            '<script src="https://use.typekit.net/%s.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>', 'TYPEKIT_ID'

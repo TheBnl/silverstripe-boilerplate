@@ -1,10 +1,14 @@
 ---
 Name: mySchemaConfig
 ---
-Schema:
-  logo: '/favicon-152.png'
-  config:
-    'Page':
-      - WebsiteSchemaBuilder
-      - BreadcrumbsSchemaBuilder
-      - OrganizationSchemaBuilder
+Page:
+  default_image: '/favicon-152.png'
+  extensions:
+    - Broarm\Schema\SchemaExtension
+  active_schema:
+    - Broarm\Schema\Builder\LocalBusiness
+    - Broarm\Schema\Builder\Website
+    - Broarm\Schema\Builder\Breadcrumbs
+BlogPost:
+  active_schema:
+    - Broarm\Schema\Builder\NewsArticle

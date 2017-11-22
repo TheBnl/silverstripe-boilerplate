@@ -1,6 +1,12 @@
 <?php
 
 global $project;
+
+use SilverStripe\Control\Director;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorConfig;
+use SilverStripe\i18n\i18n;
+
 $project = 'mysite';
 
 // Use the _ss_environment.php file for configuration
@@ -25,17 +31,12 @@ if (!defined('ERROR_EMAIL')) {
 HtmlEditorConfig::get('cms')->setOption('content_css', project() . "/css/editor.css");
 
 // If configured use the SMTP mailer
-if (SmtpMailer::config()->get('user') && SmtpMailer::config()->get('password')) {
-    Injector::inst()->registerService(new SmtpMailer(), 'Mailer');
-}
+//if (SmtpMailer::config()->get('user') && SmtpMailer::config()->get('password')) {
+//    Injector::inst()->registerService(new SmtpMailer(), 'Mailer');
+//}
 
-if (!Director::isLive()) {
-    // Catch all email in dev mode
-    Email::send_all_emails_to(Email::config()->get('admin_email'));
-    // Set source comments in dev mode
-    Config::inst()->update('SSViewer', 'source_file_comments', true);
-} else {
-    SS_Log::add_writer(new SS_LogEmailWriter(ERROR_EMAIL), SS_Log::ERR);
+if (Director::isLive()) {
+    //SS_Log::add_writer(new SS_LogEmailWriter(ERROR_EMAIL), SS_Log::ERR);
     Director::forceWWW();
     //Director::forceSSL();
 }

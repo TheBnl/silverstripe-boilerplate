@@ -5,6 +5,9 @@
  * @author Bram de Leeuw
  * Date: 26/01/16
  */
+
+use SilverStripe\Forms\HTMLEditor\HTMLEditorConfig;
+
 $formats = array(
 
 	/**
@@ -23,6 +26,7 @@ $formats = array(
 
 );
 
+/*
 //Set the dropdown menu options
 // HtmlEditorConfig::get('cms')->setOption('style_formats',$formats);
 HtmlEditorConfig::get('cms')->setOption('content_css', project() . "/css/editor.css");
@@ -64,3 +68,4 @@ HtmlEditorConfig::get('cms')->setButtonsForLine(2,
 HtmlEditorConfig::get('cms')->setButtonsForLine(3,''); // Delete line 3
 // Remove h1 tag option
 HtmlEditorConfig::get('cms')->setOption('theme_advanced_blockformats', 'p,address,pre,h3,h4,h5,h6');
+*/

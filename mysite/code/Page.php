@@ -1,17 +1,18 @@
 <?php
 
+use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\CMS\Model\SiteTree;
 
 /**
  * Class Page
- * @method Image OpenGraphImage()
+ * @method SilverStripe\Assets\Image OpenGraphImage()
  */
 class Page extends SiteTree
 {
     private static $db = [];
 
     private static $has_one = [
-        'OpenGraphImage' => 'Image'
+        'OpenGraphImage' => 'SilverStripe\\Assets\\Image'
     ];
 
     private static $has_many = [];
@@ -31,13 +32,14 @@ class Page extends SiteTree
 
         $fields = parent::getCMSFields();
 
-        $openGraphImage = new UploadField('OpenGraphImage', 'Social media image');
+        $openGraphImage = UploadField::create('OpenGraphImage', 'Social media image');
         $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
-        $fields->addFieldToTab('Root.SEO', $openGraphImage, 'MetaDescription');
+        //$fields->addFieldToTab('Root.SEO', $openGraphImage, 'MetaDescription');
+        $fields->addFieldToTab('Root.Main.Metadata', $openGraphImage, 'MetaDescription');
 
-        if ($metaDescription = $fields->fieldByName('Root.SEO.MetaDescription')) {
-            $metaDescription->setTargetLength(150, 130, 160);
-        }
+        //if ($metaDescription = $fields->fieldByName('Root.SEO.MetaDescription')) {
+        //    $metaDescription->setTargetLength(150, 130, 160);
+        //}
 
         $fields->removeByName(array('ExtraMeta'));
         return $fields;

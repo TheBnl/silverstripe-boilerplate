@@ -1,1 +1,2 @@
-<% include PageSlices %>
+<%-- include PageSlices --%>
+<% include PageContentSlice %>

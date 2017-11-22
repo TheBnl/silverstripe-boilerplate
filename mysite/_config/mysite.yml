@@ -12,7 +12,7 @@ SilverStripe\i18n\i18n:
 SilverStripe\CMS\Model\SiteTree:
   nested_urls: true
 SilverStripe\Control\Email\Email:
-  admin_email: 'mail@mysite.com'
+  admin_email: mail@mysite.com
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_css:
     - 'mysite/css/cms.css'
@@ -25,6 +25,15 @@ Page:
   default_image: '/favicon-152.png'
   default_slices:
     - PageContentSlice
+
+---
+Except:
+  environment: 'live'
+---
+Email:
+  send_all_emails_to: mail@mysite.com
+#SSViewer:
+#  source_file_comments: true
 
 # todo what is the gd backend
 #GDBackend:

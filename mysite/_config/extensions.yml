@@ -4,23 +4,23 @@ After:
   - 'framework/*'
   - 'cms/*'
 ---
-DataObject:
-  extensions:
-    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
-Controller:
+#SilverStripe\ORM\DataObject:
+#  extensions:
+#    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
+SilverStripe\Control\Controller:
   extensions:
     - MobileDetectExtension
-Image:
+SilverStripe\Assets\Image:
   extensions:
     - ImageExtension
-LeftAndMain:
+SilverStripe\Admin\LeftAndMain:
   extensions:
     - MyLeftAndMainExtension
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SiteConfigExtension
-    - Addressable
+#    - Addressable
 #   - Geocodable
-Page:
-  extensions:
-    - Broarm\Silverstripe\PageSlices\PageSlicesExtension
+#Page:
+#  extensions:
+#    - Broarm\PageSlices\PageSlicesExtension
