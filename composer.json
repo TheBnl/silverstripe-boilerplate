@@ -15,7 +15,6 @@
     "colymba/gridfield-bulk-editing-tools": "*",
     "mobiledetect/mobiledetectlib": "*",
     "heyday/silverstripe-versioneddataobjects": "*",
-    "heyday/silverstripe-cacheinclude": "*",
     "jonom/silverstripe-betternavigator": "*",
     "littlegiant/silverstripe-catalogmanager": "*",
     "littlegiant/silverstripe-singlepageadmin": "*",
@@ -52,6 +51,7 @@
   "prefer-stable": true,
 
   "bak": {
+    "heyday/silverstripe-cacheinclude": "*",
     "jonom/silverstripe-tinytidy": "*",
     "silverstripe/secureassets": "*",
     "lrc/silverstripe-link-field": "*",
