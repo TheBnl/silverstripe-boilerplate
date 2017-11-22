@@ -1,53 +1,68 @@
 {
-	"name": "TheBnl/silverstripe-boilerplate",
-	"description": "Boilerplate template to quickly kick off a new SilverStripe project, forked from zauberfisch",
-	"require": {
-		"php": ">=5.3.2",
-		"silverstripe/cms": "4.x@stable",
-		"silverstripe/framework": "4.x@stable",
-		"silverstripe/googlesitemaps": "*",
-		"silverstripe/userforms": "*",
-		"silverstripe/secureassets": "*",
-		"silverstripe/redirectedurls": "*",
-		"silverstripe/spamprotection": "*",
-		"symbiote/silverstripe-gridfieldextensions": "*",
-		"symbiote/silverstripe-grouped-cms-menu": "*",
-		"symbiote/silverstripe-addressable": "*",
-		"exadium/breadcrumbnavigation": "*",
-		"unisolutions/silverstripe-copybutton": "*",
-		"lrc/silverstripe-link-field": "*",
-		"unclecheese/betterbuttons": "*",
-		"unclecheese/display-logic": "*",
-		"colymba/gridfield-bulk-editing-tools": "*",
-		"mobiledetect/mobiledetectlib": "*",
-		"heyday/silverstripe-versioneddataobjects": "*",
-		"heyday/silverstripe-cacheinclude": "*",
-		"jonom/focuspoint": "*",
-		"jonom/silverstripe-share-care": "*",
-		"jonom/silverstripe-betternavigator": "*",
-		"jonom/silverstripe-text-target-length": "*",
-		"littlegiant/silverstripe-catalogmanager": "*",
-		"littlegiant/silverstripe-seo-editor": "*",
-		"littlegiant/silverstripe-singlepageadmin": "*",
-		"tractorcow/silverstripe-opengraph": "*",
-		"undefinedoffset/silverstripe-nocaptcha": "*",
-		"gdmedia/ss-auto-git-ignore": "*",
-		"bramdeleeuw/silverstripe-schema": "*",
-		"bramdeleeuw/silverstripe-pageslices": "*",
-		"bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
-		"markguinn/silverstripe-email-helpers": "*",
-		"hubertusanton/silverstripe-seo": "*"
-	},
-	"require-dev": {
-		"silverstripe/docsviewer": "*",
-		"phpunit/phpunit": "3.7.*"
-	},
-	"scripts": {
-		"post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true,
+  "name": "broarm/recipe-boilerplate",
+  "type": "silverstripe-recipe",
+  "description": "Boilerplate template to quickly kick off a new SilverStripe project",
+  "require": {
+    "php": ">=5.6.0",
+    "silverstripe/recipe-cms": "1.0.0@stable",
+    "silverstripe/googlesitemaps": "*",
+    "silverstripe/userforms": "*",
+    "silverstripe/redirectedurls": "*",
+    "silverstripe/spamprotection": "*",
+    "silverstripe/html5": "*",
+    "symbiote/silverstripe-gridfieldextensions": "*",
+    "unclecheese/betterbuttons": "*",
+    "colymba/gridfield-bulk-editing-tools": "*",
+    "mobiledetect/mobiledetectlib": "*",
+    "heyday/silverstripe-versioneddataobjects": "*",
+    "heyday/silverstripe-cacheinclude": "*",
+    "jonom/silverstripe-betternavigator": "*",
+    "littlegiant/silverstripe-catalogmanager": "*",
+    "littlegiant/silverstripe-singlepageadmin": "*",
+    "tractorcow/silverstripe-opengraph": "*",
+    "undefinedoffset/silverstripe-nocaptcha": "*",
+    "gdmedia/ss-auto-git-ignore": "*",
+    "bramdeleeuw/silverstripe-schema": "*",
+    "bramdeleeuw/silverstripe-pageslices": "*",
+    "bramdeleeuw/silverstripe-pageslices-userform": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/PHPUnit": "^5.7"
+  },
+  "extra": {
+    "project-files": [
+      "mysite/*",
+      ".gitignore",
+      ".htaccess",
+      "favicon.ico",
+      "favicon-144.png",
+      "favicon-152.png",
+      "robots.txt",
+      "web.config"
+    ]
+  },
+  "scripts": {
+    "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
+  },
+  "config": {
+    "process-timeout": 600
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+
   "bak": {
-    	"jonom/silverstripe-tinytidy": "*"
+    "jonom/silverstripe-tinytidy": "*",
+    "silverstripe/secureassets": "*",
+    "lrc/silverstripe-link-field": "*",
+    "littlegiant/silverstripe-seo-editor": "*",
+    "markguinn/silverstripe-email-helpers": "*",
+    "jonom/focuspoint": "*",
+    "jonom/silverstripe-share-care": "*",
+    "jonom/silverstripe-text-target-length": "*",
+    "unclecheese/display-logic": "*",
+    "unisolutions/silverstripe-copybutton": "*",
+    "symbiote/silverstripe-addressable": "*",
+    "symbiote/silverstripe-grouped-cms-menu": "*",
+    "hubertusanton/silverstripe-seo": "*"
   }
 }
