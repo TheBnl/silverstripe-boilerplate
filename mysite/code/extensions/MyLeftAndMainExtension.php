@@ -1,9 +1,12 @@
 <?php
 
+use SilverStripe\Admin\CMSMenu;
+use SilverStripe\Admin\LeftAndMainExtension;
+
 /**
  * Workaround to remove CMS Help Button
  *
- * @property LeftAndMain owner
+ * @property SilverStripe\Admin\LeftAndMain owner
  */
 class MyLeftAndMainExtension extends LeftAndMainExtension
 {

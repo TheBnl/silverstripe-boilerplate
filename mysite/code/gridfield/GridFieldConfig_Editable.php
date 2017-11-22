@@ -6,6 +6,17 @@
  * Date: 03/10/16
  */
 
+use SilverStripe\Forms\GridField\GridFieldConfig;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
+use SilverStripe\Forms\GridField\GridFieldDetailForm;
+use SilverStripe\Forms\GridField\GridFieldEditButton;
+use SilverStripe\Forms\GridField\GridFieldPaginator;
+use SilverStripe\Forms\GridField\GridFieldToolbarHeader;
+use Symbiote\GridFieldExtensions\GridFieldAddNewInlineButton;
+use Symbiote\GridFieldExtensions\GridFieldEditableColumns;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use Symbiote\GridFieldExtensions\GridFieldTitleHeader;
+
 /**
  * Class GridFieldConfig_Editable
  */

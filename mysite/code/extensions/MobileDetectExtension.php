@@ -6,11 +6,15 @@
  * Date: 01/03/17
  */
 
+use SilverStripe\Control\Director;
+use SilverStripe\Core\Extension;
+use SilverStripe\View\Requirements;
+
 
 /**
  * Class MobileDetectExtension
  *
- * @property MobileDetectExtension|ContentController $owner
+ * @property MobileDetectExtension|SilverStripe\CMS\Controllers\ContentController $owner
  */
 class MobileDetectExtension extends Extension
 {

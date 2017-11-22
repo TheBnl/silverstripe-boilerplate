@@ -1,5 +1,9 @@
 <?php
 
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
+use SilverStripe\ORM\ValidationException;
+
 /**
  * Class VersionedGridFieldDeleteAction
  *

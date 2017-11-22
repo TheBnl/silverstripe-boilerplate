@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\DataExtension;
+
 /**
  * Created by PhpStorm.
  * User: bramdeleeuw

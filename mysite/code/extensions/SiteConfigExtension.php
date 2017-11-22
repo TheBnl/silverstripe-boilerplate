@@ -1,8 +1,15 @@
 <?php
 
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\DataExtension;
+
+
 /**
  * Extension to modify SiteConfig
- * @property SiteConfig owner
+ * @property SilverStripe\SiteConfig\SiteConfig owner
  */
 class SiteConfigExtension extends DataExtension
 {

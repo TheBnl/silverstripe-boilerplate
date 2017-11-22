@@ -6,6 +6,16 @@
  * Date: 03/10/16
  */
 
+use Heyday\VersionedDataObjects\VersionedDataObjectDetailsForm;
+use Heyday\VersionedDataObjects\VersionedGridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldConfig;
+use SilverStripe\Forms\GridField\GridFieldDataColumns;
+use SilverStripe\Forms\GridField\GridFieldEditButton;
+use SilverStripe\Forms\GridField\GridFieldPaginator;
+use SilverStripe\Forms\GridField\GridFieldToolbarHeader;
+use Symbiote\GridFieldExtensions\GridFieldAddNewMultiClass;
+use Symbiote\GridFieldExtensions\GridFieldTitleHeader;
+
 /**
  * Class GridFieldConfig_SortableVersionedMultiClass
  */
