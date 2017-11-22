@@ -32,9 +32,9 @@
   "extra": {
     "project-files": [
       "mysite/*",
+      ".env.example",
       ".gitignore",
       ".htaccess",
-      "_ss_environment.php",
       "favicon.ico",
       "favicon-144.png",
       "favicon-152.png",
