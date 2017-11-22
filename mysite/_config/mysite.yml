@@ -1,0 +1,53 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: mysite
+SilverStripe\View\SSViewer:
+  theme_enabled: false
+SilverStripe\ORM\Connect\MySQLDatabase:
+  connection_charset: 'utf8'
+SilverStripe\i18n\i18n:
+  default_locale: 'nl_NL'
+SilverStripe\CMS\Model\SiteTree:
+  nested_urls: true
+SilverStripe\Control\Email\Email:
+  admin_email: 'mail@mysite.com'
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - 'mysite/css/cms.css'
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+  default_spam_protector: NocaptchaProtector
+UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+  site_key: 'YOUR_SITE_KEY'
+  secret_key: 'YOUR_SECRET_KEY'
+Page:
+  default_image: '/favicon-152.png'
+  default_slices:
+    - PageContentSlice
+
+# todo what is the gd backend
+#GDBackend:
+#  default_quality: 80
+
+# todo not ss4 compatible
+#SmtpMailer:
+#  host: mail.mysite.nl
+#  user: mail@mysite.nl
+#  password: password
+#  encryption: tls
+#  charset: UTF-8
+#BetterNavigator:
+#  developers:
+#    - 'mail@mysite.com'
+#OpenGraph:
+#  application_id: ''  # Give application id or set this to 'SiteConfig' so the cms user can set this value
+#  admin_id: ''        # Give admin id or set this to 'SiteConfig' so the cms user can set this value
+#  default_locale: 'nl_NL'
+#  default_tagbuilder: 'OpenGraphBuilder'
+#ShareCare:
+#  twitter_username: 'YOUR_USERNAME'
+#Addressable:
+#  set_postcode_regex: '/^[0-9A-Za-z\s]+$/'
+#GoogleGeocoding:
+#  google_api_key: 'YOUR_GOOGLE_SERVER_API_KEY'
