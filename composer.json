@@ -3,8 +3,8 @@
   "type": "silverstripe-recipe",
   "description": "Boilerplate template to quickly kick off a new SilverStripe project",
   "require": {
-    "php": ">=5.6.0",
-    "silverstripe/recipe-cms": "^1.0@dev",
+    "silverstripe/recipe-plugin": "^1",
+    "silverstripe/recipe-cms": "1.x@stable",
     "mobiledetect/mobiledetectlib": "*",
     "gdmedia/ss-auto-git-ignore": "*"
   },
@@ -30,8 +30,8 @@
   "config": {
     "process-timeout": 600
   },
-  "minimum-stability": "dev",
   "prefer-stable": true,
+  "minimum-stability": "dev",
 
   "bak": {
     "silverstripe/googlesitemaps": "*",
