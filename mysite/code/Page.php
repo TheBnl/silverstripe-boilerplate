@@ -2,6 +2,7 @@
 
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Control\Director;
 
 /**
  * Class Page
@@ -55,10 +56,10 @@ class Page extends SiteTree
         if (isset($image)) {
             return $image;
         } if ($this->OpenGraphImage()->exists()) {
-        return $this->OpenGraphImage();
-    } else {
-        return Director::absoluteURL(self::config()->get('default_image'));
-    }
+            return $this->OpenGraphImage();
+        } else {
+            return Director::absoluteURL(self::config()->get('default_image'));
+        }
     }
 
     /**

@@ -3,8 +3,6 @@ Name: mySchemaConfig
 ---
 Page:
   default_image: '/favicon-152.png'
-  extensions:
-    - Broarm\Schema\SchemaExtension
   active_schema:
     - Broarm\Schema\Builder\LocalBusiness
     - Broarm\Schema\Builder\Website

@@ -3,8 +3,6 @@ Name: myproject
 ---
 SilverStripe\Core\Manifest\ModuleManifest:
   project: mysite
-SilverStripe\View\SSViewer:
-  theme_enabled: false
 SilverStripe\ORM\Connect\MySQLDatabase:
   connection_charset: 'utf8'
 SilverStripe\i18n\i18n:
@@ -38,6 +36,10 @@ Email:
 # todo what is the gd backend
 #GDBackend:
 #  default_quality: 80
+
+# fixme setting theme enabled to false disables the cms theme to
+#SilverStripe\View\SSViewer:
+#  theme_enabled: false
 
 # todo not ss4 compatible
 #SmtpMailer:

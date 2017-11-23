@@ -5,8 +5,16 @@
   "require": {
     "silverstripe/recipe-plugin": "^1",
     "silverstripe/recipe-cms": "1.x@stable",
+    "silverstripe/googlesitemaps": "*",
+    "silverstripe/userforms": "5.0.0-beta1",
+    "silverstripe/spamprotection": "*",
+    "silverstripe/html5": "*",
     "mobiledetect/mobiledetectlib": "*",
-    "gdmedia/ss-auto-git-ignore": "*"
+    "gdmedia/ss-auto-git-ignore": "*",
+    "unclecheese/betterbuttons": "*",
+    "symbiote/silverstripe-gridfieldextensions": "*",
+    "undefinedoffset/silverstripe-nocaptcha": "*",
+    "bramdeleeuw/silverstripe-schema": "*"
   },
   "require-dev": {
     "phpunit/PHPUnit": "^5.7"
@@ -34,14 +42,6 @@
   "minimum-stability": "dev",
 
   "bak": {
-    "silverstripe/googlesitemaps": "*",
-    "silverstripe/userforms": "5.0.0-beta1",
-    "silverstripe/spamprotection": "*",
-    "silverstripe/html5": "*",
-    "symbiote/silverstripe-gridfieldextensions": "*",
-    "undefinedoffset/silverstripe-nocaptcha": "*",
-    "bramdeleeuw/silverstripe-schema": "*",
-    "unclecheese/betterbuttons": "*",
     "bramdeleeuw/silverstripe-pageslices": "*",
     "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
     "heyday/silverstripe-versioneddataobjects": "*",
