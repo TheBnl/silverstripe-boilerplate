@@ -5,15 +5,8 @@
   "require": {
     "php": ">=5.6.0",
     "silverstripe/recipe-cms": "^1.0@dev",
-    "silverstripe/googlesitemaps": "*",
-    "silverstripe/userforms": "*",
-    "silverstripe/spamprotection": "*",
-    "silverstripe/html5": "*",
-    "symbiote/silverstripe-gridfieldextensions": "*",
     "mobiledetect/mobiledetectlib": "*",
-    "undefinedoffset/silverstripe-nocaptcha": "*",
-    "gdmedia/ss-auto-git-ignore": "*",
-    "bramdeleeuw/silverstripe-schema": "*"
+    "gdmedia/ss-auto-git-ignore": "*"
   },
   "require-dev": {
     "phpunit/PHPUnit": "^5.7"
@@ -41,6 +34,13 @@
   "prefer-stable": true,
 
   "bak": {
+    "silverstripe/googlesitemaps": "*",
+    "silverstripe/userforms": "5.0.0-beta1",
+    "silverstripe/spamprotection": "*",
+    "silverstripe/html5": "*",
+    "symbiote/silverstripe-gridfieldextensions": "*",
+    "undefinedoffset/silverstripe-nocaptcha": "*",
+    "bramdeleeuw/silverstripe-schema": "*",
     "unclecheese/betterbuttons": "*",
     "bramdeleeuw/silverstripe-pageslices": "*",
     "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
