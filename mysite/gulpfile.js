@@ -4,12 +4,14 @@ const webpack = require('webpack');
 const pump = require('pump');
 const sass = require('gulp-sass');
 const webpackConfig = require('./javascript/config/webpack.config');
+const autoprefixer = require('gulp-autoprefixer');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 gulp.task('default', ['webpack']);
 
 gulp.task('watch', ['webpack:watch', 'sass:watch'], cb => {
     gulp.watch('javascript/app/*.js', ['webpack:watch']);
-    gulp.watch('scss/**/*.scss', ['sass:watch']);
+gulp.watch('scss/**/*.scss', ['sass:watch']);
 });
 
 gulp.task('build', ['webpack:build', 'sass:build']);
@@ -42,7 +44,7 @@ const doPack = (cb, build) => {
     const config = Object.create(webpackConfig);
     if (build) {
         config.plugins = [
-            new webpack.optimize.UglifyJsPlugin()
+            new UglifyJSPlugin()
         ];
     }
 
@@ -54,7 +56,7 @@ const doPack = (cb, build) => {
         }));
         cb();
     });
-};
+}
 
 /**
  * Compile the sass
@@ -72,6 +74,7 @@ const doSass = (cb, build) => {
     pump([
         gulp.src('scss/**/*.scss'),
         sass(config).on('error', sass.logError),
+        autoprefixer({browsers: ['last 2 versions']}),
         gulp.dest('css'),
     ], cb);
-};
+}

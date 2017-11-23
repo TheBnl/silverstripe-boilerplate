@@ -7,16 +7,22 @@ module.exports = {
     },
     resolve: {
         modules: [
-            '../../node_modules'
+            '../../node_modules',
+            '../../mysite/node_modules',
+            './node_modules'
         ]
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader?presets[]=es2015'
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015'],
+                        comments: false
+                    }
                 }
             }
         ]
