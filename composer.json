@@ -4,13 +4,12 @@
   "description": "Boilerplate template to quickly kick off a new SilverStripe project",
   "require": {
     "php": ">=5.6.0",
-    "silverstripe/recipe-cms": "1.0.0@stable",
+    "silverstripe/recipe-cms": "^1.0@dev",
     "silverstripe/googlesitemaps": "*",
     "silverstripe/userforms": "*",
     "silverstripe/spamprotection": "*",
     "silverstripe/html5": "*",
     "symbiote/silverstripe-gridfieldextensions": "*",
-    "unclecheese/betterbuttons": "*",
     "mobiledetect/mobiledetectlib": "*",
     "undefinedoffset/silverstripe-nocaptcha": "*",
     "gdmedia/ss-auto-git-ignore": "*",
@@ -42,6 +41,7 @@
   "prefer-stable": true,
 
   "bak": {
+    "unclecheese/betterbuttons": "*",
     "bramdeleeuw/silverstripe-pageslices": "*",
     "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
     "heyday/silverstripe-versioneddataobjects": "*",
