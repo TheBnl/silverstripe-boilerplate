@@ -2,10 +2,6 @@
 
 The SilverStripe Boilerplate aims to make it easier to kick of a new SilverStripe project, just download it and get started.
 
-It is just a collection of config defaults, tools and modules (sass, _ss_environment.php, h5bp, ...) one always needs.    
-
-As of SilverStripe 3.1 this boilerplate requieres [composer](http://getcomposer.org/).
-
 ## Maintainers
 - Bram de Leeuw [@bramdeleeuw](http://twitter.com/bramdeleeuw)
 
@@ -14,48 +10,37 @@ As of SilverStripe 3.1 this boilerplate requieres [composer](http://getcomposer.
 
 ## how to install
 
-    # clone the project
-    git clone https://github.com/TheBnl/silverstripe-boilerplate.git "myNewProject"
-    
-    # install composer modules
-    cd myNewProject/
-    composer update
+    # create the project
+    # make sure to point to the new remote afterwards
+    composer create-project bramdeleeuw/recipe-boilerplate ./myproject dev-master
     
     # install js modules
     cd myNewProject/mysite
-    npm install
+    yarn install
     
 
-## configuration (with `_ss_environment.php`)
+## configuration (with `.env`)
 
-create a file named `_ss_environment.php`, you can place that inside the repo, parent folder or in the parent parent folder.  
-the file should look like this (more infos at http://doc.silverstripe.org/sapphire/en/topics/environment-management)
+You can move the `.env.example` to a file named `.env`, 
+the file should look like this (more infos at https://docs.silverstripe.org/en/4/getting_started/environment_management/)
 
 **this method is recommended for database and environment configuration, because you can easily exclude it from version control**
     
-    <?php
+    # What kind of environment is this: development, test, or live (ie, production)?
+    SS_ENVIRONMENT_TYPE="dev"
     
-    <?php
-    // What kind of environment is this: development, test, or live (ie, production)?
-    define('SS_ENVIRONMENT_TYPE', 'dev');
-    define('GA_CODE', 'GOOGLE_ANALYTICS_CODE');
-    // (Set these in your local environment)
-    ini_set("display_errors", 1);
-    ini_set("display_startup_errors", 1);
+    # Database settings
+    SS_DATABASE_SERVER="localhost"
+    SS_DATABASE_USERNAME="USER"
+    SS_DATABASE_PASSWORD="PASSWORD"
+    SS_DATABASE_NAME="DB_NAME"
 
+    # Configure a default username and password to access the CMS on all sites in this environment.
+    SS_DEFAULT_ADMIN_USERNAME="admin"
+    SS_DEFAULT_ADMIN_PASSWORD="password"
 
-    // Database connection
-    define('SS_DATABASE_SERVER', 'localhost');
-    define('SS_DATABASE_USERNAME', 'YOUR_DB_USER');
-    define('SS_DATABASE_PASSWORD', 'YOUR_DB_USER_PASSWORD');
-    define('SS_DATABASE_NAME', 'YOUR_DB_NAME');
-
-    // Configure a default username and password to access the CMS on all sites in this environment.
-    define('SS_DEFAULT_ADMIN_USERNAME', 'YOUR_ADMIN_NAME');
-    define('SS_DEFAULT_ADMIN_PASSWORD', 'YOUR_ADMIN_PASSWORD');
-
-    global $_FILE_TO_URL_MAPPING;
-    $_FILE_TO_URL_MAPPING['/path/to/your/site/httpdocs'] = 'http://hostename.wherever/';
+    # Make sure the command line knows what the site url is
+    SS_BASE_URL="http://example.com"
 
 
 **now just run mysite.com/dev/build and you are done, no further setup required, you are ready to go**
