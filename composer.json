@@ -1,70 +1,74 @@
 {
-  "name": "bramdeleeuw/recipe-boilerplate",
-  "type": "silverstripe-recipe",
-  "description": "Boilerplate template to quickly kick off a new SilverStripe project",
-  "require": {
-    "silverstripe/recipe-plugin": "^1",
-    "silverstripe/recipe-cms": "1.x@stable",
-    "silverstripe/googlesitemaps": "*",
-    "silverstripe/userforms": "5.0.0-beta1",
-    "silverstripe/spamprotection": "*",
-    "silverstripe/html5": "*",
-    "mobiledetect/mobiledetectlib": "*",
-    "gdmedia/ss-auto-git-ignore": "*",
-    "unclecheese/betterbuttons": "*",
-    "symbiote/silverstripe-gridfieldextensions": "*",
-    "undefinedoffset/silverstripe-nocaptcha": "*",
-    "bramdeleeuw/silverstripe-schema": "*"
-  },
-  "require-dev": {
-    "phpunit/PHPUnit": "^5.7"
-  },
-  "extra": {
-    "project-files": [
-      "mysite/*",
-      ".env.example",
-      ".gitignore",
-      ".htaccess",
-      "favicon.ico",
-      "favicon-144.png",
-      "favicon-152.png",
-      "robots.txt",
-      "web.config"
-    ]
-  },
-  "scripts": {
-    "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go",
-    "post-create-project-cmd": "cd ./mysite && yarn install"
-  },
-  "config": {
-    "process-timeout": 600
-  },
-  "prefer-stable": true,
-  "minimum-stability": "dev",
-
-  "bak": {
-    "bramdeleeuw/silverstripe-pageslices": "*",
-    "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
-    "heyday/silverstripe-versioneddataobjects": "*",
-    "jonom/silverstripe-betternavigator": "*",
-    "littlegiant/silverstripe-catalogmanager": "*",
-    "tractorcow/silverstripe-opengraph": "*",
-    "colymba/gridfield-bulk-editing-tools": "*",
-    "silverstripe/redirectedurls": "*",
-    "littlegiant/silverstripe-singlepageadmin": "*",
-    "heyday/silverstripe-cacheinclude": "*",
-    "jonom/silverstripe-tinytidy": "*",
-    "silverstripe/secureassets": "*",
-    "lrc/silverstripe-link-field": "*",
-    "littlegiant/silverstripe-seo-editor": "*",
-    "markguinn/silverstripe-email-helpers": "*",
-    "jonom/focuspoint": "*",
-    "jonom/silverstripe-share-care": "*",
-    "jonom/silverstripe-text-target-length": "*",
-    "unclecheese/display-logic": "*",
-    "unisolutions/silverstripe-copybutton": "*",
-    "symbiote/silverstripe-addressable": "*",
-    "symbiote/silverstripe-grouped-cms-menu": "*",
-    "hubertusanton/silverstripe-seo": "*"
-  }
+    "name": "bramdeleeuw/recipe-boilerplate",
+    "type": "silverstripe-recipe",
+    "description": "Boilerplate template to quickly kick off a new SilverStripe project",
+    "require": {
+        "silverstripe/recipe-plugin": "^1.0",
+        "silverstripe/recipe-cms": "1.x@stable",
+        "silverstripe/googlesitemaps": "*",
+        "silverstripe/userforms": "5.0.0-beta1",
+        "silverstripe/spamprotection": "*",
+        "silverstripe/html5": "*",
+        "mobiledetect/mobiledetectlib": "*",
+        "gdmedia/ss-auto-git-ignore": "*",
+        "unclecheese/betterbuttons": "*",
+        "symbiote/silverstripe-gridfieldextensions": "*",
+        "undefinedoffset/silverstripe-nocaptcha": "*",
+        "bramdeleeuw/silverstripe-schema": "*",
+        "bramdeleeuw/silverstripe-pageslices": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/PHPUnit": "^5.7"
+    },
+    "extra": {
+        "project-files-installed": [
+            ".htaccess",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
+            "mysite/.htaccess",
+            "mysite/_config.php",
+            "mysite/_config/mysite.yml",
+            "mysite/code/Page.php",
+            "mysite/code/PageController.php",
+            "web.config"
+        ]
+    },
+    "scripts": {
+        "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go",
+        "post-create-project-cmd": "cd ./mysite && yarn install"
+    },
+    "config": {
+        "process-timeout": 600
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "bak": {
+        "bramdeleeuw/silverstripe-pageslices": "*",
+        "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
+        "heyday/silverstripe-versioneddataobjects": "*",
+        "jonom/silverstripe-betternavigator": "*",
+        "littlegiant/silverstripe-catalogmanager": "*",
+        "tractorcow/silverstripe-opengraph": "*",
+        "colymba/gridfield-bulk-editing-tools": "*",
+        "silverstripe/redirectedurls": "*",
+        "littlegiant/silverstripe-singlepageadmin": "*",
+        "heyday/silverstripe-cacheinclude": "*",
+        "jonom/silverstripe-tinytidy": "*",
+        "silverstripe/secureassets": "*",
+        "lrc/silverstripe-link-field": "*",
+        "littlegiant/silverstripe-seo-editor": "*",
+        "markguinn/silverstripe-email-helpers": "*",
+        "jonom/focuspoint": "*",
+        "jonom/silverstripe-share-care": "*",
+        "jonom/silverstripe-text-target-length": "*",
+        "unclecheese/display-logic": "*",
+        "unisolutions/silverstripe-copybutton": "*",
+        "symbiote/silverstripe-addressable": "*",
+        "symbiote/silverstripe-grouped-cms-menu": "*",
+        "hubertusanton/silverstripe-seo": "*"
+    },
+    "provide": {
+        "bramdeleeuw/recipe-boilerplate": "dev-master"
+    }
 }

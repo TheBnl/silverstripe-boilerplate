@@ -10,6 +10,7 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * SocialMediaPlatform
@@ -29,7 +30,7 @@ class SocialMediaPlatform extends DataObject
     private static $default_sort = 'Sort DESC';
 
     private static $has_one = array(
-        'SiteConfig' => 'SiteConfig'
+        'SiteConfig' => SiteConfig::class
     );
 
     private static $has_many = array();

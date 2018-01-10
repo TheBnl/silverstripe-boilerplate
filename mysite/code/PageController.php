@@ -27,7 +27,6 @@ class PageController extends ContentController
         parent::init();
 
         Requirements::block(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
-        Requirements::block(USERFORMS_THIRDPARTY_DIR . '/jquery-validate/jquery.validate.min.js');
         Requirements::set_combined_files_folder(project() . '/_combinedfiles');
         Requirements::javascript(project() . '/javascript/dist/app.bundle.js');
         Requirements::css(project() . '/css/app.css');

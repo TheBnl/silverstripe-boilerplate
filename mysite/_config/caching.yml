@@ -1,5 +1,5 @@
 ---
-After: 'silverstripe-cacheinclude/*'
+Name: caching
 ---
 #Injector:
 #  CacheIncludeConfig:

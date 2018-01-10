@@ -1,8 +1,5 @@
 ---
 Name: extensions
-After:
-  - 'framework/*'
-  - 'cms/*'
 ---
 #SilverStripe\ORM\DataObject:
 #  extensions:
@@ -19,8 +16,8 @@ SilverStripe\Admin\LeftAndMain:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SiteConfigExtension
-#    - Addressable
+#   - Addressable
 #   - Geocodable
-#Page:
-#  extensions:
-#    - Broarm\PageSlices\PageSlicesExtension
+Page:
+  extensions:
+    - Broarm\PageSlices\PageSlicesExtension
