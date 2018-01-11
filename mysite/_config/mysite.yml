@@ -28,7 +28,7 @@ Page:
 Except:
   environment: 'live'
 ---
-Email:
+SilverStripe\Control\Email\Email:
   send_all_emails_to: mail@mysite.com
 #SSViewer:
 #  source_file_comments: true

@@ -11,11 +11,10 @@
         "silverstripe/html5": "*",
         "mobiledetect/mobiledetectlib": "*",
         "gdmedia/ss-auto-git-ignore": "*",
-        "unclecheese/betterbuttons": "*",
         "symbiote/silverstripe-gridfieldextensions": "*",
         "undefinedoffset/silverstripe-nocaptcha": "*",
         "bramdeleeuw/silverstripe-schema": "*",
-        "bramdeleeuw/silverstripe-pageslices": "^2.0"
+        "bramdeleeuw/silverstripe-pageslices": "*"
     },
     "require-dev": {
         "phpunit/PHPUnit": "^5.7"

@@ -1,6 +1,6 @@
 <header class="site-header">
-    <div class="row">
-        <div class="large-12 columns">
+    <div class="grid-x grid-margin-x">
+        <div class="cell">
             <h1>$SiteConfig.Title</h1>
             <nav>
                 <ul>

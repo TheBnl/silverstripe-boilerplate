@@ -20,7 +20,7 @@
     <meta name="msapplication-TileColor" content="#132136">
 </head>
 <body>
-<div class="page-container">
+<div class="grid-container">
     <% include Header %>
     <div class="layout" role="main">
         $Layout

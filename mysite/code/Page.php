@@ -1,19 +1,21 @@
 <?php
 
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Director;
+use SilverStripe\Forms\FieldList;
 
 /**
  * Class Page
- * @method SilverStripe\Assets\Image OpenGraphImage()
+ * @method Image OpenGraphImage()
  */
 class Page extends SiteTree
 {
     private static $db = [];
 
     private static $has_one = [
-        'OpenGraphImage' => 'SilverStripe\\Assets\\Image'
+        'OpenGraphImage' => Image::class
     ];
 
     private static $has_many = [];
@@ -28,26 +30,20 @@ class Page extends SiteTree
     public function getCMSFields()
     {
         $self =& $this;
-
-        $this->beforeUpdateCMSFields(function ($fields) use ($self) {});
+        $this->beforeUpdateCMSFields(function (FieldList $fields) use ($self) {
+            $openGraphImage = UploadField::create('OpenGraphImage', 'Social media image');
+            $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
+            $fields->addFieldToTab('Root.Main.Metadata', $openGraphImage, 'MetaDescription');
+        });
 
         $fields = parent::getCMSFields();
-
-        $openGraphImage = UploadField::create('OpenGraphImage', 'Social media image');
-        $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
-        //$fields->addFieldToTab('Root.SEO', $openGraphImage, 'MetaDescription');
-        $fields->addFieldToTab('Root.Main.Metadata', $openGraphImage, 'MetaDescription');
-
-        //if ($metaDescription = $fields->fieldByName('Root.SEO.MetaDescription')) {
-        //    $metaDescription->setTargetLength(150, 130, 160);
-        //}
-
         $fields->removeByName(array('ExtraMeta'));
         return $fields;
     }
 
     /**
      * Override the default Open Graph Image
+     *
      * @return mixed
      */
     function getOGImage()
@@ -55,7 +51,8 @@ class Page extends SiteTree
         $this->extend('updateOGImage', $image);
         if (isset($image)) {
             return $image;
-        } if ($this->OpenGraphImage()->exists()) {
+        }
+        if ($this->OpenGraphImage()->exists()) {
             return $this->OpenGraphImage();
         } else {
             return Director::absoluteURL(self::config()->get('default_image'));
@@ -64,6 +61,7 @@ class Page extends SiteTree
 
     /**
      * Make sure a meta description tag is set even if no description is given
+     *
      * @param bool $includeTitle
      *
      * @return string

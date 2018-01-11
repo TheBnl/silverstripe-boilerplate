@@ -1,10 +1,4 @@
 <?php
-/**
- * SocialMediaPlatform.php
- *
- * @author Bram de Leeuw
- * Date: 17/02/16
- */
 
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
@@ -14,10 +8,14 @@ use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * SocialMediaPlatform
- * @property int Sort
+ *
+ * @author Bram de Leeuw
+ * Date: 17/02/16
+ *
+ * @property int    Sort
  * @property string Title
  * @property string URL
- * @method SilverStripe\SiteConfig\SiteConfig SiteConfig()
+ * @method SiteConfig SiteConfig()
  */
 class SocialMediaPlatform extends DataObject
 {
@@ -33,12 +31,6 @@ class SocialMediaPlatform extends DataObject
         'SiteConfig' => SiteConfig::class
     );
 
-    private static $has_many = array();
-    private static $many_many = array();
-    private static $defaults = array();
-    private static $belongs_many_many = array();
-    private static $searchable_fields = array();
-
     private static $summary_fields = array(
         'Title' => 'Platform',
         'URL' => 'URL'
@@ -50,12 +42,12 @@ class SocialMediaPlatform extends DataObject
 
     public function getCMSFields()
     {
-
         $socialMediaPlatforms = singleton('SocialMediaPlatform')->dbObject('Title')->enumValues();
-        $socialMediaPlatformDropdownField = new DropdownField('Title', 'Platform', $socialMediaPlatforms);
-        $socialMediaPlatformURLFields = new TextField('URL', 'URL');
+        $fields = FieldList::create(array(
+            DropdownField::create('Title', 'Platform', $socialMediaPlatforms),
+            TextField::create('URL', 'URL')
+        ));
 
-        $fields = new FieldList(array($socialMediaPlatformDropdownField, $socialMediaPlatformURLFields));
         $this->extend('updateCMSFields', $fields);
         return $fields;
     }

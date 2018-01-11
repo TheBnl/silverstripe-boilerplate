@@ -1,9 +1,9 @@
 <section class="page-slice page-content-slice" id="$ID">
-    <article class="row">
-        <header class="large-12 columns">
+    <article class="grid-x grid-margin-x">
+        <header class="cell">
             <h2>$Title</h2>
         </header>
-        <section class="large-12 columns">
+        <section class="cell">
             $Content
             $Form
         </section>
