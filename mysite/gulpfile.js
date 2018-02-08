@@ -3,6 +3,7 @@ const gulpUtil = require('gulp-util');
 const webpack = require('webpack');
 const pump = require('pump');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
 const webpackConfig = require('./javascript/config/webpack.config');
 
 gulp.task('default', ['webpack']);
@@ -39,13 +40,7 @@ gulp.task('webpack:build', cb => {
  */
 const doPack = (cb, build) => {
     gulpUtil.log((build ? 'build' : 'pack'), 'js');
-    const config = Object.create(webpackConfig);
-    if (build) {
-        config.plugins = [
-            new webpack.optimize.UglifyJsPlugin()
-        ];
-    }
-
+    const config = Object.create(webpackConfig.get(build));
     webpack(config, function (err, stats) {
         if (err) throw new gulpUtil.PluginError('webpack', err);
         gulpUtil.log('[webpack]', stats.toString({
@@ -72,6 +67,7 @@ const doSass = (cb, build) => {
     pump([
         gulp.src('scss/**/*.scss'),
         sass(config).on('error', sass.logError),
+        autoprefixer({browsers: ['last 2 versions']}),
         gulp.dest('css'),
     ], cb);
 };
