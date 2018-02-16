@@ -61,32 +61,32 @@ class SocialMediaPlatform extends DataObject
     {
         switch ($this->Title) {
             case 'Twitter':
-                return 'fa fa-twitter-square';
+                return 'fab fa-twitter-square';
                 break;
             case 'Google+':
-                return 'fa fa-google-plus-square';
+                return 'fab fa-google-plus-square';
                 break;
             case 'Instagram':
-                return 'fa fa-instagram';
+                return 'fab fa-instagram';
                 break;
             case 'YouTube':
-                return 'fa fa-youtube-square';
+                return 'fab fa-youtube-square';
                 break;
             case 'LinkedIn':
-                return 'fa fa-linkedin-square';
+                return 'fab fa-linkedin-square';
                 break;
             case 'Pinterest':
-                return 'fa fa-pinterest-square';
+                return 'fab fa-pinterest-square';
                 break;
             case 'SoundCloud':
-                return 'fa fa-soundcloud';
+                return 'fab fa-soundcloud';
                 break;
             case 'Tumblr':
-                return 'fa fa-tumblr-square';
+                return 'fab fa-tumblr-square';
                 break;
             default:
             case 'Facebook':
-                return 'fa fa-facebook-square';
+                return 'fab fa-facebook-square';
                 break;
         }
     }

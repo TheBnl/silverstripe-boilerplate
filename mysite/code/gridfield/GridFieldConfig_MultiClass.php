@@ -19,7 +19,7 @@ use Symbiote\GridFieldExtensions\GridFieldTitleHeader;
 /**
  * Class GridFieldConfig_SortableVersionedMultiClass
  */
-class GridFieldConfig_SortableVersionedMultiClass extends GridFieldConfig
+class GridFieldConfig_MultiClass extends GridFieldConfig
 {
 
     /**

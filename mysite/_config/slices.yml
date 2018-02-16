@@ -1,0 +1,11 @@
+---
+Name: slices
+---
+Broarm\PageSlices\PageSliceController:
+  enable_cache: true
+
+Page:
+  extensions:
+    - Broarm\PageSlices\PageSlicesExtension
+  default_slices:
+    - Broarm\PageSlices\PageContentSlice

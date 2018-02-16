@@ -3,12 +3,8 @@ Name: myproject
 ---
 SilverStripe\Core\Manifest\ModuleManifest:
   project: mysite
-SilverStripe\ORM\Connect\MySQLDatabase:
-  connection_charset: 'utf8'
 SilverStripe\i18n\i18n:
   default_locale: 'nl_NL'
-SilverStripe\CMS\Model\SiteTree:
-  nested_urls: true
 SilverStripe\Control\Email\Email:
   admin_email: mail@mysite.com
 SilverStripe\Admin\LeftAndMain:
@@ -19,10 +15,6 @@ SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
 UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
   site_key: 'YOUR_SITE_KEY'
   secret_key: 'YOUR_SECRET_KEY'
-Page:
-  default_image: '/favicon-152.png'
-  default_slices:
-    - PageContentSlice
 
 ---
 Except:
@@ -30,6 +22,7 @@ Except:
 ---
 SilverStripe\Control\Email\Email:
   send_all_emails_to: mail@mysite.com
+
 #SSViewer:
 #  source_file_comments: true
 

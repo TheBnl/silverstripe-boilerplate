@@ -13,11 +13,7 @@ use SilverStripe\Forms\FieldList;
 class Page extends SiteTree
 {
     private static $db = [];
-
-    private static $has_one = [
-        'OpenGraphImage' => Image::class
-    ];
-
+    private static $has_one = [];
     private static $has_many = [];
     private static $many_many = [];
     private static $defaults = [];
@@ -30,33 +26,21 @@ class Page extends SiteTree
     public function getCMSFields()
     {
         $self =& $this;
-        $this->beforeUpdateCMSFields(function (FieldList $fields) use ($self) {
-            $openGraphImage = UploadField::create('OpenGraphImage', 'Social media image');
-            $openGraphImage->setDescription('Add an image to display on Facebook and Twitter');
-            $fields->addFieldToTab('Root.Main.Metadata', $openGraphImage, 'MetaDescription');
-        });
-
+        $this->beforeUpdateCMSFields(function (FieldList $fields) use ($self) {});
         $fields = parent::getCMSFields();
-        $fields->removeByName(array('ExtraMeta'));
         return $fields;
     }
 
     /**
      * Override the default Open Graph Image
+     * This is set by extension OpenGraphMeta
+     * @see OpenGraphMeta::getOGImageURL()
      *
-     * @return mixed
+     * @return Image
      */
-    function getOGImage()
+    function OGImage()
     {
-        $this->extend('updateOGImage', $image);
-        if (isset($image)) {
-            return $image;
-        }
-        if ($this->OpenGraphImage()->exists()) {
-            return $this->OpenGraphImage();
-        } else {
-            return Director::absoluteURL(self::config()->get('default_image'));
-        }
+        return parent::OGImage();
     }
 
     /**
