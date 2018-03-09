@@ -1,6 +1,7 @@
 {
   "name": "mysite",
   "version": "1.0.0",
+  "license" : "BSD-3-Clause",
   "main": "webpack.config.js",
   "scripts": {
     "watch": "concurrently --kill-others \"yarn future-watch\" \"gulp watch\"",
