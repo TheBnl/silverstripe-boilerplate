@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "watch": "concurrently --kill-others \"yarn future-watch\" \"gulp watch\"",
-    "build": "concurrently --kill-others \"yarn future-build\" \"gulp build\"",
+    "build": "yarn future-build && gulp build",
     "future-watch": "webpack --watch",
     "future-build": "webpack --config webpack.prod.js"
   },
