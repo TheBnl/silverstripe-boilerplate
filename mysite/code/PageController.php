@@ -1,6 +1,7 @@
 <?php
 
 use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Core\Environment;
 use SilverStripe\View\Requirements;
 
 class PageController extends ContentController
@@ -26,6 +27,7 @@ class PageController extends ContentController
     {
         parent::init();
         Requirements::block(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
+        Requirements::javascript(project() . '/javascript/dist/vendor.bundle.js');
         Requirements::javascript(project() . '/javascript/dist/app.bundle.js');
         Requirements::css(project() . '/css/app.css');
 

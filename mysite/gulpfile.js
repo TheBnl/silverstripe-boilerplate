@@ -9,14 +9,12 @@ gulp.task('watch', ['sass:watch'], cb => {
     gulp.watch('scss/**/*.scss', ['sass:watch']);
 });
 
-gulp.task('build', ['sass:build']);
+gulp.task('build', cb => {
+  return doSass(cb, true);
+});
 
 gulp.task('sass:watch', cb => {
     return doSass(cb, false);
-});
-
-gulp.task('sass:build', cb => {
-    return doSass(cb, true);
 });
 
 const doSass = (cb, build) => {
