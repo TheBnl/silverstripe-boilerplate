@@ -3,6 +3,7 @@
     "type": "silverstripe-recipe",
     "description": "Boilerplate template to quickly kick off a new SilverStripe project",
     "require": {
+        "silverstripe/recipe-plugin": "^1.2",
         "silverstripe/recipe-cms": "4.x@stable",
         "silverstripe/googlesitemaps": "*",
         "silverstripe/userforms": "*",
