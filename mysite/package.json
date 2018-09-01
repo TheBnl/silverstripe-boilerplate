@@ -26,7 +26,8 @@
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "natives": "^1.1.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.3",
