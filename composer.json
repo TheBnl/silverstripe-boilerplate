@@ -72,7 +72,7 @@
         ],
         "public-files-installed": [
             "install-frameworkmissing.html",
-            "install.php",
+            "install.php"
         ]
     }
 }
