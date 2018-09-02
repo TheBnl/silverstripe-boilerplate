@@ -16,8 +16,8 @@ SilverStripe\Admin\LeftAndMain:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - SiteConfigExtension
-#   - Addressable
-#   - Geocodable
+    - Symbiote\Addressable\Addressable
+    - Symbiote\Addressable\Geocodable
 Page:
   extensions:
     - Broarm\PageSlices\PageSlicesExtension

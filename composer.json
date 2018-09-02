@@ -1,6 +1,7 @@
 {
     "name": "bramdeleeuw/recipe-boilerplate",
     "type": "silverstripe-recipe",
+    "license": "BSD-3-Clause",
     "description": "Boilerplate template to quickly kick off a new SilverStripe project",
     "require": {
         "silverstripe/recipe-plugin": "^1.2",
@@ -12,6 +13,7 @@
         "mobiledetect/mobiledetectlib": "*",
         "gdmedia/ss-auto-git-ignore": "*",
         "symbiote/silverstripe-gridfieldextensions": "*",
+        "symbiote/silverstripe-addressable": "*",
         "undefinedoffset/silverstripe-nocaptcha": "*",
         "bramdeleeuw/silverstripe-schema": "*",
         "bramdeleeuw/silverstripe-pageslices": "*",
