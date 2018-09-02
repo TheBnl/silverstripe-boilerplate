@@ -5,12 +5,13 @@
 @import "../node_modules/foundation-sites/scss/foundation";
 
 // Get everything or only the modules you need
-@include foundation-everything;
+@include foundation-everything(false);
 
 // Modules
 @import "modules/header";
 @import "modules/footer";
 @import "modules/forms";
+@import "modules/cookieGroupTable";
 
 // Layout
 @import "layout/page";

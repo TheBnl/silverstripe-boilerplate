@@ -17,6 +17,7 @@
         "undefinedoffset/silverstripe-nocaptcha": "*",
         "bramdeleeuw/silverstripe-schema": "*",
         "bramdeleeuw/silverstripe-pageslices": "*",
+        "bramdeleeuw/cookieconsent": "*",
         "jonom/focuspoint": "*",
         "jonom/silverstripe-betternavigator": "*",
         "colymba/gridfield-bulk-editing-tools": "^3",

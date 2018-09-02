@@ -1,0 +1,28 @@
+.cookie-group-table {
+  min-width: 100%;
+
+  &__header {}
+  &__header-row {}
+
+  &__body-col,
+  &__header-col {
+    white-space: nowrap;
+    &--provider,
+    &--expiry,
+    &--name {
+      width: 20%;
+    }
+    &--purpose {
+      min-width: 40%;
+    }
+  }
+
+  &__body {}
+  &__body-row {}
+  &__body-col {
+    &--name {}
+    &--provider {}
+    &--purpose {}
+    &--expiry {}
+  }
+}

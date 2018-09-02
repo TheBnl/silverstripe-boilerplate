@@ -90,3 +90,8 @@ input[type="submit"] {
     // loading style
   }
 }
+
+input:disabled ~ .switch-paddle {
+  background-color: $dark-gray;
+  cursor: not-allowed;
+}
