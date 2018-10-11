@@ -30,7 +30,7 @@
     },
     "scripts": {
         "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go",
-        "post-create-project-cmd": "cd ./mysite && yarn install"
+        "post-create-project-cmd": "cd ./app && yarn install"
     },
     "config": {
         "process-timeout": 600
