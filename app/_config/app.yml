@@ -1,0 +1,30 @@
+---
+Name: app
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+SilverStripe\i18n\i18n:
+  default_locale: 'nl_NL'
+SilverStripe\Control\Email\Email:
+  admin_email: mail@mysite.com
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - 'app/css/cms.css'
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+  default_spam_protector: NocaptchaProtector
+UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+  site_key: 'YOUR_SITE_KEY'
+  secret_key: 'YOUR_SECRET_KEY'
+Symbiote\Addressable\Addressable:
+  postcode_regex: '/^[0-9A-Za-z\s]+$/'
+Symbiote\Addressable\GeocodeService:
+  google_api_key: 'YOUR_GOOGLE_SERVER_API_KEY'
+LeKoala\DebugBar\DebugBar:
+  check_local_ip: false
+  enabled_in_admin: false
+---
+Except:
+  environment: 'live'
+---
+SilverStripe\Control\Email\Email:
+  send_all_emails_to: mail@mysite.com

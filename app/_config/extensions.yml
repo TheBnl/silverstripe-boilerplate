@@ -1,9 +1,6 @@
 ---
 Name: extensions
 ---
-#SilverStripe\ORM\DataObject:
-#  extensions:
-#    - Heyday\CacheInclude\SilverStripe\InvalidationExtension
 SilverStripe\Control\Controller:
   extensions:
     - MobileDetectExtension

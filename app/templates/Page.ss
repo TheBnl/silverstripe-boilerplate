@@ -20,13 +20,13 @@
     <meta name="msapplication-TileColor" content="#132136">
 </head>
 <body>
-<div class="grid-container">
+    $GTMFallback
     <% include Header %>
     <div class="layout" role="main">
         $Layout
     </div>
     <% include Footer %>
+    <% include CookieConsent %>
     $BetterNavigator
-</div>
 </body>
 </html>
