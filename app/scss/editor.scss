@@ -1,10 +1,23 @@
 @import '../node_modules/foundation-sites/scss/util/util';
 @import "settings";
 @import "../node_modules/foundation-sites/scss/foundation";
+@import "../node_modules/foundation-sites/scss/typography/typography";
 
-@include foundation-typography;
+// Import TypeKit fonts
+@if $typeKitId {
+  @import url("https://use.typekit.net/#{$typeKitId}.css");
+}
 
 body {
-  font-size: 14px;
+  font-family: $body-font-family;
   color: $body-font-color;
+  font-weight: 400;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
+
+.mce-content-body {
+  @include foundation-typography-base;
+}
+
+@include foundation-typography-helpers;
