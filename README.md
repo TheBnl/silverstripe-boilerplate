@@ -14,10 +14,6 @@ The SilverStripe Boilerplate aims to make it easier to kick of a new SilverStrip
     # make sure to point to the new remote afterwards
     composer create-project bramdeleeuw/recipe-boilerplate ./myproject dev-master
     
-    # install js modules
-    cd myNewProject/mysite
-    yarn install
-    
 
 ## configuration (with `.env`)
 
@@ -53,8 +49,8 @@ Which has the benefit of having the whole project at one place, not separated in
 
 ### file structure
 
-    mysite
-    |-- code // your php code in here
+    app
+    |-- src // your php code in here
     |-- css // the css in here is generated from the files in /scss
     |-- images // project images
     |-- javascript // all your self written javascript
@@ -65,18 +61,3 @@ Which has the benefit of having the whole project at one place, not separated in
     |-- _config.php
     |-- Gemfile // all gem requirements to work with compass and foundaton
     |-- config.rb // config file for sass
-
-### SASS / SCSS / Javascript
-
-Compiling SASS and JS is now done by gulp, you need to register the files in the bundle.js document located in the javascript folder. To compile simply run `gulp` or `gulp watch`.
-
-### Lazy Loading Images
-
-This boilerplate comes packed with a bower dependency on [Lazy Load XT](https://github.com/ressio/lazy-load-xt), to easily add lazy loaded images to your templates use the following method:
- 
-    $Image.Lazy('Fill', 600, 200)
-
-This method produces the following code with fallbacks for non JS browsers:
-
-     <img class="lazy" data-src="image.jpg" alt="image title" width="image_width" height="image_height">
-     <noscript><img src="image.jpg" alt="image title" width="image_width" height="image_height"></noscript>

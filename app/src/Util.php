@@ -2,7 +2,10 @@
 
 namespace XD\Basic;
 
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Core\Injector\Injector;
 use SilverStripe\ORM\DataObject;
+use Swift_SmtpTransport;
 
 /**
  * Class Util
@@ -37,5 +40,22 @@ class Util
             $fallback = is_numeric($value) ? $value : ucfirst(strtolower($value));
             return _t(get_class($class) . ".{$enum}_{$value}", $fallback);
         }, $class::singleton()->dbObject($enum)->enumValues());
+    }
+
+    /**
+     * Get the email from address, if the SmtpTransport is configured use that as from address
+     *
+     * @param null $backupAddress
+     * @return string
+     */
+    public static function getEmailFromAddress($backupAddress = null)
+    {
+        if (($transport = Injector::inst()->create('Swift_Transport')) && $transport instanceof Swift_SmtpTransport) {
+            return $transport->getUsername();
+        } elseif ($backupAddress) {
+            return $backupAddress;
+        } else {
+            return Email::config()->get('admin_email');
+        }
     }
 }

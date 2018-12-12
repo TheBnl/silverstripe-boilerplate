@@ -1,0 +1,17 @@
+---
+Name: myemailconfig
+After: emailconfig
+Except:
+  environment: 'dev'
+---
+SilverStripe\Core\Injector\Injector:
+  Swift_Transport:
+    class: Swift_SmtpTransport
+    properties:
+      Host: mail.mysite.nl
+      Port: 587
+      Encryption: tls
+    calls:
+      Username: [ setUsername, ['mail@mysite.nl'] ]
+      Password: [ setPassword, ['`EMAIL_SMTP_PASSWORD`'] ]
+      AuthMode: [ setAuthMode, ['login'] ]
