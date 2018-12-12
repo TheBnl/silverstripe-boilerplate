@@ -3,16 +3,16 @@ Name: extensions
 ---
 SilverStripe\Control\Controller:
   extensions:
-    - MobileDetectExtension
+    - XD\Basic\MobileDetectExtension
 SilverStripe\Assets\Image:
   extensions:
-    - ImageExtension
+    - XD\Basic\ImageExtension
 SilverStripe\Admin\LeftAndMain:
   extensions:
-    - MyLeftAndMainExtension
+    - XD\Basic\MyLeftAndMainExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - SiteConfigExtension
+    - XD\Basic\SiteConfigExtension
     - Symbiote\Addressable\Addressable
     - Symbiote\Addressable\Geocodable
 Page:

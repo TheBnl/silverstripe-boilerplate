@@ -20,9 +20,12 @@
         "bramdeleeuw/cookieconsent": "*",
         "jonom/focuspoint": "*",
         "jonom/silverstripe-betternavigator": "*",
+        "jonom/silverstripe-share-care": "*",
         "colymba/gridfield-bulk-editing-tools": "^3",
         "silverstripe/redirectedurls": "*",
-        "tractorcow/silverstripe-opengraph": "^4"
+        "tractorcow/silverstripe-opengraph": "^4",
+        "xddesigners/silverstripe-dropzonefield": "dev-master",
+        "axllent/silverstripe-scaled-uploads": "*"
     },
     "require-dev": {
         "phpunit/PHPUnit": "*",
@@ -37,31 +40,6 @@
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
-    "bak": {
-        "bramdeleeuw/silverstripe-pageslices": "*",
-        "bramdeleeuw/silverstripe-pageslices-userform": "dev-master",
-        "heyday/silverstripe-versioneddataobjects": "*",
-        "jonom/silverstripe-betternavigator": "*",
-        "littlegiant/silverstripe-catalogmanager": "*",
-        "tractorcow/silverstripe-opengraph": "*",
-        "colymba/gridfield-bulk-editing-tools": "*",
-        "silverstripe/redirectedurls": "*",
-        "littlegiant/silverstripe-singlepageadmin": "*",
-        "heyday/silverstripe-cacheinclude": "*",
-        "jonom/silverstripe-tinytidy": "*",
-        "silverstripe/secureassets": "*",
-        "lrc/silverstripe-link-field": "*",
-        "littlegiant/silverstripe-seo-editor": "*",
-        "markguinn/silverstripe-email-helpers": "*",
-        "jonom/focuspoint": "*",
-        "jonom/silverstripe-share-care": "*",
-        "jonom/silverstripe-text-target-length": "*",
-        "unclecheese/display-logic": "*",
-        "unisolutions/silverstripe-copybutton": "*",
-        "symbiote/silverstripe-addressable": "*",
-        "symbiote/silverstripe-grouped-cms-menu": "*",
-        "hubertusanton/silverstripe-seo": "*"
-    },
     "provide": {
         "bramdeleeuw/recipe-boilerplate": "dev-master"
     },
@@ -74,8 +52,11 @@
             "app/src/PageController.php"
         ],
         "public-files-installed": [
+            ".htaccess",
+            "index.php",
             "install-frameworkmissing.html",
-            "install.php"
+            "install.php",
+            "web.config"
         ]
     }
 }

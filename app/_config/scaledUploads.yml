@@ -1,0 +1,7 @@
+---
+Name: myScaledUploads
+---
+Axllent\ScaledUploads\ScaledUploads:
+  max_width: 2000
+  max_height: 2000
+  auto_rotate: true

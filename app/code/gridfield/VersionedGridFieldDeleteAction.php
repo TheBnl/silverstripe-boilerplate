@@ -1,5 +1,7 @@
 <?php
 
+namespace XD\Basic\GridField;
+
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\ORM\ValidationException;
@@ -12,7 +14,6 @@ use SilverStripe\ORM\ValidationException;
  */
 class VersionedGridFieldDeleteAction extends GridFieldDeleteAction
 {
-
     /**
      * Delete the object form both live and stage
      *
@@ -24,10 +25,12 @@ class VersionedGridFieldDeleteAction extends GridFieldDeleteAction
      */
     public function handleAction(GridField $gridField, $actionName, $arguments, $data)
     {
+        /** @var \SilverStripe\ORM\DataObject|\SilverStripe\Versioned\Versioned $item */
         if ($item = $gridField->getList()->byID($arguments['RecordID'])) {
             if (!$item->canDelete()) {
-                throw new ValidationException(
-                    _t('GridFieldAction_Delete.DeletePermissionsFailure', "No delete permissions"), 0);
+                throw new ValidationException(_t(
+                    'GridFieldAction_Delete.DeletePermissionsFailure', 'No delete permissions'
+                ), 0);
             }
             $item->deleteFromStage('Live');
             $item->delete();

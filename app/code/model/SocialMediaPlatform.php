@@ -1,5 +1,7 @@
 <?php
 
+namespace XD\Basic;
+
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
@@ -42,10 +44,10 @@ class SocialMediaPlatform extends DataObject
 
     public function getCMSFields()
     {
-        $socialMediaPlatforms = singleton('SocialMediaPlatform')->dbObject('Title')->enumValues();
+        $socialMediaPlatforms = self::singleton()->dbObject('Title')->enumValues();
         $fields = FieldList::create(array(
-            DropdownField::create('Title', 'Platform', $socialMediaPlatforms),
-            TextField::create('URL', 'URL')
+            DropdownField::create('Title', _t(__CLASS__ . '.Platform', 'Platform'), $socialMediaPlatforms),
+            TextField::create('URL', _t(__CLASS__ . 'URL', 'URL'))
         ));
 
         $this->extend('updateCMSFields', $fields);

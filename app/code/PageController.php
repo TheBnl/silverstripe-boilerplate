@@ -1,9 +1,9 @@
 <?php
 
+use Broarm\CookieConsent\CookieConsent;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Core\Environment;
 use SilverStripe\View\Requirements;
-use SilverStripe\View\SSViewer;
 
 class PageController extends ContentController
 {
@@ -24,6 +24,11 @@ class PageController extends ContentController
      */
     private static $allowed_actions = [];
 
+    /**
+     * Initiate the controller
+     *
+     * @throws Exception
+     */
     protected function init()
     {
         parent::init();
@@ -56,7 +61,8 @@ class PageController extends ContentController
     /**
      * Fallback tag for Google Tag manager
      *
-     * @return string
+     * @return null|\SilverStripe\ORM\FieldType\DBHTMLText
+     * @throws Exception
      */
     public function getGTMFallback()
     {

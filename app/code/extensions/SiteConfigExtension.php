@@ -1,5 +1,7 @@
 <?php
 
+namespace XD\Basic;
+
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
@@ -14,39 +16,33 @@ use SilverStripe\ORM\DataExtension;
  *
  * @property string Phone
  * @property string Email
- * @method \SilverStripe\ORM\HasManyList SocialMediaPlatforms
- * @property SilverStripe\SiteConfig\SiteConfig|SiteConfigExtension owner
+ * @method \SilverStripe\ORM\HasManyList SocialMediaPlatforms()
+ * @property \SilverStripe\SiteConfig\SiteConfig|SiteConfigExtension owner
  */
 class SiteConfigExtension extends DataExtension
 {
-    private static $db = array(
+    private static $db = [
         'Phone' => 'Varchar(25)',
         'Email' => 'Varchar(255)'
-    );
+    ];
 
-    private static $has_many = array(
-        'SocialMediaPlatforms' => 'SocialMediaPlatform'
-    );
-
-    private static $many_many = array();
-    private static $defaults = array();
-    private static $belongs_many_many = array();
-    private static $searchable_fields = array();
-    private static $summary_fields = array();
+    private static $has_many = [
+        'SocialMediaPlatforms' => SocialMediaPlatform::class
+    ];
 
     public function updateCMSFields(FieldList $fields)
     {
         $fields->removeByName('Theme');
         $fields->addFieldsToTab('Root.Address', [
-            TextField::create('Phone', 'TelephoneNumber'),
-            EmailField::create('Email', 'Email')
+            TextField::create('Phone', _t(__CLASS__ . '.TelephoneNumber', 'TelephoneNumber')),
+            EmailField::create('Email', _t(__CLASS__ . '.Email', 'Email'))
         ]);
 
         if ($this->owner->exists()) {
-            $editableGridFieldConfig = new GridFieldConfig_EditableNoDetail();
+            $editableGridFieldConfig = new GridFieldConfig_SortableEditable();
             $fields->addFieldToTab('Root.SocialMedia', GridField::create(
                 'SocialMediaPlatforms',
-                'Social Media Links',
+                _t(__CLASS__ . '.SocialMediaLinks', 'Social Media Links'),
                 $this->owner->SocialMediaPlatforms(),
                 $editableGridFieldConfig
             ));
@@ -67,5 +63,20 @@ class SiteConfigExtension extends DataExtension
             $this->owner->getField('Postcode'),
             $this->owner->getField('Suburb')
         ));
+    }
+
+    /**
+     * Return a directional link to Google Maps
+     *
+     * @return string
+     */
+    public function getGoogleMapsLink()
+    {
+        $address = urlencode($this->owner->getFullAddress());
+        $latitude = $this->owner->getField("Lat");
+        $longitude = $this->owner->getField("Lng");
+        $title = $this->owner->Title;
+
+        return "https://www.google.nl/maps/dir//$title+$address/@$latitude,$longitude,16z/?hl=nl";
     }
 }

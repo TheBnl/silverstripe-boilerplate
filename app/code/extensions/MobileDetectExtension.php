@@ -1,11 +1,8 @@
 <?php
-/**
- * MobileDetectExtension.php
- *
- * @author Bram de Leeuw
- * Date: 01/03/17
- */
 
+namespace XD\Basic;
+
+use Mobile_Detect;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Extension;
 use SilverStripe\View\Requirements;
@@ -14,7 +11,7 @@ use SilverStripe\View\Requirements;
 /**
  * Class MobileDetectExtension
  *
- * @property MobileDetectExtension|SilverStripe\CMS\Controllers\ContentController $owner
+ * @property MobileDetectExtension|\SilverStripe\CMS\Controllers\ContentController $owner
  */
 class MobileDetectExtension extends Extension
 {

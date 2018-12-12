@@ -2,7 +2,7 @@
 Name: slices
 ---
 Broarm\PageSlices\PageSliceController:
-  enable_cache: true
+  enable_cache: false # !! Set to true on production !!
 
 Page:
   extensions:

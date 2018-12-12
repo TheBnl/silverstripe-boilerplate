@@ -17,7 +17,7 @@ UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
   secret_key: 'YOUR_SECRET_KEY'
 Symbiote\Addressable\Addressable:
   postcode_regex: '/^[0-9A-Za-z\s]+$/'
-Symbiote\Addressable\GeocodeService:
+Symbiote\Addressable\GoogleGeocodeService:
   google_api_key: 'YOUR_GOOGLE_SERVER_API_KEY'
 LeKoala\DebugBar\DebugBar:
   check_local_ip: false

@@ -1,10 +1,15 @@
 <?php
 
-use SilverStripe\Core\Config\Config;
+namespace XD\Basic;
+
+use SilverStripe\Forms\CompositeField;
+use SilverStripe\Forms\ConfirmedPasswordField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\FormField;
 use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TextField;
 
 /**
  * Base Form to provide additional functionality like auto placeholder setting and fieldLabel()
@@ -15,7 +20,7 @@ class BaseForm extends Form
     private static $set_placeholder_required_star = true;
 
     /**
-     * @param SilverStripe\Control\Controller $controller
+     * @param \SilverStripe\Control\Controller $controller
      * @param String     $name
      * @param FieldList  $fields
      * @param FieldList  $actions
@@ -27,8 +32,8 @@ class BaseForm extends Form
         $this->processFields(
             $fields,
             $validator,
-            Config::inst()->get($this->class, 'set_placeholder'),
-            Config::inst()->get($this->class, 'set_placeholder_required_star')
+            self::config()->get('set_placeholder'),
+            self::config()->get('set_placeholder_required_star')
         );
         $this->addExtraClass('base-form');
     }
@@ -49,13 +54,13 @@ class BaseForm extends Form
     ) {
         if ($setPlaceholder) {
             foreach ($fields as $f) {
-                if ($f->is_a('CompositeField')) {
+                if ($f instanceof CompositeField) {
                     $this->processFields($f->FieldList(), $r, $setPlaceholder, $setRequiredPlaceholder);
-                } elseif ($f->is_a('ConfirmedPasswordField')) {
+                } elseif ($f instanceof ConfirmedPasswordField) {
                     $this->processFields($f->getChildren(), $r, $setPlaceholder, $setRequiredPlaceholder);
-                } elseif ($setPlaceholder && ($f->is_a('TextField') || $f->is_a('TextAreaField'))) {
-                    $surfix = $r && $r->fieldIsRequired($f->getName()) && $setRequiredPlaceholder ? ' *' : '';
-                    $this->setPlaceHolder($f, $surfix);
+                } elseif ($setPlaceholder && ($f instanceof TextField || $f instanceof TextAreaField)) {
+                    $surFix = $r && $r->fieldIsRequired($f->getName()) && $setRequiredPlaceholder ? ' *' : '';
+                    $this->setPlaceHolder($f, $surFix);
                 }
             }
         }
@@ -64,15 +69,15 @@ class BaseForm extends Form
 
     /**
      * @param FormField $f
-     * @param string    $surfix
+     * @param string $surFix
      *
      * @return static
      */
-    protected function setPlaceHolder(FormField $f, $surfix = '')
+    protected function setPlaceHolder(FormField $f, $surFix = '')
     {
         $str = $f->Title();
-        if ($surfix) {
-            $str .= " $surfix";
+        if ($surFix) {
+            $str .= " $surFix";
         }
         $f->setAttribute('placeholder', $str);
         return $this;

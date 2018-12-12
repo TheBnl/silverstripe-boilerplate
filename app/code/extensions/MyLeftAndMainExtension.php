@@ -1,12 +1,14 @@
 <?php
 
+namespace XD\Basic;
+
 use SilverStripe\Admin\CMSMenu;
 use SilverStripe\Admin\LeftAndMainExtension;
 
 /**
  * Workaround to remove CMS Help Button
  *
- * @property SilverStripe\Admin\LeftAndMain owner
+ * @property \SilverStripe\Admin\LeftAndMain owner
  */
 class MyLeftAndMainExtension extends LeftAndMainExtension
 {
