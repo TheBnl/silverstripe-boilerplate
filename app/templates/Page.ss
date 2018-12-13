@@ -27,6 +27,6 @@
     </div>
     <% include Footer %>
     <% include CookieConsent %>
-    $BetterNavigator
+    <% if not $IsDev %>$BetterNavigator<% end_if %>
 </body>
 </html>

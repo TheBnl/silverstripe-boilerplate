@@ -33,9 +33,8 @@ class PageController extends ContentController
     {
         parent::init();
         Requirements::block(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
-        Requirements::javascript(project() . '/javascript/dist/vendor.bundle.js');
-        Requirements::javascript(project() . '/javascript/dist/app.bundle.js');
-        Requirements::css(project() . '/css/app.css');
+        Requirements::javascript(project() . '/client/dist/js/bundle.js');
+        Requirements::css(project() . '/client/dist/styles/bundle.css');
 
         if ($typeKit = Environment::getEnv('TYPEKIT_ID')) {
             Requirements::insertHeadTags(sprintf(

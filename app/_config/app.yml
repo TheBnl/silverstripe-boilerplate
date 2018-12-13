@@ -6,7 +6,10 @@ SilverStripe\Core\Manifest\ModuleManifest:
 SilverStripe\i18n\i18n:
   default_locale: 'nl_NL'
 SilverStripe\Control\Email\Email:
-  admin_email: mail@mysite.com
+  admin_email:
+    mail@mysite.com: 'app'
+#  send_all_emails_from:
+#    mail@mysite.com: 'app'
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_css:
     - 'app/css/cms.css'

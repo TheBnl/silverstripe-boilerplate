@@ -1,8 +1,7 @@
 // Import foundation
-//@import "settings", "../../vendor/zurb/foundation/scss/foundation";
-@import '../node_modules/foundation-sites/scss/util/util';
+@import '~foundation-sites/scss/util/util';
 @import "settings";
-@import "../node_modules/foundation-sites/scss/foundation";
+@import "~foundation-sites/scss/foundation";
 
 // Get everything or only the modules you need
 @include foundation-everything;
