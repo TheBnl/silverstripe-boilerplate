@@ -33,7 +33,9 @@ const CONFIGS = [
       'bundle': 'bundles/bundle.js'
     },
     resolve: {
-      alias: {}
+      alias: {
+        'jquery$': path.resolve(PATHS.MODULES, 'jquery/src/jquery')
+      }
     }
   }
 ];
@@ -231,10 +233,8 @@ const resolve = (env, config) => {
 
 const externals = (env, config) => {
   
-  let externals = {
-    jquery: 'jQuery'
-  };
-  
+  let externals = {};
+
   if (config.externals) {
     Object.assign(externals, config.externals);
   }

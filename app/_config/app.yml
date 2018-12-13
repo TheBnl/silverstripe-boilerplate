@@ -25,6 +25,7 @@ Symbiote\Addressable\GoogleGeocodeService:
 LeKoala\DebugBar\DebugBar:
   check_local_ip: false
   enabled_in_admin: false
+  auto_debug: true
 ---
 Except:
   environment: 'live'

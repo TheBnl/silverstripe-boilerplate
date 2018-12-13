@@ -21,6 +21,8 @@ use SilverStripe\SiteConfig\SiteConfig;
  */
 class SocialMediaPlatform extends DataObject
 {
+    private static $table_name = 'SocialMediaPlatform';
+
     private static $db = array(
         'Sort' => 'Int',
         'Title' => "Enum('Facebook, Twitter, Google+, Instagram, YouTube, LinkedIn, Pinterest, SoundCloud, Tumblr','Facebook')",

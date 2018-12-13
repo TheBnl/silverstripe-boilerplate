@@ -32,7 +32,6 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
-        Requirements::block(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
         Requirements::javascript(project() . '/client/dist/js/bundle.js');
         Requirements::css(project() . '/client/dist/styles/bundle.css');
 
