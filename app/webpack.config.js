@@ -30,7 +30,9 @@ const CONFIGS = [
   {
     paths: PATHS.MODULE,
     entry: {
-      'bundle': 'bundles/bundle.js'
+      'bundle': 'bundles/bundle.js',
+      'cms': 'bundles/cms.js',
+      'editor': 'bundles/editor.js',
     },
     resolve: {
       alias: {

@@ -47,7 +47,7 @@
         "project-files-installed": [
             "app/.htaccess",
             "app/_config.php",
-            "app/_config/mysite.yml",
+            "app/_config/app.yml",
             "app/src/Page.php",
             "app/src/PageController.php"
         ],

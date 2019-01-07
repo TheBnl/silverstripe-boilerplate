@@ -3,7 +3,6 @@ import { initForms } from './modules/forms';
 import { initNavigation } from './modules/navigation';
 import { initFontAwesome } from './modules/fontAwesome';
 
-
 (($) => {
   'use strict';
 

@@ -1,7 +1,7 @@
-@import '../node_modules/foundation-sites/scss/util/util';
+@import '~foundation-sites/scss/util/util';
 @import "settings";
-@import "../node_modules/foundation-sites/scss/foundation";
-@import "../node_modules/foundation-sites/scss/typography/typography";
+@import "~foundation-sites/scss/foundation";
+@import "~foundation-sites/scss/typography/typography";
 
 // Import TypeKit fonts
 @if $typeKitId {
