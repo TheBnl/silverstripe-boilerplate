@@ -12,7 +12,10 @@ SilverStripe\Control\Email\Email:
 #    mail@mysite.com: 'app'
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_css:
-    - 'app/css/cms.css'
+    - 'app/client/dist/styles/cms.css'
+SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
+  editor_css:
+    - 'app/client/dist/styles/editor.css'
 SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
   default_spam_protector: NocaptchaProtector
 UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
