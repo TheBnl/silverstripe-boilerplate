@@ -14,10 +14,11 @@ class GridFieldConfig_SortableEditable extends GridFieldConfig_Sortable
      *
      * @param int $itemsPerPage
      * @param string $sortField
+     * @param boolean $versioned
      */
-    public function __construct($itemsPerPage = null, $sortField = 'Sort')
+    public function __construct($itemsPerPage = null, $sortField = 'Sort', $versioned = false)
     {
-        parent::__construct($itemsPerPage, $sortField);
+        parent::__construct($itemsPerPage, $sortField, $versioned);
         $this->addComponent(new GridFieldEditableColumns());
     }
 }

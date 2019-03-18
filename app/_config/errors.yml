@@ -1,0 +1,18 @@
+---
+Name: errors
+Except:
+  environment: 'dev'
+---
+SilverStripe\Core\Injector\Injector:
+  Psr\Log\LoggerInterface:
+    calls:
+      MailHandler: [ pushHandler, [ %$MailHandler ] ]
+  MailHandler:
+    class: Monolog\Handler\NativeMailerHandler
+    constructor:
+      - 'errors@xd.nl'
+      - '[Error] mysite.nl'
+      - 'errors@xd.nl'
+    properties:
+      ContentType: text/html
+      Formatter: %$SilverStripe\Logging\DetailedErrorFormatter

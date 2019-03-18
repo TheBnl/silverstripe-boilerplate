@@ -56,9 +56,13 @@ const rules = (env) => {
           loader: 'babel-loader'
         }
       ],
-      exclude: [
-        PATHS.MODULES
-      ]
+      exclude: (env) => {
+        const exclude = [];
+        if (env === 'development') {
+          exclude.push(PATHS.MODULES);
+        }
+        return exclude;
+      }
     },
     {
       test: /\.css$/,

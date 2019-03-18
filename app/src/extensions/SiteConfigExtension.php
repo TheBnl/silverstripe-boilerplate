@@ -7,6 +7,8 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\HasManyList;
+use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * class SiteConfigExtension
@@ -16,8 +18,8 @@ use SilverStripe\ORM\DataExtension;
  *
  * @property string Phone
  * @property string Email
- * @method \SilverStripe\ORM\HasManyList SocialMediaPlatforms()
- * @property \SilverStripe\SiteConfig\SiteConfig|SiteConfigExtension owner
+ * @method HasManyList SocialMedia()
+ * @property SiteConfig|SiteConfigExtension owner
  */
 class SiteConfigExtension extends DataExtension
 {
@@ -27,7 +29,7 @@ class SiteConfigExtension extends DataExtension
     ];
 
     private static $has_many = [
-        'SocialMediaPlatforms' => SocialMediaPlatform::class
+        'SocialMedia' => SocialMediaPlatform::class
     ];
 
     public function updateCMSFields(FieldList $fields)
@@ -43,7 +45,7 @@ class SiteConfigExtension extends DataExtension
             $fields->addFieldToTab('Root.SocialMedia', GridField::create(
                 'SocialMediaPlatforms',
                 _t(__CLASS__ . '.SocialMediaLinks', 'Social Media Links'),
-                $this->owner->SocialMediaPlatforms(),
+                $this->owner->SocialMedia(),
                 $editableGridFieldConfig
             ));
         }

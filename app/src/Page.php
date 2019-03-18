@@ -1,5 +1,6 @@
 <?php
 
+use JonoM\FocusPoint\Extensions\FocusPointImageExtension;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
@@ -8,8 +9,8 @@ use SilverStripe\Forms\FieldList;
 
 /**
  * Class Page
- * @method Image FeaturedImage()
- * @method Image OpenGraphImage()
+ * @method FocusPointImageExtension|Image FeaturedImage()
+ * @method FocusPointImageExtension|Image OpenGraphImage()
  */
 class Page extends SiteTree
 {
