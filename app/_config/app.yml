@@ -19,7 +19,7 @@ SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
   editor_css:
     - 'app/client/dist/styles/editor.css'
 SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
-  default_spam_protector: NocaptchaProtector
+  default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
 UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
   site_key: 'YOUR_SITE_KEY'
   secret_key: 'YOUR_SECRET_KEY'
