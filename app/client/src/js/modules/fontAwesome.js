@@ -9,8 +9,8 @@ import {faTwitter} from '@fortawesome/free-brands-svg-icons/faTwitter'
 import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram'
 import {faPinterestSquare} from '@fortawesome/free-brands-svg-icons/faPinterestSquare'
 import {faGooglePlusSquare} from '@fortawesome/free-brands-svg-icons/faGooglePlusSquare'
-import {faEnvelopeSquare} from '@fortawesome/pro-solid-svg-icons/faEnvelopeSquare';
-import {faEnvelope} from '@fortawesome/pro-regular-svg-icons/faEnvelope';
+import {faEnvelopeSquare} from '@fortawesome/free-solid-svg-icons/faEnvelopeSquare';
+import {faEnvelope} from '@fortawesome/free-regular-svg-icons/faEnvelope';
 
 /**
  * Add all the fontawesome icons

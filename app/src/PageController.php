@@ -32,8 +32,8 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
-        Requirements::javascript(project() . '/client/dist/js/bundle.js');
-        Requirements::css(project() . '/client/dist/styles/bundle.css');
+        Requirements::javascript(project() . '/client/dist/js/app.js');
+        Requirements::css(project() . '/client/dist/styles/app.css');
 
         if ($typeKit = Environment::getEnv('TYPEKIT_ID')) {
             Requirements::insertHeadTags(sprintf(
