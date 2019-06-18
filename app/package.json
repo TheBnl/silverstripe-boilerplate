@@ -33,10 +33,12 @@
     "@fortawesome/free-brands-svg-icons": "latest",
     "@fortawesome/free-regular-svg-icons": "latest",
     "@fortawesome/free-solid-svg-icons": "latest",
+    "jquery": "3.3.1",
     "foundation-sites": "^6.0.0",
     "imagesloaded": "^4.1.4",
-    "jquery-validation": "^1.17.0",
-    "swiper": "^4.1.0"
+    "jquery-validation": "^1.19.0",
+    "swiper": "^4.1.0",
+    "photoswipe": "^4.1.2"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
