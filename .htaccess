@@ -40,9 +40,11 @@ ErrorDocument 500 /assets/error-500.html
     # Deny access to potentially sensitive files and folders
     RewriteRule ^vendor(/|$) - [F,L,NC]
     RewriteRule ^\.env - [F,L,NC]
+    RewriteRule ^\.git* - [F,L,NC]
     RewriteRule silverstripe-cache(/|$) - [F,L,NC]
     RewriteRule composer\.(json|lock) - [F,L,NC]
     RewriteRule (error|silverstripe|debug)\.log - [F,L,NC]
+    RewriteRule (README|LICENSE).md - [F,L,NC]
 
     # Process through SilverStripe if no file with the requested name exists.
     # Pass through the original path as a query parameter, and retain the existing parameters.
