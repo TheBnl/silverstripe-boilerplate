@@ -5,6 +5,8 @@ SilverStripe\Core\Manifest\ModuleManifest:
   project: app
 SilverStripe\i18n\i18n:
   default_locale: 'nl_NL'
+SilverStripe\ORM\FieldType\DBCurrency:
+  currency_symbol: '€'
 SilverStripe\View\SSViewer:
   rewrite_hash_links: false
 SilverStripe\Control\Email\Email:

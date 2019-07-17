@@ -33,13 +33,14 @@ class Page extends SiteTree
 
     public function getCMSFields()
     {
-        $self =& $this;
-        $this->beforeUpdateCMSFields(function (FieldList $fields) use ($self) {
-            $openGraphImage = UploadField::create('OpenGraphImage', _t(__CLASS__ . '.MetaImage', 'Meta image'));
-            $fields->insertBefore('MetaDescription', $openGraphImage);
-        });
-
         $fields = parent::getCMSFields();
+        $openGraphImage = UploadField::create('OpenGraphImage', _t(__CLASS__ . '.MetaImage', 'Meta image'));
+        $fields->insertBefore('MetaDescription', $openGraphImage);
+        if ($metaDescriptionField = $fields->fieldByName('Root.SEO.MetaDescription')) {
+            $metaDescriptionField->setTargetLength(125);
+        }
+
+        $fields->removeByName('ExtraMeta');
         return $fields;
     }
 

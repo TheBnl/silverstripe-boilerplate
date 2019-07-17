@@ -27,10 +27,12 @@
         "jonom/focuspoint": "*",
         "jonom/silverstripe-betternavigator": "*",
         "jonom/silverstripe-share-care": "*",
+        "jonom/silverstripe-text-target-length": "*",
         "colymba/gridfield-bulk-editing-tools": "^3",
         "tractorcow/silverstripe-opengraph": "^4",
         "xddesigners/silverstripe-dropzonefield": "dev-master",
-        "axllent/silverstripe-scaled-uploads": "*"
+        "axllent/silverstripe-scaled-uploads": "*",
+        "hubertusanton/silverstripe-seo": "*"
     },
     "require-dev": {
         "phpunit/PHPUnit": "*",
