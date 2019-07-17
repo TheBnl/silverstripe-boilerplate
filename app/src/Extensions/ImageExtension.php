@@ -1,11 +1,13 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\Extensions;
 
+use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataExtension;
 
 /**
  * Class ImageExtension
+ * @property Image|ImageExtension owner
  */
 class ImageExtension extends DataExtension
 {

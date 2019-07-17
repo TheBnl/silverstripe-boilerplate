@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\GridField;
 
 use Symbiote\GridFieldExtensions\GridFieldEditableColumns;
 

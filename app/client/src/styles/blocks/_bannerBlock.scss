@@ -1,0 +1,11 @@
+.banner-block {
+  &__figure {
+    position: relative;
+  }
+
+  &__caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}

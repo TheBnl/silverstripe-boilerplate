@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\Forms;
 
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\ConfirmedPasswordField;

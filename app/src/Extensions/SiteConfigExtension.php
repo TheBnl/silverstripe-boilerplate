@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\Extensions;
 
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
@@ -9,12 +9,16 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\HasManyList;
 use SilverStripe\SiteConfig\SiteConfig;
+use Symbiote\Addressable\Addressable;
+use Symbiote\Addressable\Geocodable;
+use XD\Basic\GridField\GridFieldConfig_SortableEditable;
+use XD\Basic\Models\SocialMediaPlatform;
 
 /**
  * class SiteConfigExtension
  * Extension to modify SiteConfig
- * @mixin \Symbiote\Addressable\Addressable
- * @mixin \Symbiote\Addressable\Geocodable
+ * @mixin Addressable
+ * @mixin Geocodable
  *
  * @property string Phone
  * @property string Email

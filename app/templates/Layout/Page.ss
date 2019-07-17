@@ -1,1 +1,1 @@
-<% include PageSlices %>
+$ElementalArea

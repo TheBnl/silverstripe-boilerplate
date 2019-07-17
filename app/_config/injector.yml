@@ -1,0 +1,6 @@
+---
+Name: injector
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Forms\Form:
+    class: XD\Basic\Forms\BaseForm

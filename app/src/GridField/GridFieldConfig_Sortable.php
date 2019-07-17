@@ -1,8 +1,7 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\GridField;
 
-use Heyday\GridFieldVersionedOrderableRows\GridFieldVersionedOrderableRows;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
@@ -22,7 +21,7 @@ class GridFieldConfig_Sortable extends GridFieldConfig_RecordEditor
     {
         parent::__construct($itemsPerPage);
         if ($versioned) {
-            $this->addComponent(new GridFieldVersionedOrderableRows($sortField));
+            //$this->addComponent(new GridFieldVersionedOrderableRows($sortField));
         } else {
             $this->addComponent(new GridFieldOrderableRows($sortField));
         }

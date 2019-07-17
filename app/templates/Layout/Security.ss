@@ -1,5 +1,5 @@
-<section class="page-slice page-content-slice">
-    <article class="grid-container">
+<section class="element">
+    <div class="grid-container">
         <header class="grid-x grid-padding-x">
             <div class="medium-6 medium-offset-3 cell">
                 <h1>$Title</h1>
@@ -11,5 +11,5 @@
                 $Form
             </div>
         </section>
-    </article>
+    </div>
 </section>

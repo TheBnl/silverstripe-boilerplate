@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\Models;
 
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldList;
@@ -14,7 +14,7 @@ use SilverStripe\SiteConfig\SiteConfig;
  * @author Bram de Leeuw
  * Date: 17/02/16
  *
- * @property int    Sort
+ * @property int Sort
  * @property string Title
  * @property string URL
  * @method SiteConfig SiteConfig()

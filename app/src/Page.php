@@ -1,28 +1,31 @@
 <?php
 
+use DNADesign\Elemental\Extensions\ElementalPageExtension;
+use DNADesign\Elemental\Models\ElementalArea;
 use JonoM\FocusPoint\Extensions\FocusPointImageExtension;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Director;
+use SilverStripe\ElementalBannerBlock\Block\BannerBlock;
 use SilverStripe\Forms\FieldList;
 
 /**
  * Class Page
- * @method FocusPointImageExtension|Image FeaturedImage()
+ * @mixin ElementalPageExtension
  * @method FocusPointImageExtension|Image OpenGraphImage()
+ * @method ElementalArea ElementalArea()
  */
 class Page extends SiteTree
 {
     private static $db = [];
 
     private static $has_one = [
-        'FeaturedImage' => Image::class,
         'OpenGraphImage' => Image::class
     ];
 
     private static $owns = [
-        'FeaturedImage',
         'OpenGraphImage'
     ];
 
@@ -32,10 +35,6 @@ class Page extends SiteTree
     {
         $self =& $this;
         $this->beforeUpdateCMSFields(function (FieldList $fields) use ($self) {
-            $uploadField = UploadField::create('FeaturedImage', _t(__CLASS__ . '.FeaturedImage', 'Featured Image'));
-            $uploadField->getValidator()->setAllowedExtensions(['jpg', 'jpeg', 'png', 'gif']);
-            $fields->insertAfter('Content', $uploadField);
-
             $openGraphImage = UploadField::create('OpenGraphImage', _t(__CLASS__ . '.MetaImage', 'Meta image'));
             $fields->insertBefore('MetaDescription', $openGraphImage);
         });
@@ -56,7 +55,12 @@ class Page extends SiteTree
         $this->extend('updateOGImage', $image);
         if ($image->exists()) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
-        } elseif (($image = $this->FeaturedImage()) && $image->exists()) {
+        } elseif (
+            // Search for set BannerBlocks
+            ($area = $this->ElementalArea()) && $area->exists() &&
+            ($banner = $area->Elements()->filter(['ClassName' => BannerBlock::class])->first()) && $banner->exists() &&
+            ($image = $banner->File()) && $image->exists()
+        ) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
         } else {
             return Director::absoluteURL(self::config()->get('default_image'));

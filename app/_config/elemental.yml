@@ -1,0 +1,6 @@
+DNADesign\Elemental\Controllers\ElementController:
+  include_default_styles: false
+
+DNADesign\Elemental\Extensions\ElementalAreasExtension:
+  ignored_classes:
+    - Broarm\CookieConsent\CookiePolicyPage

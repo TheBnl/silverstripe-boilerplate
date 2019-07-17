@@ -3,18 +3,21 @@ Name: extensions
 ---
 SilverStripe\Control\Controller:
   extensions:
-    - XD\Basic\MobileDetectExtension
+    - XD\Basic\Extensions\MobileDetectExtension
 SilverStripe\Assets\Image:
   extensions:
-    - XD\Basic\ImageExtension
+    - XD\Basic\Extensions\ImageExtension
 SilverStripe\Admin\LeftAndMain:
   extensions:
-    - XD\Basic\MyLeftAndMainExtension
+    - XD\Basic\Extensions\MyLeftAndMainExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - XD\Basic\SiteConfigExtension
+    - XD\Basic\Extensions\SiteConfigExtension
     - Symbiote\Addressable\Addressable
     - Symbiote\Addressable\Geocodable
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - XD\Basic\Extensions\BaseElementExtension
 Page:
   extensions:
-    - Broarm\PageSlices\PageSlicesExtension
+    - DNADesign\Elemental\Extensions\ElementalPageExtension

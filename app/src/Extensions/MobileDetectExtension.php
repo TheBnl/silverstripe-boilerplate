@@ -1,8 +1,9 @@
 <?php
 
-namespace XD\Basic;
+namespace XD\Basic\Extensions;
 
 use Mobile_Detect;
+use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Extension;
 use SilverStripe\View\Requirements;
@@ -11,7 +12,7 @@ use SilverStripe\View\Requirements;
 /**
  * Class MobileDetectExtension
  *
- * @property MobileDetectExtension|\SilverStripe\CMS\Controllers\ContentController $owner
+ * @property MobileDetectExtension|ContentController $owner
  */
 class MobileDetectExtension extends Extension
 {

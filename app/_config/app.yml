@@ -37,5 +37,3 @@ Except:
 ---
 SilverStripe\Control\Email\Email:
   send_all_emails_to: mail@mysite.com
-Broarm\PageSlices\PageSliceController:
-  enable_cache: false
