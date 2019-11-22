@@ -7,7 +7,7 @@
         "silverstripe/recipe-plugin": "^1.2",
         "silverstripe/recipe-cms": "4.x@stable",
         "silverstripe/googlesitemaps": "*",
-        "silverstripe/userforms": "dev-master",
+        "silverstripe/userforms": "*",
         "silverstripe/spamprotection": "*",
         "silverstripe/html5": "*",
         "silverstripe/redirectedurls": "*",
