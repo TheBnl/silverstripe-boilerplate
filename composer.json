@@ -36,7 +36,7 @@
         "xddesigners/page-content-block": "*"
     },
     "require-dev": {
-        "phpunit/PHPUnit": "*",
+        "phpunit/phpunit": "*",
         "lekoala/silverstripe-debugbar": "*"
     },
     "scripts": {
