@@ -10,6 +10,7 @@ use SilverStripe\Forms\FormField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
+use SilverStripe\ORM\ArrayList;
 
 /**
  * Base Form to provide additional functionality like auto placeholder setting and fieldLabel()
@@ -47,7 +48,7 @@ class BaseForm extends Form
      * @return static
      */
     protected function processFields(
-        FieldList $fields,
+        ArrayList $fields,
         RequiredFields $r = null,
         $setPlaceholder = true,
         $setRequiredPlaceholder = true
