@@ -11,10 +11,7 @@
         "silverstripe/spamprotection": "*",
         "silverstripe/html5": "*",
         "silverstripe/redirectedurls": "*",
-        "silverstripe/elemental-bannerblock": "*",
-        "silverstripe/elemental-fileblock": "*",
         "dnadesign/silverstripe-elemental-userforms": "*",
-        "dnadesign/silverstripe-elemental-list": "*",
         "dnadesign/silverstripe-elemental-virtual": "*",
         "dnadesign/silverstripe-elemental": "*",
         "symbiote/silverstripe-gridfieldextensions": "*",
@@ -62,6 +59,7 @@
         ],
         "public-files-installed": [
             ".htaccess",
+            "index.php",
             "install-frameworkmissing.html",
             "install.php",
             "web.config"

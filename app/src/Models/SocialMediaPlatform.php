@@ -16,7 +16,7 @@ use SilverStripe\SiteConfig\SiteConfig;
  *
  * @property int Sort
  * @property string Title
- * @property string URL
+ * @property string Link
  * @method SiteConfig SiteConfig()
  */
 class SocialMediaPlatform extends DataObject
@@ -26,7 +26,7 @@ class SocialMediaPlatform extends DataObject
     private static $db = array(
         'Sort' => 'Int',
         'Title' => "Enum('Facebook, Twitter, Google+, Instagram, YouTube, LinkedIn, Pinterest, SoundCloud, Tumblr','Facebook')",
-        'URL' => 'Varchar(255)'
+        'Link' => 'Varchar(255)'
     );
 
     private static $default_sort = 'Sort DESC';
@@ -37,11 +37,11 @@ class SocialMediaPlatform extends DataObject
 
     private static $summary_fields = array(
         'Title' => 'Platform',
-        'URL' => 'URL'
+        'Link' => 'Link'
     );
 
     private static $translate = array(
-        'URL'
+        'Link'
     );
 
     public function getCMSFields()
@@ -49,7 +49,7 @@ class SocialMediaPlatform extends DataObject
         $socialMediaPlatforms = self::singleton()->dbObject('Title')->enumValues();
         $fields = FieldList::create(array(
             DropdownField::create('Title', _t(__CLASS__ . '.Platform', 'Platform'), $socialMediaPlatforms),
-            TextField::create('URL', _t(__CLASS__ . 'URL', 'URL'))
+            TextField::create('Link', _t(__CLASS__ . '.Link', 'Link'))
         ));
 
         $this->extend('updateCMSFields', $fields);

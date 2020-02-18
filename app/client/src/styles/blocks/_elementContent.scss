@@ -1,0 +1,17 @@
+.element-content {
+  &__content {
+    &--image-pos-right {
+      @include breakpoint(medium) {
+        order: 1;
+      }
+    }
+  }
+
+  &__image {
+    &--image-pos-right {
+      @include breakpoint(medium) {
+        order: 2;
+      }
+    }
+  }
+}

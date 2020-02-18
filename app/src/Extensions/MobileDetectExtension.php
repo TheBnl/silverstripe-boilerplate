@@ -38,7 +38,7 @@ class MobileDetectExtension extends Extension
             (int)$this->getIsMobile(),
             (int)$this->getIsTablet(),
             (int)$this->getIsPhone()
-        ));
+        ), 'Mobile_Detect');
     }
 
     /**

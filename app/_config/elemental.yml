@@ -4,3 +4,6 @@ DNADesign\Elemental\Controllers\ElementController:
 DNADesign\Elemental\Extensions\ElementalAreasExtension:
   ignored_classes:
     - Broarm\CookieConsent\CookiePolicyPage
+
+DNADesign\ElementalVirtual\Model\ElementVirtual:
+  icon: 'font-icon-link'

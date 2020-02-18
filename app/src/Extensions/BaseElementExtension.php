@@ -3,15 +3,8 @@
 namespace XD\Basic\Extensions;
 
 use DNADesign\Elemental\Models\BaseElement;
-use DNADesign\ElementalList\Model\ElementList;
 use SilverStripe\Core\ClassInfo;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\DropdownField;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\LiteralField;
-use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
-use XD\Basic\Util;
 
 /**
  * Class BaseElementExtension
