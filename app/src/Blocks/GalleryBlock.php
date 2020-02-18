@@ -18,8 +18,6 @@ use XD\Models\GalleryItem;
  * Class GalleryBlock
  * @package PlanetBio\Blocks
  *
- * @property string Color
- *
  * @method HasManyList GalleryItems()
  */
 class GalleryBlock extends BaseElement
@@ -32,9 +30,7 @@ class GalleryBlock extends BaseElement
 
     private static $icon = 'font-icon-block-carousel';
 
-    private static $db = [
-        'Color' => 'Varchar(9)'
-    ];
+    private static $db = [];
 
     private static $has_many = [
         'GalleryItems' => GalleryItem::class . '.Parent'
@@ -56,7 +52,7 @@ class GalleryBlock extends BaseElement
             $gridField = $fields->fieldByName('Root.GalleryItems.GalleryItems');
             if ($gridField && $this->exists()) {
                 $fields->removeByName('GalleryItems');
-                $fields->insertAfter('Color', $gridField);
+                $fields->insertAfter('Title', $gridField);
                 $config = $gridField->getConfig();
                 $config->removeComponentsByType(new GridFieldDataColumns());
                 $config->addComponent(new BulkUploader(null, null, true));
