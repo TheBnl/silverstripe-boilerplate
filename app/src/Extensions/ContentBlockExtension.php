@@ -3,8 +3,6 @@
 namespace XD\Basic\Extensions;
 
 use DNADesign\Elemental\Models\ElementContent;
-use PlanetBio\Extensions\HasLink;
-use PlanetBio\Util\Colors;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
@@ -38,10 +36,10 @@ class ContentBlockExtension extends DataExtension
         'ShowTitle' => 1
     ];
 
-    private static $inline_editable = false;
-
     public function updateCMSFields(FieldList $fields)
-    {}
+    {
+        $fields->insertAfter('Image', $fields->fieldByName('Root.Main.ImagePosition'));
+    }
 
     public function updateBlockSchema(&$blockSchema)
     {

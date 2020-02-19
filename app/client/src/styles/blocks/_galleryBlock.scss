@@ -1,0 +1,5 @@
+.gallery-block {
+  &__item {
+    @include grid-column-margin;
+  }
+}

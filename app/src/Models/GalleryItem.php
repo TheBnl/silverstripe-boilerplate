@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Models;
+namespace XD\Basic\Models;
 
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
@@ -18,7 +18,7 @@ use SilverStripe\Versioned\Versioned;
  */
 class GalleryItem extends DataObject
 {
-    private static $table_name = 'PlanetBio_GalleryItem';
+    private static $table_name = 'GalleryItem';
 
     private static $db = [
         'Title' => 'Varchar',

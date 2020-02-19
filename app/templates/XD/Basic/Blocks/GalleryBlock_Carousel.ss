@@ -2,10 +2,10 @@
     <div class="swiper-container gallery">
         <div class="swiper-wrapper gallery__wrapper grid-padding-x">
             <% loop $GalleryItems %>
-                <figure class="cell swiper-slide gallery-item gallery-item--slide" data-gallery-index="$Pos">
+                <figure class="cell swiper-slide gallery-block__item gallery-block__item--slide" data-gallery-index="$Pos">
                     <img src="$Image.FocusFill(400, 300).Link" alt="$Image.Title">
                     <% if $Title %>
-                        <figcaption class="gallery-item__caption">$Title</figcaption>
+                        <figcaption class="gallery-block__item-caption">$Title</figcaption>
                     <% end_if %>
                 </figure>
             <% end_loop %>

@@ -7,23 +7,13 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class GridFieldConfig_Sortable
+ * @package XD\Basic\GridField
  */
 class GridFieldConfig_Sortable extends GridFieldConfig_RecordEditor
 {
-    /**
-     * GridFieldConfig_Sortable constructor.
-     *
-     * @param int $itemsPerPage
-     * @param string $sortField
-     * @param boolean $versioned
-     */
-    public function __construct($itemsPerPage = null, $sortField = 'Sort', $versioned = false)
+    public function __construct($itemsPerPage = null, $sortField = 'Sort')
     {
         parent::__construct($itemsPerPage);
-        if ($versioned) {
-            //$this->addComponent(new GridFieldVersionedOrderableRows($sortField));
-        } else {
-            $this->addComponent(new GridFieldOrderableRows($sortField));
-        }
+        $this->addComponent(new GridFieldOrderableRows($sortField));
     }
 }

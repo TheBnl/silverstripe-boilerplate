@@ -1,6 +1,6 @@
 <?php
 
-namespace XD\Blocks;
+namespace XD\Basic\Blocks;
 
 use Colymba\BulkUpload\BulkUploader;
 use DNADesign\Elemental\Models\BaseElement;
@@ -12,7 +12,7 @@ use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\ORM\HasManyList;
 use Symbiote\GridFieldExtensions\GridFieldEditableColumns;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
-use XD\Models\GalleryItem;
+use XD\Basic\Models\GalleryItem;
 
 /**
  * Class GalleryBlock
@@ -45,6 +45,11 @@ class GalleryBlock extends BaseElement
         'Carousel' => 'Carousel',
     ];
 
+    public function getType()
+    {
+        return _t(__CLASS__ . '.BlockType', 'Gallery');
+    }
+
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function (FieldList $fields) {
@@ -55,9 +60,10 @@ class GalleryBlock extends BaseElement
                 $fields->insertAfter('Title', $gridField);
                 $config = $gridField->getConfig();
                 $config->removeComponentsByType(new GridFieldDataColumns());
-                $config->addComponent(new BulkUploader(null, null, true));
+                $config->addComponent($bulkUploader = new BulkUploader(null, null, true));
                 $config->addComponent(new GridFieldEditableColumns(), new GridFieldEditButton());
                 $config->addComponent(new GridFieldOrderableRows());
+                $bulkUploader->setUfSetup('setFolderName', "Gallery/{$this->Link()}");
             }
         });
 
@@ -69,11 +75,6 @@ class GalleryBlock extends BaseElement
         return json_encode(array_map(function (GalleryItem $item) {
             return $item->getJSON();
         }, $this->GalleryItems()->toArray()));
-    }
-
-    public function getType()
-    {
-        return _t(__CLASS__ . '.BlockType', 'Gallery');
     }
 
     public function inlineEditable()

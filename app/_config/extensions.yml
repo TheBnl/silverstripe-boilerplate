@@ -21,7 +21,7 @@ DNADesign\Elemental\Models\BaseElement:
 DNADesign\Elemental\Models\ElementContent:
   extensions:
     - XD\Basic\Extensions\ContentBlockExtension
-    - PlanetBio\Extensions\HasLink
+    - XD\Basic\Extensions\HasLink
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension

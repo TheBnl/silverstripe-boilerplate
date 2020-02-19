@@ -1,9 +1,7 @@
 <?php
 
-namespace PlanetBio\Extensions;
+namespace XD\Basic\Extensions;
 
-use DNADesign\Elemental\Models\ElementContent;
-use SebastianBergmann\CodeCoverage\Report\Text;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\DropdownField;

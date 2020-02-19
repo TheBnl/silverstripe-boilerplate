@@ -4,18 +4,20 @@ use DNADesign\Elemental\Extensions\ElementalPageExtension;
 use DNADesign\Elemental\Models\ElementalArea;
 use JonoM\FocusPoint\Extensions\FocusPointImageExtension;
 use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\Assets\File;
 use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Director;
-use SilverStripe\ElementalBannerBlock\Block\BannerBlock;
-use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\ORM\HasManyList;
+use XD\Basic\GridField\GridFieldConfig_Sortable;
+use XD\Basic\Models\Banner;
 
 /**
  * Class Page
  * @mixin ElementalPageExtension
  * @method FocusPointImageExtension|Image OpenGraphImage()
  * @method ElementalArea ElementalArea()
+ * @method HasManyList Banners()
  */
 class Page extends SiteTree
 {
@@ -23,6 +25,10 @@ class Page extends SiteTree
 
     private static $has_one = [
         'OpenGraphImage' => Image::class
+    ];
+
+    private static $has_many = [
+        'Banners' => Banner::class . '.Parent'
     ];
 
     private static $owns = [
@@ -34,6 +40,11 @@ class Page extends SiteTree
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+
+        $fields->addFieldsToTab('Root.Banners', [
+            GridField::create('Banners', _t(__CLASS__ . '.Banners', 'Banners'), $this->Banners(), GridFieldConfig_Sortable::create())
+        ]);
+
         $openGraphImage = UploadField::create('OpenGraphImage', _t(__CLASS__ . '.MetaImage', 'Meta image'));
         $fields->insertBefore('MetaDescription', $openGraphImage);
         if ($metaDescriptionField = $fields->fieldByName('Root.SEO.MetaDescription')) {
@@ -52,15 +63,15 @@ class Page extends SiteTree
      */
     public function getOGImage()
     {
+        /** @var Image|FocusPointImageExtension $image */
         $image = $this->OpenGraphImage();
         $this->extend('updateOGImage', $image);
         if ($image->exists()) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
         } elseif (
-            // Search for set BannerBlocks
-            ($area = $this->ElementalArea()) && $area->exists() &&
-            ($banner = $area->Elements()->filter(['ClassName' => BannerBlock::class])->first()) && $banner->exists() &&
-            ($image = $banner->File()) && $image->exists()
+            // Search for set Banners
+            ($banners = $this->Banners()) && $banners->exists() &&
+            ($image = $banners->first()->Image()) && $image->exists()
         ) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
         } else {

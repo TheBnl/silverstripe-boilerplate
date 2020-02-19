@@ -11,6 +11,7 @@ import {faPinterestSquare} from '@fortawesome/free-brands-svg-icons/faPinterestS
 import {faGooglePlusSquare} from '@fortawesome/free-brands-svg-icons/faGooglePlusSquare'
 import {faEnvelopeSquare} from '@fortawesome/free-solid-svg-icons/faEnvelopeSquare';
 import {faEnvelope} from '@fortawesome/free-regular-svg-icons/faEnvelope';
+import {faPlay} from '@fortawesome/free-solid-svg-icons/faPlay';
 
 /**
  * Add all the fontawesome icons
@@ -28,7 +29,8 @@ export const initFontAwesome = function () {
     faTumblrSquare,
     faFacebookSquare,
     faEnvelopeSquare,
-    faEnvelope
+    faEnvelope,
+    faPlay
   ]);
 
   dom.watch();

@@ -3,7 +3,7 @@
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div class="cell">
-                    <h2><a href="$BaseHref">$SiteConfig.Title</a></h2>
+                    <h1><a href="$BaseHref">$SiteConfig.Title</a></h1>
                 </div>
             </div>
         </div>

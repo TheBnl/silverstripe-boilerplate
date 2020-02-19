@@ -3,8 +3,13 @@
 @import "settings";
 @import "~foundation-sites/scss/foundation";
 
+// Photoswipe
+// @import "photoswipeSettings";
+// @import "~photoswipe/src/css/main";
+// @import "~photoswipe/src/css/default-skin/default-skin";
+
 // Swiper
-// @import "~swiper/dist/css/swiper.min";
+@import "~swiper/dist/css/swiper.min";
 
 // Get everything or only the modules you need
 @include foundation-everything;
@@ -19,6 +24,8 @@
 @import "blocks/block";
 @import "blocks/bannerBlock";
 @import "blocks/elementContent";
+// @import "blocks/galleryBlock";
+// @import "blocks/videoBlock";
 
 // Layout
 @import "layout/page";

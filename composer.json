@@ -36,6 +36,9 @@
         "phpunit/phpunit": "*",
         "lekoala/silverstripe-debugbar": "*"
     },
+    "autoload": {
+        "psr-4": {"XD\\Basic\\": "app/src"}
+    },
     "scripts": {
         "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go",
         "post-create-project-cmd": "cd ./app && yarn install"

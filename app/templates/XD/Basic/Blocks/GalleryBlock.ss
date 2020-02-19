@@ -1,11 +1,11 @@
 <div class="grid-container" data-gallery='$JSONGallery'>
     <div class="grid-x grid-padding-x small-up-2 medium-up-3 gallery-block__gallery">
-        <% loop $GalleryItems %>
-            <div class="cell">
-                <figure class="gallery-item" data-gallery-index="$Pos">
+        <% loop $GalleryItems.Limit(4) %>
+            <div class="cell<% if $Pos == 4 %> hide-for-medium<% end_if %>">
+                <figure class="gallery-block__item" data-gallery-index="$Pos">
                     <img src="$Image.FocusFill(400, 300).Link" alt="$Image.Title">
                     <% if $Title %>
-                        <figcaption class="gallery-item__caption">$Title</figcaption>
+                        <figcaption class="gallery-block__item-caption">$Title</figcaption>
                     <% end_if %>
                 </figure>
             </div>

@@ -29,7 +29,7 @@ class SiteConfigExtension extends DataExtension
 {
     private static $db = [
         'Phone' => 'Varchar(25)',
-        'Email' => 'Varchar(255)'
+        'Email' => 'Varchar'
     ];
 
     private static $has_many = [
