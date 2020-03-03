@@ -4,7 +4,7 @@
     "license": "BSD-3-Clause",
     "description": "Boilerplate template to quickly kick off a new SilverStripe project",
     "require": {
-        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-plugin": "^1.3",
         "silverstripe/recipe-cms": "4.x@stable",
         "silverstripe/googlesitemaps": "*",
         "silverstripe/userforms": "*",
@@ -29,7 +29,7 @@
         "tractorcow/silverstripe-opengraph": "^4",
         "axllent/silverstripe-scaled-uploads": "*",
         "hubertusanton/silverstripe-seo": "*",
-        "xddesigners/silverstripe-dropzonefield": "dev-master",
+        "xddesigners/silverstripe-dropzonefield": "*",
         "xddesigners/page-content-block": "*"
     },
     "require-dev": {
@@ -37,7 +37,9 @@
         "lekoala/silverstripe-debugbar": "*"
     },
     "autoload": {
-        "psr-4": {"XD\\Basic\\": "app/src"}
+        "psr-4": {
+            "XD\\Basic\\": "app/src"
+        }
     },
     "scripts": {
         "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go",

@@ -1,4 +1,8 @@
-import $ from 'jquery';
+import jquery from 'jquery';
+window.jQuery = jquery;
+window.$ = jquery;
+window.jquery = jquery;
+import 'jquery-validation';
 import { initForms } from './modules/forms';
 import { initNavigation } from './modules/navigation';
 import { initFontAwesome } from './modules/fontAwesome';
