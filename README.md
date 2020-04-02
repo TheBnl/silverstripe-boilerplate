@@ -51,13 +51,16 @@ Which has the benefit of having the whole project at one place, not separated in
 
     app
     |-- src // your php code in here
-    |-- css // the css in here is generated from the files in /scss
+    |-- client // your frond end code goes in here
+    |   |-- src
+    |   |   |-- js // your js files and modules
+    |   |   |-- styles // your sass files and modules
+    |   |-- dist // compiled code
     |-- images // project images
-    |-- javascript // all your self written javascript
-    |-- scss // your scss, which gets processed and written into /css
     |-- templates // your templates, that others put into themes/mytheme/templates
-    |-- thirdparty // all thirdparty code goes in here (jquery plugins)
     |-- .gitignore
+    |-- .htaccess
     |-- _config.php
-    |-- Gemfile // all gem requirements to work with compass and foundaton
-    |-- config.rb // config file for sass
+    |-- package.json
+    |-- webpack.mix.js
+    |-- yarn.lock

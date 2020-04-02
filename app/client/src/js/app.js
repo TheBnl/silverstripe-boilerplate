@@ -16,15 +16,11 @@ import { initScrollTo, scrollTo } from './modules/scrollTo';
 
   // If Foundation modules are installed uncomment this line
   //$(document).foundation();
-
-  $(document).ready(() => {
-    initForms();
-    initNavigation();
-    initFontAwesome();
-    initScrollTo();
-    // initVideo();
-    // initGallery();
-    // initGallerySwiper();
-  });
-
+  initForms();
+  initNavigation();
+  initFontAwesome();
+  initScrollTo();
+  // initVideo();
+  // initGallery();
+  // initGallerySwiper();
 }

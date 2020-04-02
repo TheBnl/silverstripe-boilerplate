@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /admin
-Crawl-delay: 15
-Sitemap: http://www.yoursitename.nl/sitemap.xml
