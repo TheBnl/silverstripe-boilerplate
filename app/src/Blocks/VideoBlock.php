@@ -7,6 +7,8 @@ use XD\Basic\Extensions\EmbedableVideo;
 
 /**
  * Class VideoBlock
+ * Enable this block by editing Page.disallowed_elements in elemental.yml
+ *
  * @package Viva\Basic\Blocks
  * @mixin EmbedableVideo
  */

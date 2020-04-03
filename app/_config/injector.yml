@@ -6,3 +6,5 @@ SilverStripe\Core\Injector\Injector:
     class: XD\Basic\Forms\BaseForm
   Symbiote\Addressable\GeocodeServiceInterface:
     class: XD\Basic\Services\NationaalGeoregisterService
+  Symbiote\Addressable\Addressable:
+    class: XD\Basic\Injector\Addressable

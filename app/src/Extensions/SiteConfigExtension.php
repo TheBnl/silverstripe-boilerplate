@@ -56,33 +56,4 @@ class SiteConfigExtension extends DataExtension
 
         return $fields;
     }
-
-    /**
-     * Return a formatted address
-     *
-     * @return string
-     */
-    public function getFormattedAddress()
-    {
-        return implode(', ', array(
-            $this->owner->getField('Address'),
-            $this->owner->getField('Postcode'),
-            $this->owner->getField('Suburb')
-        ));
-    }
-
-    /**
-     * Return a directional link to Google Maps
-     *
-     * @return string
-     */
-    public function getGoogleMapsLink()
-    {
-        $address = urlencode($this->owner->getFullAddress());
-        $latitude = $this->owner->getField("Lat");
-        $longitude = $this->owner->getField("Lng");
-        $title = $this->owner->Title;
-
-        return "https://www.google.nl/maps/dir//$title+$address/@$latitude,$longitude,16z/?hl=nl";
-    }
 }
