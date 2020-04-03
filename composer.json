@@ -30,7 +30,11 @@
         "axllent/silverstripe-scaled-uploads": "*",
         "hubertusanton/silverstripe-seo": "*",
         "xddesigners/silverstripe-dropzonefield": "*",
-        "xddesigners/page-content-block": "*"
+        "xddesigners/page-content-block": "*",
+        "swisnl/geocoder-php-nationaal-georegister-provider": "*",
+        "guzzlehttp/guzzle": "*",
+        "php-http/guzzle6-adapter": "*",
+        "php-http/message": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",

@@ -4,3 +4,5 @@ Name: injector
 SilverStripe\Core\Injector\Injector:
   SilverStripe\Forms\Form:
     class: XD\Basic\Forms\BaseForm
+  Symbiote\Addressable\GeocodeServiceInterface:
+    class: XD\Basic\Services\NationaalGeoregisterService
