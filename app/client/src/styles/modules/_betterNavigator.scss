@@ -1,0 +1,10 @@
+#BetterNavigator {
+  bottom: 0;
+  left: 0;
+  right: auto !important;
+  top: auto !important;
+  opacity: .5;
+  &.open {
+    opacity: 1;
+  }
+}
