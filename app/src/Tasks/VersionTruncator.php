@@ -76,9 +76,14 @@ class VersionTruncator extends BuildTask
         $excludeVersions[$liveVersion] = $liveVersion;
         $excludeVersions[$draftVersion] = $draftVersion;
         $excluded = implode(',', array_filter($excludeVersions));
+        $tableList = DB::table_list();
         foreach ($tables as $table) {
-            $this->log("Cleaning $table [$id] exclude ($excluded)");
-            DB::query("DELETE FROM {$table}_Versions WHERE RecordID=$id AND Version NOT IN($excluded)");
+            if (in_array($table, $tableList)) {
+                $this->log("Cleaning $table [$id] exclude ($excluded)");
+                DB::query("DELETE FROM {$table}_Versions WHERE RecordID=$id AND Version NOT IN($excluded)");
+            } else {
+                $this->log("Skip $table not in database");
+            }
         }
     }
 
