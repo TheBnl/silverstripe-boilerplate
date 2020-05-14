@@ -1,7 +1,7 @@
 ---
 Name: mycookieconsent
 ---
-Broarm\CookieConsent\CookieConsentCheckBoxField:
+Broarm\CookieConsent\Forms\CookieConsentCheckBoxField:
   default_classes:
     - 'switch-input'
 
