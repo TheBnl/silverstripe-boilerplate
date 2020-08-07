@@ -2,6 +2,13 @@ const mix = require('laravel-mix');
 require('laravel-mix-polyfill');
 
 mix
+  .webpackConfig({
+    resolve: {
+      modules: [
+        path.resolve(__dirname, 'node_modules')
+      ]
+    }
+  })
   .setResourceRoot('/app/')
   .js('client/src/js/app.js', 'client/dist/js')
   .sass('client/src/styles/app.scss', 'client/dist/styles')
