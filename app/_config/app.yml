@@ -33,6 +33,10 @@ LeKoala\DebugBar\DebugBar:
   check_local_ip: false
   enabled_in_admin: false
   auto_debug: true
+DNADesign\ElementalUserForms\Model\ElementForm:
+  block_default_userforms_css: true
+SilverStripe\UserForms\Model\UserDefinedForm:
+  block_default_userforms_css: true
 ---
 Except:
   environment: 'live'
