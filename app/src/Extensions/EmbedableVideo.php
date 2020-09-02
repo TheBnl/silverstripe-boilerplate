@@ -4,6 +4,7 @@ namespace XD\Basic\Extensions;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
+use SilverStripe\Assets\Image;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
@@ -31,7 +32,7 @@ class EmbedableVideo extends DataExtension
     ];
 
     private static $has_one = [
-        'VideoPreview' => VideoPreview::class
+        'VideoPreview' => Image::class
     ];
 
     private static $owns = [
