@@ -19,6 +19,10 @@ class BaseElementExtension extends DataExtension
      */
     public function getBemClassName()
     {
-        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', ClassInfo::shortName($this->owner)));
+        $class = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', ClassInfo::shortName($this->owner)));
+        if( $class=='element-virtual' && $this->owner->LinkedElementID ){
+            $class .= ' ' . strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', ClassInfo::shortName($this->owner->LinkedElement())));
+        }
+        return $class;
     }
 }
