@@ -28,7 +28,6 @@
         "colymba/gridfield-bulk-editing-tools": "^3",
         "tractorcow/silverstripe-opengraph": "^4",
         "axllent/silverstripe-scaled-uploads": "*",
-        "hubertusanton/silverstripe-seo": "*",
         "xddesigners/silverstripe-dropzonefield": "*",
         "xddesigners/page-content-block": "*",
         "swisnl/geocoder-php-nationaal-georegister-provider": "*",
@@ -62,12 +61,14 @@
             "app/.htaccess",
             "app/_config.php",
             "app/_config/app.yml",
+            "app/_config/mimevalidator.yml",
             "app/_config/mysite.yml",
             "app/src/Page.php",
             "app/src/PageController.php"
         ],
         "public-files-installed": [
             ".htaccess",
+            "index.php",
             "install-frameworkmissing.html",
             "install.php",
             "web.config"

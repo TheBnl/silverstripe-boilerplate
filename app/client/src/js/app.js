@@ -15,7 +15,7 @@ import { initScrollTo, scrollTo } from './modules/scrollTo';
   'use strict';
 
   // If Foundation modules are installed uncomment this line
-  //$(document).foundation();
+  // $(document).foundation();
   initForms();
   initNavigation();
   initFontAwesome();
