@@ -10,9 +10,9 @@ SilverStripe\Core\Injector\Injector:
   MailHandler:
     class: Monolog\Handler\NativeMailerHandler
     constructor:
-      - 'errors@xd.nl'
+      - 'errors@mysite.nl'
       - '[Error] mysite.nl'
-      - 'errors@xd.nl'
+      - 'errors@mysite.nl'
     properties:
       ContentType: text/html
       Formatter: %$SilverStripe\Logging\DetailedErrorFormatter

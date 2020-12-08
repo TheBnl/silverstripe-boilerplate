@@ -1,5 +1,6 @@
 ---
 Name: injector
+after: '#addressable'
 ---
 SilverStripe\Core\Injector\Injector:
   SilverStripe\Forms\Form:

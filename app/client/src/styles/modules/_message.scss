@@ -1,0 +1,19 @@
+.message {
+  @extend .callout;
+
+  &.info {
+    @extend .primary;
+  }
+
+  &.good {
+    @extend .success;
+  }
+
+  &.warning {
+    @extend .warning;
+  }
+
+  &.bad {
+    @extend .alert;
+  }
+}

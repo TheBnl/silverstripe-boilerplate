@@ -10,12 +10,13 @@ import { initScrollTo, scrollTo } from './modules/scrollTo';
 // import { initGallerySwiper } from './modules/swiper';
 // import { initGallery } from './modules/gallery';
 // import { initVideo } from './modules/video';
+import { OffCanvas } from 'foundation-sites';
 
 {
   'use strict';
 
   // If Foundation modules are installed uncomment this line
-  // $(document).foundation();
+  $(document).foundation();
   initForms();
   initNavigation();
   initFontAwesome();

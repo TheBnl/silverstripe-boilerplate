@@ -28,6 +28,7 @@
         "colymba/gridfield-bulk-editing-tools": "^3",
         "tractorcow/silverstripe-opengraph": "^4",
         "axllent/silverstripe-scaled-uploads": "*",
+        "axllent/silverstripe-image-optimiser": "*",
         "xddesigners/silverstripe-dropzonefield": "*",
         "xddesigners/page-content-block": "*",
         "swisnl/geocoder-php-nationaal-georegister-provider": "*",

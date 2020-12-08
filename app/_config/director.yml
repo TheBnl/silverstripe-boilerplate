@@ -1,6 +1,0 @@
----
-Name: director
----
-SilverStripe\Control\Director:
-  rules:
-    'robots.txt': 'XD\Basic\Controllers\RobotsController'

@@ -1,0 +1,8 @@
+---
+Name: approutes
+After: '#googlesitemaproutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'robots.txt': 'XD\Basic\Controllers\RobotsController'
+    #'robots': 'XD\Basic\Controllers\RobotsController'

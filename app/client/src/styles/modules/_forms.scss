@@ -83,6 +83,7 @@ form {
 }
 
 button,
+input[type="button"],
 input[type="submit"] {
   @include button;
   &.ajax-loading:not(.error),

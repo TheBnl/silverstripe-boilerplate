@@ -1,14 +1,15 @@
-/**
- * Toggle the active class on the hamburger
- * Set navigation and navigationActive strings to your used classes
- */
-export const initNavigation = function() {
-  let hamburger = $('.c-hamburger');
-  let navigation = $('.your-nav-class');
-  let navigationActive = 'your-nav-class--active';
+const hamburger = $('.hamburger');
 
-  hamburger.on('click', () => {
-    hamburger.toggleClass('is-active');
-    navigation.toggleClass(navigationActive);
-  });
+export const initNavigation = function() {
+  hamburger.on('click', openNavigation);
+  $(window).on('opened.zf.offCanvas', openNavigation);
+  $(window).on('close.zf.offCanvas', closeNavigation);
 };
+
+function openNavigation() {
+  hamburger.addClass('is-active');
+}
+
+function closeNavigation() {
+  hamburger.removeClass('is-active');
+}

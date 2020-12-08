@@ -10,7 +10,8 @@ use SilverStripe\View\ArrayData;
 class RobotsController extends Controller
 {
     private static $allowed_actions = [
-        'index'
+        'index',
+        'robots'
     ];
 
     private static $params = [

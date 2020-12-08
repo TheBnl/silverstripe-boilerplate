@@ -1,0 +1,8 @@
+.site-nav {
+  &__item {
+    display: none;
+    @include breakpoint(large) {
+      display: flex;
+    }
+  }
+}
