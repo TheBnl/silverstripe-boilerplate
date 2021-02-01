@@ -2,8 +2,11 @@
 
 use Broarm\CookieConsent\CookieConsent;
 use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Control\Director;
 use SilverStripe\Core\Environment;
 use SilverStripe\ORM\FieldType\DBHTMLText;
+use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\Requirements;
 
 class PageController extends ContentController
@@ -33,6 +36,12 @@ class PageController extends ContentController
     private $critical_css = [
         PageController::class => 'app_critical.css',
     ];
+
+    /**
+     * Store for page cache key
+     * @var string
+     */
+    protected static $page_cache_key;
 
     /**
      * Initiate the controller
@@ -105,6 +114,11 @@ class PageController extends ContentController
         return null;
     }
 
+    /**
+     * Find CriticalCSS file for given class
+     *
+     * @return mixed|string|null
+     */
     public function getCriticalCSS()
     {
         $criticalFile = null;
@@ -120,5 +134,34 @@ class PageController extends ContentController
         }
 
         return $criticalFile;
+    }
+
+    public function PageCacheKey()
+    {
+        if (self::$page_cache_key) {
+            return self::$page_cache_key;
+        }
+
+        $fragments = [];
+        // Start with the class
+        $fragments[] = $this->ClassName;
+        // Identify by ID, or URL as a fallback. Note that Security pages (and maybe others?) generate a random ID so this may be redundant
+        $fragments[] = $this->ID ? $this->ID : $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        // Identify the action and ID
+        $fragments[] = json_encode($this->request->params());
+        // Ensure menus are up to date
+        $fragments[] = SiteTree::get()->max('LastEdited'); // Catch created / edited
+        $fragments[] = SiteTree::get()->count(); // Catch deleted
+        // Dev mode can affect output
+        $fragments[] = Director::get_environment_type();
+        // Split cache by protocol to prevent accidental mixed-content issues
+        $fragments[] = Director::protocol();
+        // Get reading mode
+        $fragments[] = Versioned::get_reading_mode();
+
+        // Extension hook
+        $this->extend('updatePageCacheKey', $fragments);
+
+        return $this->cache_key = md5(serialize($fragments));
     }
 }
