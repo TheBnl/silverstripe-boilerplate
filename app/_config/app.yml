@@ -37,6 +37,8 @@ DNADesign\ElementalUserForms\Model\ElementForm:
   block_default_userforms_css: true
 SilverStripe\UserForms\Model\UserDefinedForm:
   block_default_userforms_css: true
+JonoM\ShareCare\ShareCare:
+  enable_facebook_cache_clear: false
 ---
 Except:
   environment: 'live'

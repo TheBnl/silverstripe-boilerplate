@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 require('laravel-mix-polyfill');
+require('laravel-mix-critical');
 
 mix
   .webpackConfig({
@@ -20,3 +21,16 @@ mix
     useBuiltIns: "usage",
     targets: {"ie": 11}
   });
+  // .critical({
+  //   enabled: mix.inProduction(),
+  //   urls: [
+  //     {
+  //       src: 'http://mysite.test/',
+  //       dest: 'client/dist/styles/app_critical.css'
+  //     }
+  //   ],
+  //   options: {
+  //     minify: true,
+  //   },
+  // });
+

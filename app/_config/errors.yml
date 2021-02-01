@@ -6,7 +6,7 @@ Except:
 SilverStripe\Core\Injector\Injector:
   Psr\Log\LoggerInterface:
     calls:
-      MailHandler: [ pushHandler, [ %$MailHandler ] ]
+      MailHandler: [ pushHandler, [ '%$MailHandler' ] ]
   MailHandler:
     class: Monolog\Handler\NativeMailerHandler
     constructor:
@@ -15,4 +15,4 @@ SilverStripe\Core\Injector\Injector:
       - 'errors@mysite.nl'
     properties:
       ContentType: text/html
-      Formatter: %$SilverStripe\Logging\DetailedErrorFormatter
+      Formatter: '%$SilverStripe\Logging\DetailedErrorFormatter'

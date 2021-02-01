@@ -2,6 +2,7 @@
 
 namespace XD\Basic\Forms;
 
+use SilverStripe\Control\RequestHandler;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\ConfirmedPasswordField;
 use SilverStripe\Forms\FieldList;
@@ -10,6 +11,7 @@ use SilverStripe\Forms\FormField;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\Validator;
 use SilverStripe\ORM\ArrayList;
 
 /**
@@ -21,13 +23,14 @@ class BaseForm extends Form
     private static $set_placeholder_required_star = true;
 
     /**
-     * @param \SilverStripe\Control\Controller $controller
-     * @param String     $name
-     * @param FieldList  $fields
-     * @param FieldList  $actions
-     * @param null       $validator
+     * BaseForm constructor.
+     * @param RequestHandler $controller
+     * @param $name
+     * @param FieldList $fields
+     * @param FieldList $actions
+     * @param Validator|null $validator
      */
-    public function __construct($controller, $name, FieldList $fields, FieldList $actions, $validator = null)
+    public function __construct(RequestHandler $controller, $name, FieldList $fields, FieldList $actions, Validator $validator = null)
     {
         parent::__construct($controller, $name, $fields, $actions, $validator);
         $this->processFields(
@@ -40,27 +43,22 @@ class BaseForm extends Form
     }
 
     /**
-     * @param FieldList $fields
-     * @param RequiredFields $r
+     * @param ArrayList $fields
+     * @param Validator|null $validator
      * @param bool $setPlaceholder
      * @param bool $setRequiredPlaceholder
-     *
-     * @return static
+     * @return $this
      */
-    protected function processFields(
-        ArrayList $fields,
-        RequiredFields $r = null,
-        $setPlaceholder = true,
-        $setRequiredPlaceholder = true
-    ) {
+    protected function processFields(ArrayList $fields, Validator $validator = null, $setPlaceholder = true, $setRequiredPlaceholder = true)
+    {
         if ($setPlaceholder) {
             foreach ($fields as $f) {
                 if ($f instanceof CompositeField) {
-                    $this->processFields($f->FieldList(), $r, $setPlaceholder, $setRequiredPlaceholder);
+                    $this->processFields($f->FieldList(), $validator, $setPlaceholder, $setRequiredPlaceholder);
                 } elseif ($f instanceof ConfirmedPasswordField) {
-                    $this->processFields($f->getChildren(), $r, $setPlaceholder, $setRequiredPlaceholder);
+                    $this->processFields($f->getChildren(), $validator, $setPlaceholder, $setRequiredPlaceholder);
                 } elseif ($setPlaceholder && ($f instanceof TextField || $f instanceof TextAreaField)) {
-                    $surFix = $r && $r->fieldIsRequired($f->getName()) && $setRequiredPlaceholder ? ' *' : '';
+                    $surFix = $validator && $validator->fieldIsRequired($f->getName()) && $setRequiredPlaceholder ? ' *' : '';
                     $this->setPlaceHolder($f, $surFix);
                 }
             }

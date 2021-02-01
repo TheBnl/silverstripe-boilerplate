@@ -1,0 +1,1 @@
+<img <% if $Lazy %>class="lazy" data-<% end_if %>src="$Last.URL.ATT" <% if $Lazy %>data-<% end_if %>srcset="<% loop $Me %>$URL.ATT {$Width}w,<% end_loop %>" style="transform-origin: {$Last.PercentageX}% {$Last.PercentageY}%" />

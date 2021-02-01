@@ -22,6 +22,8 @@
 <body>
     $GTMFallback
 
+    $OpenGraphImage.ScaleWidth(500).Intrinsic
+
     <div class="off-canvas-wrapper">
         <div class="off-canvas position-right" id="side-nav" data-off-canvas data-transition="overlap">
             <% include SideNav %>

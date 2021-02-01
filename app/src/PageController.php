@@ -26,6 +26,15 @@ class PageController extends ContentController
     private static $allowed_actions = [];
 
     /**
+     * Define files for each class you've rendered critical css for
+     *
+     * @var string[]
+     */
+    private $critical_css = [
+        PageController::class => 'app_critical.css',
+    ];
+
+    /**
      * Initiate the controller
      *
      * @throws Exception
@@ -33,8 +42,21 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
+
         Requirements::javascript(project() . '/client/dist/js/app.js');
-        Requirements::css(project() . '/client/dist/styles/app.css');
+
+        $criticalFile = $this->getCriticalCSS();
+        $styleSheet = project() . '/client/dist/styles/app.css';
+        if ($criticalCss = file_get_contents(project() . "/client/dist/styles/$criticalFile")) {
+            Requirements::insertHeadTags(sprintf('
+                <style type="text/css">%s</style>
+                <link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
+                <noscript><link rel="stylesheet" href="%s"></noscript>
+                ', $criticalCss, $styleSheet, $styleSheet
+            ));
+        } else {
+            Requirements::css($styleSheet);
+        }
 
         if ($typeKit = Environment::getEnv('TYPEKIT_ID')) {
             Requirements::insertHeadTags(sprintf(
@@ -81,5 +103,22 @@ class PageController extends ContentController
         }
 
         return null;
+    }
+
+    public function getCriticalCSS()
+    {
+        $criticalFile = null;
+        foreach ($this->critical_css as $class => $css) {
+            if ($this instanceof $class) {
+                $criticalFile = $css;
+                break;
+            }
+        }
+
+        if (!$criticalFile) {
+            $criticalFile = end($this->critical_css);
+        }
+
+        return $criticalFile;
     }
 }
