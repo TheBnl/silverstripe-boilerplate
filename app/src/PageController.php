@@ -55,8 +55,9 @@ class PageController extends ContentController
         Requirements::javascript(project() . '/client/dist/js/app.js');
 
         $criticalFile = $this->getCriticalCSS();
+        $criticalPath = project() . "/client/dist/styles/$criticalFile";
         $styleSheet = project() . '/client/dist/styles/app.css';
-        if ($criticalCss = file_get_contents(project() . "/client/dist/styles/$criticalFile")) {
+        if (file_exists($criticalPath) && $criticalCss = file_get_contents($criticalPath)) {
             Requirements::insertHeadTags(sprintf('
                 <style type="text/css">%s</style>
                 <link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">

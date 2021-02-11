@@ -4,6 +4,9 @@ Name: extensions
 SilverStripe\Control\Controller:
   extensions:
     - XD\Basic\Extensions\MobileDetectExtension
+SilverStripe\Assets\File:
+  extensions:
+    - XD\Basic\Extensions\ImageExtension
 SilverStripe\Assets\Image:
   extensions:
     - XD\Basic\Extensions\ImageExtension
