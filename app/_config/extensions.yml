@@ -15,9 +15,9 @@ SilverStripe\Admin\LeftAndMain:
     - XD\Basic\Extensions\MyLeftAndMainExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - XD\Basic\Extensions\SiteConfigExtension
     - Symbiote\Addressable\Addressable
     - Symbiote\Addressable\Geocodable
+    - XD\Basic\Extensions\SiteConfigExtension
 DNADesign\Elemental\Models\BaseElement:
   extensions:
     - XD\Basic\Extensions\BaseElementExtension
