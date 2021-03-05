@@ -22,23 +22,27 @@ class NationaalGeoregisterService implements GeocodeServiceInterface
      */
     public function addressToPoint($address, $region = '')
     {
-        $guzzle = new GuzzleClient([
-            'timeout' => 2.0,
-            'verify' => false,
-        ]);
-        $client  = new HttpClient($guzzle);
-        $geocoder = new NationaalGeoregister($client);
-        $query = GeocodeQuery::create($address);
-        $result = $geocoder->geocodeQuery($query);
+        try {
+            $guzzle = new GuzzleClient([
+                'timeout' => 2.0,
+                'verify' => false,
+            ]);
+            $client = new HttpClient($guzzle);
+            $geocoder = new NationaalGeoregister($client);
+            $query = GeocodeQuery::create($address);
+            $result = $geocoder->geocodeQuery($query);
 
-        if ($result->isEmpty()) {
-            throw new GeocodeServiceException('No result found', 0, null);
+            if ($result->isEmpty()) {
+                throw new GeocodeServiceException('No result found', 0, null);
+            }
+
+            $location = $result->first()->getCoordinates();
+            return [
+                'lat' => (float)$location->getLatitude(),
+                'lng' => (float)$location->getLongitude()
+            ];
+        } catch(Exception $e){
+            return null;
         }
-
-        $location = $result->first()->getCoordinates();
-        return [
-            'lat' => (float)$location->getLatitude(),
-            'lng' => (float)$location->getLongitude()
-        ];
     }
 }
