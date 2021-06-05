@@ -19,6 +19,7 @@
         "mobiledetect/mobiledetectlib": "*",
         "gdmedia/ss-auto-git-ignore": "*",
         "undefinedoffset/silverstripe-nocaptcha": "*",
+        "bramdeleeuw/silverstripe-inertia": "*",
         "bramdeleeuw/silverstripe-schema": "*",
         "bramdeleeuw/cookieconsent": "*",
         "jonom/focuspoint": "*",

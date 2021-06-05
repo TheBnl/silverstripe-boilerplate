@@ -1,1 +1,1 @@
-$ElementalArea
+$Inertia($pageJson)

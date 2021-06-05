@@ -8,6 +8,7 @@ use SilverStripe\Core\Environment;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\Requirements;
+use SilverStripe\Control\HTTPRequest;
 
 class PageController extends ContentController
 {
@@ -98,6 +99,22 @@ class PageController extends ContentController
                 $gaCode
             ));
         }
+    }
+
+    public function index(HTTPRequest $request)
+    {
+        $routes = json_encode(array_map(function (SiteTree $menuItem) {
+            return [
+                'title' => $menuItem->Title,
+                'link' => $menuItem->Link(),
+            ];
+        }, $this->Menu(1)->toArray()));
+        Requirements::insertHeadTags("<script>window.routes = {$routes}</script>");
+
+        return \Inertia\Inertia::render('Page', [
+            'title' => $this->Title,
+            'content' => $this->Content
+        ]);
     }
 
     /**

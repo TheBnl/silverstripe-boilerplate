@@ -22,18 +22,7 @@
 <body>
     $GTMFallback
 
-    <div class="off-canvas-wrapper">
-        <div class="off-canvas position-right" id="side-nav" data-off-canvas data-transition="overlap">
-            <% include SideNav %>
-        </div>
-        <div class="off-canvas-content" data-off-canvas-content>
-            <% include Header %>
-            <div class="layout" role="main">
-                $Layout
-            </div>
-            <% include Footer %>
-        </div>
-    </div>
+    $Layout
 
     <% include CookieConsent %>
     <% if not $IsDev %>$BetterNavigator<% end_if %>

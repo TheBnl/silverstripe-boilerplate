@@ -1,27 +1,16 @@
-import jquery from 'jquery';
-window.jQuery = jquery;
-window.$ = jquery;
-window.jquery = jquery;
-import 'jquery-validation';
-import { initForms } from './modules/forms';
-import { initNavigation } from './modules/navigation';
-import { initFontAwesome } from './modules/fontAwesome';
-import { initScrollTo, scrollTo } from './modules/scrollTo';
-// import { initGallerySwiper } from './modules/swiper';
-// import { initGallery } from './modules/gallery';
-// import { initVideo } from './modules/video';
-import { OffCanvas } from 'foundation-sites';
+import Vue from 'vue'
+import { createInertiaApp } from '@inertiajs/inertia-vue'
+import Layout from './Layout/Layout'
 
-{
-  'use strict';
-
-  // If Foundation modules are installed uncomment this line
-  $(document).foundation();
-  initForms();
-  initNavigation();
-  initFontAwesome();
-  initScrollTo();
-  // initVideo();
-  // initGallery();
-  // initGallerySwiper();
-}
+createInertiaApp({
+  resolve: name => {
+    const page = require(`./Pages/${name}`).default;
+    page.layout = page.layout || Layout;
+    return page;
+  },
+  setup({ el, app, props }) {
+    new Vue({
+      render: h => h(app, props),
+    }).$mount(el)
+  },
+})
