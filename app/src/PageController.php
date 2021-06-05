@@ -52,6 +52,9 @@ class PageController extends ContentController
     protected function init()
     {
         parent::init();
+        if ($this->getRequest()->getHeader('X-Inertia')) {
+            return;
+        }
 
         Requirements::javascript(project() . '/client/dist/js/app.js');
 
@@ -99,10 +102,7 @@ class PageController extends ContentController
                 $gaCode
             ));
         }
-    }
 
-    public function index(HTTPRequest $request)
-    {
         $routes = json_encode(array_map(function (SiteTree $menuItem) {
             return [
                 'title' => $menuItem->Title,
@@ -110,7 +110,10 @@ class PageController extends ContentController
             ];
         }, $this->Menu(1)->toArray()));
         Requirements::insertHeadTags("<script>window.routes = {$routes}</script>");
+    }
 
+    public function index(HTTPRequest $request)
+    {
         return \Inertia\Inertia::render('Page', [
             'title' => $this->Title,
             'content' => $this->Content
