@@ -27,12 +27,13 @@ class VideoPreview extends Image
      * @throws GuzzleException
      * @throws Exception
      */
-    public function download($url)
+    public function download($url, $fileName)
     {
         $client = new Client(['http_errors' => false]);
         $folder = Folder::find_or_make($this->folderName);
-        $sourcePath = pathinfo($url);
-        $fileName = explode('?', $sourcePath['basename'])[0];
+        if( !$fileName ) {
+            $fileName = sha1($url) . '.jpg';
+        }
         $request = $client->request('GET', $url);
         $stream = $request->getBody();
         if ($stream->isReadable()) {
