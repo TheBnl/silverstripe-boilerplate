@@ -107,8 +107,10 @@ class EmbedableVideo extends DataExtension
     public function savePreview()
     {
         if (($resource = $this->owner->getVideoResource()) && $url = $resource->getPreviewURL()) {
+            $filter = URLSegmentFilter::create();
+            $fileName = $filter->filter($this->owner->VideoURL) . '.jpg';
             $preview = VideoPreview::create();
-            $preview->download($url);
+            $preview->download($url,$fileName);
             $preview->write();
             $preview->publishSingle();
             $this->owner->VideoPreviewID = $preview->ID;
