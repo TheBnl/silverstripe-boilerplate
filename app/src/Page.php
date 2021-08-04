@@ -55,6 +55,35 @@ class Page extends SiteTree
         return $fields;
     }
 
+    public function getActiveBanners()
+    {
+        $banners = $this->Banners()->Sort('Sort ASC');
+
+        // if (!$banners->exists()) {
+        //     // use featured
+        //     if ($this->FeaturedImageID) {
+        //         $banner = Banner::create();
+        //         $banner->Image = $this->FeaturedImage();
+        //         return ArrayList::create([$banner]);
+        //     }
+
+        //     // bubble up
+        //     if ($this->Parent) {
+        //         $parent = $this->Parent;
+        //         $limit = 0;
+        //         while (!is_null($parent) && $parent->Banners()->Count() <= 0 && ++$limit < 10) {
+        //             $parent = $parent->Parent;
+        //         }
+        //         if (!is_null($parent)) {
+        //             $banners = $parent->Banners();
+        //         }
+        //     }
+        // }
+
+        $this->extend('updateBanners', $banners);
+        return $banners;
+    }
+
     /**
      * Override the default Open Graph Image
      * @see \TractorCow\OpenGraph\Extensions\OpenGraphObjectExtension::getOGImage()

@@ -3,18 +3,21 @@ require('laravel-mix-polyfill');
 require('laravel-mix-critical');
 
 mix
-  .webpackConfig({
-    resolve: {
-      modules: [
-        path.resolve(__dirname, 'node_modules')
-      ]
-    }
-  })
+  // .webpackConfig({
+  //   resolve: {
+  //     modules: [
+  //       path.resolve(__dirname, 'node_modules')
+  //     ]
+  //   }
+  // })
   .setResourceRoot('/app/')
   .js('client/src/js/app.js', 'client/dist/js')
-  .sass('client/src/styles/app.scss', 'client/dist/styles')
-  .sass('client/src/styles/cms.scss', 'client/dist/styles')
-  .sass('client/src/styles/editor.scss', 'client/dist/styles')
+    .postCss("client/src/styles/app.css", "client/dist/styles", [
+        require("tailwindcss"),
+    ])
+  // .sass('client/src/styles/app.scss', 'client/dist/styles')
+  // .sass('client/src/styles/cms.scss', 'client/dist/styles')
+  // .sass('client/src/styles/editor.scss', 'client/dist/styles')
   // .sourceMaps()
   .polyfill({
     enabled: mix.inProduction(),

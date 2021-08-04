@@ -1,1 +1,9 @@
-.table td,.table th{vertical-align:middle}.cms-content-header .cms-content-header-info{height:auto}
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.cms-content-header .cms-content-header-info {
+  height: auto;
+}
+
