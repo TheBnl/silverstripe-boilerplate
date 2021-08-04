@@ -3,7 +3,7 @@ import imagesLoaded from 'imagesloaded';
 
 export const initBannerSwiper = function() {
 
-  if( $('.banners__container .banner').length <= 1 ) return;
+  if( document.querySelectorAll('.banners__container .banner').length <= 1 ) return;
 
   imagesLoaded('.banners__container', function () {
     const BannersSwiper = new Swiper('.banners__container', {
