@@ -1,17 +1,26 @@
-<div class="grid-container">
-    <div class="grid-x grid-padding-x">
-        <div class="cell medium-4 element-content__image element-content__image--image-pos-{$ImagePosition.Lowercase}">
-            <% if $Image %>
+<div class="container mx-auto py-12">
+    <div class="grid grid-cols-12 gap-4">
+        <% if $Image %>
+            <div class="col-span-4 <% if $ImagePosition=="Right" %>order-last<% end_if %>">
                 <figure>
                     <img src="$Image.ScaleWidth(600).Link" alt="$Image.Title">
                 </figure>
-            <% end_if %>
-        </div>
-        <div class="cell medium-8 element-content__content element-content__content--image-pos-{$ImagePosition.Lowercase}">
-            <% if $ShowTitle %>
-                <h3>$Title</h3>
-            <% end_if %>
-            $HTML
-        </div>
+            </div>
+            <div class="col-span-8 <% if $ImagePosition=="Right" %>order-first<% end_if %>">
+                <% if $ShowTitle %>
+                    <h2>$Title</h2>
+                <% end_if %>
+                $HTML
+            </div>
+        <% else %>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-full lg:col-start-3 lg:col-span-8">
+                    <h2>$Title</h2>
+                    $Content
+                    $Form
+                </div>
+            </div>
+        <% end_if %>
+
     </div>
 </div>

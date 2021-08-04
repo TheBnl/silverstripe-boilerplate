@@ -2,9 +2,6 @@
   &__menu.menu {
     .site-nav__item:not(.site-nav__item--hamburger) {
       display: none;
-      @include breakpoint(large) {
-        display: flex;
-      }
     }
   }
 }

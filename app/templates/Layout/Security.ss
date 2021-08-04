@@ -1,15 +1,11 @@
 <section class="element">
-    <div class="grid-container">
-        <header class="grid-x grid-padding-x">
-            <div class="medium-6 medium-offset-3 cell">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="md:col-start-4 md:col-span-6 bg-purple-300">
                 <h1>$Title</h1>
-            </div>
-        </header>
-        <section class="grid-x grid-padding-x">
-            <div class="medium-6 medium-offset-3 cell">
                 $Content
                 $Form
             </div>
-        </section>
+        </div>
     </div>
 </section>

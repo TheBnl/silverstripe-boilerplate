@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+    h1 {
+        @apply text-3xl;
+    }
+    h2 {
+        @apply text-2xl;
+    }
+    h3 {
+        @apply text-xl;
+    }
+    h4 {
+        @apply text-lg;
+    }
+}
+
+
+/* Swiper */
+@import "~swiper/dist/css/swiper.min.css";
+
+/* Hamburgers */
+/* @import "~hamburgers/_sass/hamburgers/hamburgers.scss";*/
+
+/* Photoswipe */
+/*@import "photoswipeSettings";*/
+/*@import "~photoswipe/src/css/main";*/
+/*@import "~photoswipe/src/css/default-skin/default-skin";*/
