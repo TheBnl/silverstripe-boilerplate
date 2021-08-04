@@ -75,10 +75,5 @@
             "web.config"
         ]
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:RVXD/silverstripe-image-optimiser.git"
-        }
-    ]
+    "repositories": []
 }
