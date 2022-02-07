@@ -52,6 +52,8 @@ class PageController extends ContentController
     {
         parent::init();
 
+        Requirements::block('vendor/silverstripe/userforms/client/dist/js/jquery-validation/localization/methods_nl.min.js');
+        
         Requirements::javascript(project() . '/client/dist/js/app.js');
 
         $criticalFile = $this->getCriticalCSS();
