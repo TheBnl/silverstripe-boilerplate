@@ -54,9 +54,6 @@
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
-    "provide": {
-        "bramdeleeuw/recipe-boilerplate": "dev-master"
-    },
     "extra": {
         "project-files-installed": [
             "app/.htaccess",
