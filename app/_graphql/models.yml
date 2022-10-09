@@ -1,0 +1,54 @@
+
+Page:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
+  #   id: true
+  #   title: true
+  #   openGraphImage: true
+  #   banners: true
+  # operations:
+  #   readOne: true
+
+# SilverStripe\Assets\File:
+#   fields:
+#     id: true
+#     title: true
+#     url: true
+#   operations:
+#     readOne: true
+
+# SilverStripe\Assets\Image:
+
+# DNADesign\Elemental\Models\BaseElement:
+#   fields:
+#     id: true
+#     lastEdited: true
+#     absoluteLink: String
+#     title: true
+#     showTitle: true
+#     sort: true
+#     blockSchema: ObjectType
+#     obsoleteClassName: String
+#     isPublished: Boolean
+#     isLiveVersion: Boolean
+#   operations:
+#     readOne: true
+
+# DNADesign\Elemental\Models\ElementalArea:
+#   fields:
+#     id: true
+#     elements:
+#       plugins:
+#         paginateList: false
+#   operations:
+#     readOne: true
+
+# SilverStripe\Security\Member:
+#   fields:
+#     id: true
+#     firstName: true
+#     surname: true
+#   operations:
+#     readOne: true

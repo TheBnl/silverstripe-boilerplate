@@ -47,7 +47,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "lekoala/silverstripe-debugbar": "*"
+        "lekoala/silverstripe-debugbar": "*",
+        "silverstripe/graphql-devtools": "dev-master"
     },
     "autoload": {
         "psr-4": {

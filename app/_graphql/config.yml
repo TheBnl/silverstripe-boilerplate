@@ -1,0 +1,9 @@
+modelConfig:
+  DataObject:
+    plugins:
+      inheritance: true
+    operations:
+      read:
+        plugins:
+          readVersion: false
+          paginateList: false
