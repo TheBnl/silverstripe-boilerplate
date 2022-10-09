@@ -21,7 +21,7 @@ SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
   editor_css:
     - 'app/client/dist/styles/editor.css'
 SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
-  default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
+  default_spam_protector: XD\Honeypot\Protectors\HoneypotProtector
 UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
   site_key: 'YOUR_SITE_KEY'
   secret_key: 'YOUR_SECRET_KEY'
@@ -35,8 +35,10 @@ LeKoala\DebugBar\DebugBar:
   auto_debug: true
 DNADesign\ElementalUserForms\Model\ElementForm:
   block_default_userforms_css: true
+  block_default_userforms_js: true
 SilverStripe\UserForms\Model\UserDefinedForm:
   block_default_userforms_css: true
+  block_default_userforms_js: true
 JonoM\ShareCare\ShareCare:
   enable_facebook_cache_clear: false
 SilverStripe\RedirectedURLs\Model\RedirectedURL:

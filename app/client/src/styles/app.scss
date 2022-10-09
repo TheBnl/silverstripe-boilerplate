@@ -1,5 +1,5 @@
 // Import foundation
-@import '~foundation-sites/scss/util/util';
+@import "~foundation-sites/scss/util/util";
 @import "settings";
 @import "~foundation-sites/scss/foundation";
 @import "~hamburgers/_sass/hamburgers/hamburgers";
@@ -15,6 +15,8 @@
 // Get everything or only the modules you need
 @include foundation-everything;
 
+/* purgecss start ignore */
+
 // Modules
 @import "modules/header";
 @import "modules/footer";
@@ -23,6 +25,7 @@
 @import "modules/betterNavigator";
 @import "modules/message";
 @import "modules/siteNav";
+@import "modules/dropzone";
 
 // Blocks
 @import "blocks/block";
@@ -33,3 +36,5 @@
 
 // Layout
 @import "layout/page";
+
+/* purgecss end ignore */

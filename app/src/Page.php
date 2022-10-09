@@ -11,6 +11,7 @@ use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\ORM\HasManyList;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
 use XD\Basic\Models\Banner;
+use XD\Basic\Util;
 
 /**
  * Class Page
@@ -74,9 +75,19 @@ class Page extends SiteTree
             ($image = $banners->first()->Image()) && $image->exists()
         ) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
-        } else {
-            return Director::absoluteURL(self::config()->get('default_image'));
         }
+
+        return Director::absoluteURL(self::config()->get('default_image'));
+    }
+
+    public function getBemClassName()
+    {
+        $class = ClassInfo::shortName($this);
+        if ($this instanceof VirtualPage && $linkedElement = $this->ContentSource()) {
+            $class = $class . ' ' . ClassInfo::shortName($linkedElement);
+        }
+        
+        return Util::cssClassName($class);
     }
 
     /**

@@ -1,0 +1,43 @@
+.dropzone-field {
+  .dropzone {
+    display: none;
+    margin: 0 0 $form-spacing;
+    border: $input-border !important;
+    border-radius: $input-radius !important;
+    padding: 0 !important;
+    font-size: $input-font-size;
+    min-height: 100px;
+    transition: $input-transition;
+
+    .dz-message {
+      flex-grow: 1;
+    }
+
+    .dz-preview .dz-image {
+      border-radius: $input-radius !important;
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    .dz-success-mark {
+      top: 60px;
+      left: 60px;
+    }
+
+    &.dz-drag-hover {
+      border: $input-border-focus !important;
+    }
+  }
+
+  &--supported {
+    .dropzone {
+      display: flex;
+      align-items: center;
+
+      + input {
+        display: none;
+      }
+    }
+  }
+}

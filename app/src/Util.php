@@ -38,4 +38,11 @@ class Util
             return _t(get_class($class) . ".{$enum}_{$value}", $fallback);
         }, $class::singleton()->dbObject($enum)->enumValues());
     }
+
+    /**
+     * Creates a CSS class name
+     */
+    public static function cssClassName($class) {
+        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', $class));
+    }
 }

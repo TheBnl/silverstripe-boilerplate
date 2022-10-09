@@ -2,9 +2,10 @@
 
 namespace XD\Basic\Services;
 
+use Exception;
 use Geocoder\Query\GeocodeQuery;
 use GuzzleHttp\Client as GuzzleClient;
-use Http\Adapter\Guzzle6\Client as HttpClient;
+use Http\Adapter\Guzzle7\Client as HttpClient;
 use Swis\Geocoder\NationaalGeoregister\NationaalGeoregister;
 use Symbiote\Addressable\GeocodeServiceException;
 use Symbiote\Addressable\GeocodeServiceInterface;

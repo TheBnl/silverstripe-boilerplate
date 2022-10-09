@@ -2,15 +2,22 @@ import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
 export const initGallery = function () {
-    injectGalleryTemplate();
-    $(document).on('click', '[data-gallery-index]', function () {
-        let gallery = $(this).closest('[data-gallery]');
-        let index = parseInt(eval($(this).attr('data-gallery-index'))) - 1;
-        if (gallery.length) {
-            let items = JSON.parse($(gallery[0]).attr('data-gallery'));
-            let photoSwipe = new PhotoSwipe($('.pswp')[0], PhotoSwipeUI_Default, items, {index: index});
-            photoSwipe.init();
-        }
+    const template = injectGalleryTemplate();
+    const slides = document.querySelectorAll('[data-gallery-index]');
+    slides.forEach(el => {
+        el.addEventListener('click', function () {
+            const gallery = this.closest('[data-gallery]');
+            if (gallery) {
+                const index = parseInt(eval(this.getAttribute('data-gallery-index'))) - 1;
+                const items = JSON.parse(gallery.getAttribute('data-gallery'));
+                const pswp = document.querySelector('.pswp');
+                const photoSwipe = new PhotoSwipe(pswp, PhotoSwipeUI_Default, items, {index: index});
+                console.log('pswp', pswp);
+                console.log('photoSwipe', photoSwipe);
+                console.log('items', items);
+                photoSwipe.init();
+            }
+        });
     });
 };
 
@@ -24,4 +31,5 @@ function injectGalleryTemplate() {
     pswp.setAttribute('aria-hidden', 'true');
     pswp.innerHTML = template.trim();
     body.appendChild(pswp);
+    return pswp;
 }

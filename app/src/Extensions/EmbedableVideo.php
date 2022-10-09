@@ -9,8 +9,10 @@ use SilverStripe\Control\Controller;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\ORM\DataObject;
+use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\ORM\ValidationException;
-use SilverStripe\View\Embed\EmbedResource;
+use SilverStripe\View\Embed\EmbedContainer;
+use SilverStripe\View\Parsers\URLSegmentFilter;
 use XD\Basic\Models\VideoPreview;
 
 /**
@@ -46,8 +48,13 @@ class EmbedableVideo extends DataExtension
 
     public function onBeforeWrite()
     {
-        if ($this->owner->isChanged('VideoURL', DataObject::CHANGE_VALUE)) {
-            $this->owner->EmbedCode = $this->getVideo();
+        parent::onBeforeWrite();
+
+        if ($this->owner->isChanged('VideoURL', DataObject::CHANGE_VALUE) || (!$this->owner->VideoPreviewID && $this->owner->VideoURL)) {
+            if ($container = $this->getEmbedContainer()) {
+                $extractor = $container->getExtractor();
+                $this->owner->EmbedCode = $extractor->code->html;
+            }
             try {
                 $this->owner->savePreview();
             } catch (Exception $e) {
@@ -74,26 +81,29 @@ class EmbedableVideo extends DataExtension
     /**
      * Get the Video Resource from the given URL
      *
-     * @return EmbedResource
+     * @return EmbedContainer
      */
-    public function getVideoResource()
+    public function getEmbedContainer()
     {
-        $embed = new EmbedResource($this->owner->VideoURL);
-        $embed->setOptions(['choose_bigger_image' => true]);
-        return $embed;
+        return EmbedContainer::create($this->owner->VideoURL);
     }
 
     /**
      * Get the embed code
      *
-     * @return null|string
+     * @return null|DBHTMLText
      */
     public function getVideo()
     {
-        if ($resource = $this->owner->getVideoResource()) {
-            return $resource->getEmbed()->code;
+        /** @var EmbedContainer $resource */
+        if (!$this->owner->VideoURL) return null;
+        if ($this->owner->EmbedCode) {
+            $html = new DBHTMLText();
+            $html->setValue(
+                '<div class="responsive-embed widescreen">' . $this->owner->EmbedCode . '</div>'
+            );
+            return $html;
         }
-
         return null;
     }
 
@@ -106,11 +116,14 @@ class EmbedableVideo extends DataExtension
      */
     public function savePreview()
     {
-        if (($resource = $this->owner->getVideoResource()) && $url = $resource->getPreviewURL()) {
+        if (($container = $this->owner->getEmbedContainer()) && $url = $container->getPreviewURL()) {
+            $url = str_replace('hqdefault', 'maxresdefault', $url); // get large image instead of small one
             $filter = URLSegmentFilter::create();
-            $fileName = $filter->filter($this->owner->VideoURL) . '.jpg';
+            $fileTitle = $container->getExtractor()->providerName . ': ' . $container->getExtractor()->authorName . ' - ' . $container->getExtractor()->title;
+            $fileName = $filter->filter($fileTitle) . '.jpg';
             $preview = VideoPreview::create();
-            $preview->download($url,$fileName);
+            $preview->Title = $fileTitle;
+            $preview->download($url, $fileName);
             $preview->write();
             $preview->publishSingle();
             $this->owner->VideoPreviewID = $preview->ID;

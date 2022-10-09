@@ -1,4 +1,4 @@
-import CookieConsent from '../../../../../resources/bramdeleeuw/cookieconsent/javascript/src/cookieconsent';
+import CookieConsent from '../../../../../_resources/bramdeleeuw/cookieconsent/javascript/src/cookieconsent';
 
 export function initVideo() {
   // todo make message translatable

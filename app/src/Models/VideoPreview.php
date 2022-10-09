@@ -29,13 +29,22 @@ class VideoPreview extends Image
      */
     public function download($url, $fileName)
     {
+        $url = str_replace('hqdefault', 'maxresdefault', $url); // get large image instead of small one
         $client = new Client(['http_errors' => false]);
         $folder = Folder::find_or_make($this->folderName);
-        if( !$fileName ) {
+        if (!$fileName) {
             $fileName = sha1($url) . '.jpg';
         }
         $request = $client->request('GET', $url);
         $stream = $request->getBody();
+
+        if ($request->getStatusCode() == 404) {
+            // if max res does not exist use hqdefault
+            $url = str_replace('maxresdefault', 'hqdefault', $url);
+            $request = $client->request('GET', $url);
+            $stream = $request->getBody();
+        }
+
         if ($stream->isReadable()) {
             $this->setFromStream($stream->detach(), $fileName);
             $this->ParentID = $folder->ID;

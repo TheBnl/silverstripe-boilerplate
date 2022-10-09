@@ -102,8 +102,8 @@ class GalleryBlock extends BaseElement
             $blockSchema['content'] = $gallery->Title;
             if (($count = $this->GalleryItems()->count()) > 1) {
                 $blockSchema['content'] .= ', ' .  _t(__CLASS__ . '.AndMore', 'and {count} more...', null, [
-                        'count' => $count - 1
-                    ]);
+                    'count' => $count - 1
+                ]);
             }
         }
 

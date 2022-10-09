@@ -41,7 +41,7 @@ class GalleryItem extends DataObject
     ];
 
     private static $summary_fields = [
-        'Image.CMSThumbnail' => 'Image',
+        'Image.StripThumbnail' => 'Image',
         'Title' => 'Caption'
     ];
 
@@ -54,11 +54,11 @@ class GalleryItem extends DataObject
 
     public function getJSON()
     {
-        return array(
+        return [
             'src' => $this->Image()->Link(),
             'w' => $this->Image()->getWidth(),
             'h' => $this->Image()->getHeight(),
             'title' => htmlentities($this->Title, ENT_QUOTES)
-        );
+        ];
     }
 }

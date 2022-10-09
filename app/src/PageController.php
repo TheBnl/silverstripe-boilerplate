@@ -74,6 +74,12 @@ class PageController extends ContentController
             ));
         }
 
+        if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
+            Requirements::insertHeadTags(sprintf(
+                '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous"></script>', $fontawesomeKit
+            ));
+        }
+
         // Google Tag Manager
         if (($gtmCode = Environment::getEnv('GTM_CODE')) && CookieConsent::check(CookieConsent::ANALYTICS)) {
             Requirements::insertHeadTags(sprintf(
