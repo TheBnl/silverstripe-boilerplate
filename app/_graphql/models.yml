@@ -4,46 +4,56 @@ Page:
   operations:
     read: true
     readOne: true
-  #   id: true
-  #   title: true
-  #   openGraphImage: true
-  #   banners: true
-  # operations:
-  #   readOne: true
 
-# SilverStripe\Assets\File:
-#   fields:
-#     id: true
-#     title: true
-#     url: true
-#   operations:
-#     readOne: true
+SilverStripe\Assets\File:
+  fields:
+    id: true
+    title: true
+    url: true
+  operations:
+    readOne: true
 
-# SilverStripe\Assets\Image:
+DNADesign\Elemental\Models\BaseElement:
+  fields:
+    id: true
+    lastEdited: true
+    absoluteLink: String
+    title: true
+    showTitle: true
+    sort: true
+    # blockSchema: ObjectType
+    # obsoleteClassName: String
+    isPublished: Boolean
+    isLiveVersion: Boolean
+  operations:
+    readOne: true
 
-# DNADesign\Elemental\Models\BaseElement:
-#   fields:
-#     id: true
-#     lastEdited: true
-#     absoluteLink: String
-#     title: true
-#     showTitle: true
-#     sort: true
-#     blockSchema: ObjectType
-#     obsoleteClassName: String
-#     isPublished: Boolean
-#     isLiveVersion: Boolean
-#   operations:
-#     readOne: true
+XD\Basic\Blocks\VideoBlock:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
 
-# DNADesign\Elemental\Models\ElementalArea:
-#   fields:
-#     id: true
-#     elements:
-#       plugins:
-#         paginateList: false
-#   operations:
-#     readOne: true
+XD\Basic\Blocks\GalleryBlock:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
+
+XD\Basic\Models\GalleryItem:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
+
+DNADesign\Elemental\Models\ElementalArea:
+  fields:
+    id: true
+    elements:
+      plugins:
+        paginateList: false
+  operations:
+    readOne: true
 
 # SilverStripe\Security\Member:
 #   fields:
@@ -52,3 +62,48 @@ Page:
 #     surname: true
 #   operations:
 #     readOne: true
+
+
+# Query all pages and page elements
+# query {
+#   readPages {
+#     id
+#     title
+#     urlSegment
+#     openGraphImage {
+#       id
+#       url
+#     }
+#     banners {
+#       nodes {
+#        id 
+#       }
+#     }
+#     elementalArea {
+#       id
+#       elements {
+#         id
+#         title
+#         showTitle
+#         ... on GalleryBlock {
+#           galleryItems {
+#             nodes {
+#               id
+#               image {
+#                 url
+#               }
+#             }
+#           }
+#         }
+#         ... on VideoBlock {
+#           videoURL
+#         	embedCode
+#           videoPreview {
+#             id
+#             url
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
