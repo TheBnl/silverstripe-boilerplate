@@ -18,6 +18,7 @@
     <link rel="apple-touch-icon-precomposed" href="{$BaseURL}favicon-152.png">
     <meta name="msapplication-TileImage" content="{$BaseURL}favicon-144.png">
     <meta name="msapplication-TileColor" content="#fefefe">
+    <meta name="theme-color" content="#fefefe">
 </head>
 <body>
     $GTMFallback
