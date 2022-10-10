@@ -1,4 +1,4 @@
-<a class="action-card action-card--$Color<% if $Image %> action-card--image<% end_if %> <% if not $Link %>action-card--no-link<% end_if %>"
+<a class="action-card action-card--$Color<% if $Image %> action-card--image<% end_if %><% if not $Link %> action-card--no-link<% end_if %>"
     <% if $Link %> href="$Link"<% end_if %>
     <% if $ExternalLink %> target="_blank"<% end_if %>
     <% if $Image %> style="background-image: url('$Image.FocusFill(800,600).Link');"<% end_if %>>

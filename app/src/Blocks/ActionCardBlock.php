@@ -7,13 +7,9 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\NumericField;
-use SilverStripe\Forms\TreeDropdownField;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\HasManyList;
-use SilverStripe\View\ArrayData;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
-use XD\Basic\GridField\GridFieldConfig_SortableEditableInline;
-use XD\Basic\Models\ActionCard;
 use XD\Basic\Models\CustomActionCard;
 use XD\Basic\Util\Colors;
 

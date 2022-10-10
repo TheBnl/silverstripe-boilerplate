@@ -34,6 +34,14 @@ XD\Basic\Blocks\VideoBlock:
     read: true
     readOne: true
 
+XD\Basic\Blocks\ActionCardsBlock:
+  fields:
+    id: true
+    actionCards: '[ActionCard]'
+  operations:
+    read: true
+    readOne: true
+
 XD\Basic\Blocks\GalleryBlock:
   fields: '*'
   operations:
@@ -52,6 +60,11 @@ DNADesign\Elemental\Models\ElementalArea:
     elements:
       plugins:
         paginateList: false
+  operations:
+    readOne: true
+
+XD\Basic\Models\CustomActionCard:
+  fields: '*'
   operations:
     readOne: true
 

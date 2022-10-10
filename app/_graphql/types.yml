@@ -1,0 +1,10 @@
+ActionCard:
+  fields:
+    label: String
+    title: String
+    content: String
+    link: String
+    linkLabel: String
+    color: String
+    image: Image
+  fieldResolver: [ 'XD\Basic\GraphQL\Resolvers\Resolvers', 'resolveActionCard' ]

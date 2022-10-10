@@ -89,8 +89,9 @@ class Page extends SiteTree implements ProvidesActionCard
     public function provideActionCard(): ViewableData
     {
         $actionCardData = new ArrayData([
+            // 'title' => $this->Title,
             'Title' => $this->Title,
-            'Content' => $this->dbObject('Content'),
+            'Content' => $this->dbObject('Content')->Summary(),
             'Label' => $this->i18n_singular_name(),
             'Link' => $this->Link(),
             'LinkLabel' => _t(HasLink::class . '.ReadMore', 'Lees meer'),
