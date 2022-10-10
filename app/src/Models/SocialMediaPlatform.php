@@ -7,7 +7,7 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\SiteConfig\SiteConfig;
-use XD\Basic\Util;
+use XD\Basic\Util\Util;
 
 /**
  * SocialMediaPlatform

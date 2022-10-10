@@ -9,7 +9,7 @@
         </div>
         <div class="cell medium-8 element-content__content element-content__content--image-pos-{$ImagePosition.Lowercase}">
             <% if $ShowTitle %>
-                <h3>$Title</h3>
+                <h3 class="block__title">$Title</h3>
             <% end_if %>
             $HTML
         </div>

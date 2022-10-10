@@ -88,7 +88,7 @@
     + label[for] {
       color: $alert-color;
       display: inline-block;
-      margin-left: $global-margin/2;
+      margin-left: calc($global-margin / 2);
       margin-right: $global-margin;
       margin-bottom: 0;
     }
@@ -160,11 +160,11 @@ input:disabled ~ .switch-paddle {
   &.middleColumn {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -#{$form-spacing/2};
+    margin: 0 -#{calc($form-spacing / 2)};
   }
 
   &-field {
-    padding: 0 $form-spacing/2;
+    padding: 0 calc($form-spacing / 2);
     flex-grow: 1;
     label {
       font-weight: $global-weight-normal;
@@ -172,7 +172,7 @@ input:disabled ~ .switch-paddle {
   }
 
   .form-error {
-    padding: 0 $form-spacing/2;
+    padding: 0 calc($form-spacing / 2);
     // make sure the error message wraps to the next line
     flex-basis: 100%;
   }

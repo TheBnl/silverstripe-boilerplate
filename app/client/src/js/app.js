@@ -3,7 +3,7 @@
 import { initForms } from "./modules/forms";
 import { initNavigation } from "./modules/navigation";
 import { initScrollTo, scrollTo } from "./modules/scrollTo";
-// import { initGallerySwiper } from './modules/swiper';
+import { initGallerySwiper, initActionCardsSwiper } from './modules/swiper';
 // import { initGallery } from './modules/gallery';
 // import { initVideo } from "./modules/video";
 
@@ -11,6 +11,7 @@ import { initScrollTo, scrollTo } from "./modules/scrollTo";
   initForms();
   initNavigation();
   initScrollTo();
+  initActionCardsSwiper();
   // initVideo();
   // initGallery();
   // initGallerySwiper();

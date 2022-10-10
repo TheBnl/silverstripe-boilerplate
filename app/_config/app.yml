@@ -41,6 +41,21 @@ SilverStripe\UserForms\Model\UserDefinedForm:
   block_default_userforms_js: true
 JonoM\ShareCare\ShareCare:
   enable_facebook_cache_clear: false
+XD\Basic\Util\Colors:
+  colors:
+    primary:
+      auto: 'transparent'
+      primary: '#1779ba'
+      secondary: '#767676'
+    secondary:
+      black: '#0a0a0a'
+      white: '#fefefe'
+      lightGray: '#e6e6e6'
+      mediumGray: '#cacaca'
+      darkGray: '#8a8a8a'
+      success: '#3adb76'
+      warning: '#ffae00'
+      alert: '#cc4b37'
 SilverStripe\RedirectedURLs\Model\RedirectedURL:
   db:
     FromBase: 'Varchar(150)'

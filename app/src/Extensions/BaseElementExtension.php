@@ -6,7 +6,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use DNADesign\ElementalVirtual\Model\ElementVirtual;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataExtension;
-use XD\Basic\Util;
+use XD\Basic\Util\Util;
 
 /**
  * Class BaseElementExtension

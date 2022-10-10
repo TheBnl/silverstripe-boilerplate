@@ -2,7 +2,6 @@ import Pristine from 'pristinejs/dist/pristine.js';
 
 export function initForms() {
   let config = {
-    // class of the parent element where the error/success class is added
     classTo: 'field',
     errorClass: 'error',
     // errorClass: 'is-invalid-input',
@@ -26,8 +25,8 @@ export function initForms() {
     max: "De de invoer moet maximaal ${1} zijn",
     pattern: "De de invoer moet voldoen aan het format",
   });
-  Pristine.setLocale('nl');
 
+  Pristine.setLocale('nl');
 
   // auto add pristine attributes to all forms
   let fields = document.querySelectorAll('[data-msg-required]');

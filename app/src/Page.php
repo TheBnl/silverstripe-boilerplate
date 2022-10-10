@@ -6,12 +6,18 @@ use JonoM\FocusPoint\Extensions\FocusPointImageExtension;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\CMS\Model\VirtualPage;
 use SilverStripe\Control\Director;
+use SilverStripe\Core\ClassInfo;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\ORM\HasManyList;
+use SilverStripe\View\ArrayData;
+use SilverStripe\View\ViewableData;
+use XD\Basic\Extensions\HasLink;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
+use XD\Basic\Interfaces\ProvidesActionCard;
 use XD\Basic\Models\Banner;
-use XD\Basic\Util;
+use XD\Basic\Util\Util;
 
 /**
  * Class Page
@@ -20,7 +26,7 @@ use XD\Basic\Util;
  * @method ElementalArea ElementalArea()
  * @method HasManyList Banners()
  */
-class Page extends SiteTree
+class Page extends SiteTree implements ProvidesActionCard
 {
     private static $db = [];
 
@@ -80,6 +86,24 @@ class Page extends SiteTree
         return Director::absoluteURL(self::config()->get('default_image'));
     }
 
+    public function provideActionCard(): ViewableData
+    {
+        $actionCardData = new ArrayData([
+            'Title' => $this->Title,
+            'Content' => $this->dbObject('Content'),
+            'Label' => $this->i18n_singular_name(),
+            'Link' => $this->Link(),
+            'LinkLabel' => _t(HasLink::class . '.ReadMore', 'Lees meer'),
+            'Color' => 'primary',
+        ]);
+
+        $this->extend('updateActionCardData', $actionCardData);
+        return $actionCardData;
+    }
+
+    /**
+     * Get an css classname for this page
+     */
     public function getBemClassName()
     {
         $class = ClassInfo::shortName($this);
