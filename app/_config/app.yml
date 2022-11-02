@@ -1,5 +1,6 @@
 ---
 Name: app
+After: '#cms-actions'
 ---
 SilverStripe\Core\Manifest\ModuleManifest:
   project: app
@@ -33,6 +34,10 @@ LeKoala\DebugBar\DebugBar:
   check_local_ip: false
   enabled_in_admin: false
   auto_debug: true
+LeKoala\CmsActions\ActionsGridFieldItemRequest:
+  enable_save_prev_next: false
+  enable_save_close: false
+  # enable_delete_right: true
 DNADesign\ElementalUserForms\Model\ElementForm:
   block_default_userforms_css: true
   block_default_userforms_js: true
