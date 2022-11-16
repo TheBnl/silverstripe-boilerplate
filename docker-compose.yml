@@ -27,7 +27,8 @@ services:
       depends_on:
          - database
       environment:
-         - PMA_ARBITRARY=1
+         - PMA_HOST=database
+         - UPLOAD_LIMIT=1G
 
    mailhog:
       image: mailhog/mailhog:v1.0.0
