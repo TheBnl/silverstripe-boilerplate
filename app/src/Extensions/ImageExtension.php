@@ -17,12 +17,12 @@ class ImageExtension extends DataExtension
         'Intrinsic' => 'HTMLText',
     ];
 
-    public function WebP()
-    {
-        // todo add webp conversion
-        // find a way to change file extension from jpg to webp while maintaining silverstipe asset variants
-        return $this->owner;
-    }
+    // public function WebP()
+    // {
+    //     // todo add webp conversion
+    //     // find a way to change file extension from jpg to webp while maintaining silverstipe asset variants
+    //     return $this->owner;
+    // }
 
     /**
      * Start of image optimisation strategy.

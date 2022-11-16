@@ -1,18 +1,24 @@
 <template>
     <div>
-        <inertia-head :title="title" />
-        <H1>{{ title }}</H1>
+        <Head>
+          <title>{{ title }}</title>
+          <meta name="description" :content="metaDescription">
+        </Head>
+        <h1>{{ title }}</h1>
         <div v-html="content"></div>
     </div>
 </template>
 
 <script>
+import { Head } from '@inertiajs/inertia-vue3'
 
   export default {
-    components: {},
+    components: { Head },
     props: {
       title: String,
       content: String,
+      metaDescription: String,
+      elementalArea: Array
     },
   }
 </script>

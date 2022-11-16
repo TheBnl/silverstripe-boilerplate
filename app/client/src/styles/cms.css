@@ -1,0 +1,25 @@
+/* Add your CMS customizations here */
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.cms-content-header .cms-content-header-info {
+  height: auto;
+}
+
+td[class*="-StripThumbnail"] {
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+td[class*="-CMSThumbnail"] {
+  img {
+    width: 100px;
+    height: auto;
+  }
+}
+

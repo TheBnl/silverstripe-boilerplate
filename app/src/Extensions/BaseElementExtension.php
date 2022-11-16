@@ -6,6 +6,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use DNADesign\ElementalVirtual\Model\ElementVirtual;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataExtension;
+use XD\Basic\Util\Util;
 
 /**
  * Class BaseElementExtension
@@ -21,11 +22,21 @@ class BaseElementExtension extends DataExtension
     public function getBemClassName()
     {
         $class = ClassInfo::shortName($this->owner);
-        if( get_class($this->owner)==ElementVirtual::class ){
-            if( $linkedElement = $this->owner->LinkedElement() ){
-                $class = $class . ' ' . ClassInfo::shortName($linkedElement);
-            }
+        if ($this->owner instanceof ElementVirtual && $linkedElement = $this->owner->LinkedElement()) {
+            $class = $class . ' ' . ClassInfo::shortName($linkedElement);
         }
-        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', $class));
+
+        return Util::cssClassName($class);
     }
+
+    public function getPageBemClassName()
+    {
+        if (($page = $this->owner->getPage()) && $page->exists()) {
+            $pageBemClassName = $page->getBemClassName();
+            return Util::cssClassName("{$pageBemClassName}-content-block");
+        }
+
+        return null;
+    }
+
 }

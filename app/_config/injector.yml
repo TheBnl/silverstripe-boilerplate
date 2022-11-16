@@ -1,14 +1,14 @@
 ---
 Name: injector
-after: '#addressable'
+after: "#addressable"
 ---
 SilverStripe\Core\Injector\Injector:
-  SilverStripe\Forms\Form:
-    class: XD\Basic\Forms\BaseForm
   Symbiote\Addressable\GeocodeServiceInterface:
     class: XD\Basic\Services\NationaalGeoregisterService
   Symbiote\Addressable\Addressable:
     class: XD\Basic\Injector\Addressable
+  SilverStripe\Control\Email\Email:
+    class: XD\Basic\Injector\Email
   Intervention\Image\ImageManager:
     constructor:
       - { driver: imagick }

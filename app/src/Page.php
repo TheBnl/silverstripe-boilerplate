@@ -1,16 +1,25 @@
 <?php
 
 use DNADesign\Elemental\Extensions\ElementalPageExtension;
+use DNADesign\Elemental\Models\BaseElement;
 use DNADesign\Elemental\Models\ElementalArea;
 use JonoM\FocusPoint\Extensions\FocusPointImageExtension;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\CMS\Model\VirtualPage;
 use SilverStripe\Control\Director;
+use SilverStripe\Core\ClassInfo;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\ORM\HasManyList;
+use SilverStripe\View\ArrayData;
+use SilverStripe\View\ViewableData;
+use XD\Basic\Extensions\HasLink;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
+use XD\Basic\Interfaces\ProvidesActionCard;
 use XD\Basic\Models\Banner;
+use XD\Basic\Util\Util;
 
 /**
  * Class Page
@@ -19,9 +28,14 @@ use XD\Basic\Models\Banner;
  * @method ElementalArea ElementalArea()
  * @method HasManyList Banners()
  */
-class Page extends SiteTree
+class Page extends SiteTree implements ProvidesActionCard
 {
     private static $db = [];
+    
+    private static $inertia_props = [
+        'Title',
+        'Content'
+    ];
 
     private static $has_one = [
         'OpenGraphImage' => Image::class
@@ -74,9 +88,38 @@ class Page extends SiteTree
             ($image = $banners->first()->Image()) && $image->exists()
         ) {
             return $image->FocusFill(1200, 630)->getAbsoluteURL();
-        } else {
-            return Director::absoluteURL(self::config()->get('default_image'));
         }
+
+        return Director::absoluteURL(self::config()->get('default_image'));
+    }
+
+    public function provideActionCard(): ViewableData
+    {
+        $actionCardData = new ArrayData([
+            // 'title' => $this->Title,
+            'Title' => $this->Title,
+            'Content' => $this->dbObject('Content')->Summary(),
+            'Label' => $this->i18n_singular_name(),
+            'Link' => $this->Link(),
+            'LinkLabel' => _t(HasLink::class . '.ReadMore', 'Lees meer'),
+            'Color' => 'primary',
+        ]);
+
+        $this->extend('updateActionCardData', $actionCardData);
+        return $actionCardData;
+    }
+
+    /**
+     * Get an css classname for this page
+     */
+    public function getBemClassName()
+    {
+        $class = ClassInfo::shortName($this);
+        if ($this instanceof VirtualPage && $linkedElement = $this->ContentSource()) {
+            $class = $class . ' ' . ClassInfo::shortName($linkedElement);
+        }
+        
+        return Util::cssClassName($class);
     }
 
     /**

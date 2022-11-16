@@ -7,6 +7,7 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\SiteConfig\SiteConfig;
+use XD\Basic\Util\Util;
 
 /**
  * SocialMediaPlatform
@@ -23,34 +24,34 @@ class SocialMediaPlatform extends DataObject
 {
     private static $table_name = 'SocialMediaPlatform';
 
-    private static $db = array(
+    private static $db = [
         'Sort' => 'Int',
         'Title' => "Enum('Facebook, Twitter, Google+, Instagram, YouTube, LinkedIn, Pinterest, SoundCloud, Tumblr','Facebook')",
         'Link' => 'Varchar(255)'
-    );
+    ];
 
     private static $default_sort = 'Sort DESC';
 
-    private static $has_one = array(
+    private static $has_one = [
         'SiteConfig' => SiteConfig::class
-    );
+    ];
 
-    private static $summary_fields = array(
+    private static $summary_fields = [
         'Title' => 'Platform',
         'Link' => 'Link'
-    );
+    ];
 
-    private static $translate = array(
+    private static $translate = [
         'Link'
-    );
+    ];
 
     public function getCMSFields()
     {
         $socialMediaPlatforms = self::singleton()->dbObject('Title')->enumValues();
-        $fields = FieldList::create(array(
+        $fields = FieldList::create([
             DropdownField::create('Title', _t(__CLASS__ . '.Platform', 'Platform'), $socialMediaPlatforms),
             TextField::create('Link', _t(__CLASS__ . '.Link', 'Link'))
-        ));
+        ]);
 
         $this->extend('updateCMSFields', $fields);
         return $fields;
@@ -102,26 +103,6 @@ class SocialMediaPlatform extends DataObject
      */
     public function CSSClass()
     {
-        return strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1-', $this->getField('Title')));
-    }
-
-    public function canView($member = null)
-    {
-        return $this->SiteConfig()->canView($member);
-    }
-
-    public function canEdit($member = null)
-    {
-        return $this->SiteConfig()->canEdit($member);
-    }
-
-    public function canDelete($member = null)
-    {
-        return $this->SiteConfig()->canDelete($member);
-    }
-
-    public function canCreate($member = null, $context = [])
-    {
-        return $this->SiteConfig()->canCreate($member, $context);
+        return Util::cssClassName($this->getField('Title'));
     }
 }

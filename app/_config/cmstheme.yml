@@ -1,0 +1,77 @@
+---
+Name: cmstheme
+After: cmsdefaultadmin
+---
+# SilverStripe\SiteConfig\SiteConfig:
+#   cms_logo: '/app/images/cms-logo.png'
+#   cms_logo_width: 132
+
+SilverStripe\Admin\LeftAndMain:
+  cms_background: '#004A7C'
+  cms_border_color: '#004A7C'
+  cms_color: '#fff'
+  cms_hover_background: 'inherit'
+  cms_hover_color: '#E6E6E6'
+  cms_active_background: '#00375B'
+  cms_active_color: currentColor
+  cms_drawer_background: '#004A7C'
+  cms_drawer_color: currentColor
+  cms_icon_color: currentColor
+  menu_groups:
+    Pages:
+      icon_class: 'fas fa-pencil-alt'
+      items:
+        - SilverStripe-CMS-Controllers-CMSPagesController
+        - SilverStripe-AssetAdmin-Controller-AssetAdmin
+        - SilverStripe-CampaignAdmin-CampaignAdmin
+        - SilverStripe-VersionedAdmin-ArchiveAdmin
+    Advanced:
+      icon_class: 'fas fa-cogs'
+      items:
+        - SilverStripe-SiteConfig-SiteConfigLeftAndMain
+        - SilverStripe-Admin-SecurityAdmin
+        - Symbiote-QueuedJobs-Controllers-QueuedJobsAdmin
+        - SilverStripe-Reports-ReportAdmin
+        - SilverStripe-RedirectedURLs-Admin-RedirectedURLAdmin
+        - TractorCow-Fluent-Control-LocaleAdmin
+        - Heyday-MenuManager-MenuAdmin
+
+Bummzack\SsOmnipayUI\Admin\PaymentAdmin:
+  menu_icon_class: 'far fa-credit-card'
+  menu_icon: null
+
+XD\Shop\Subscriptions\Admin\SubscriptionsAdmin:
+  menu_icon_class: 'far fa-repeat'
+  menu_icon: null
+
+SilverShop\Discounts\Admin\DiscountModelAdmin:
+  menu_icon_class: 'far fa-percent'
+  menu_icon: null
+
+SilverShop\Shipping\Admin\ShippingMethodAdmin:
+  menu_icon_class: 'far fa-shipping-fast'
+  menu_icon: null
+
+XD\Shop\Admin\CartAdmin:
+  menu_icon_class: 'far fa-shopping-cart'
+  menu_icon: null
+
+SilverStripe\RedirectedURLs\Admin\RedirectedURLAdmin:
+  menu_icon_class: 'far fa-directions'
+  menu_icon: null
+
+Heyday\MenuManager\MenuAdmin:
+  menu_icon_class: 'far fa-list-alt'
+  menu_icon: null
+
+SilverStripe\AssetAdmin\Controller\AssetAdmin:
+  menu_icon_class: 'far fa-folder-tree'
+  menu_icon: null
+
+SilverShop\Shipping\Admin\ZoneAdmin:
+  menu_icon_class: 'far fa-globe-africa'
+  menu_icon: null
+
+Plastyk\Dashboard\Admin\DashboardAdmin:
+  menu_icon_class: 'far fa-tachometer'
+  menu_icon: null

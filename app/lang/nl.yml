@@ -1,6 +1,5 @@
 nl:
   General:
-    READ_MORE: 'Lees meer'
     GOOLGE_MAPS: 'Bekijk {site} op Google Maps'
     SOCIAL_MEDIA: 'Volg {site} op {platform}'
   NocaptchaField:
@@ -11,3 +10,5 @@ nl:
     LengthTooLong: "Te lang"
     LengthAdequate: "Oké"
     LengthIdeal: "Perfect!"
+  XD\Basic\Extensions\HasLink:
+    ReadMore: 'Lees meer'

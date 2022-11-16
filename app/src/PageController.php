@@ -9,6 +9,7 @@ use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\Requirements;
 use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Core\ClassInfo;
 
 class PageController extends ContentController
 {
@@ -78,6 +79,12 @@ class PageController extends ContentController
             ));
         }
 
+        if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
+            Requirements::insertHeadTags(sprintf(
+                '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous"></script>', $fontawesomeKit
+            ));
+        }
+
         // Google Tag Manager
         if (($gtmCode = Environment::getEnv('GTM_CODE')) && CookieConsent::check(CookieConsent::ANALYTICS)) {
             Requirements::insertHeadTags(sprintf(
@@ -112,12 +119,11 @@ class PageController extends ContentController
         Requirements::insertHeadTags("<script>window.routes = {$routes}</script>");
     }
 
-    public function index(HTTPRequest $request)
+    public function handleRequest(HTTPRequest $request)
     {
-        return \Inertia\Inertia::render('Page', [
-            'title' => $this->Title,
-            'content' => $this->Content
-        ]);
+        parent::handleRequest($request);
+        $component = ClassInfo::shortName($this->ClassName);
+        return \Inertia\Inertia::render($component, $this->getInertiaProps());
     }
 
     /**

@@ -34,7 +34,7 @@ class HasLink extends DataExtension
     ];
 
     private static $defaults = [
-        'LinkLabel' => 'Learn more'
+        'LinkLabel' => 'Read more'
     ];
 
     private static $has_one = [
@@ -62,6 +62,12 @@ class HasLink extends DataExtension
                 );
             }
         }
+    }
+
+    public function populateDefaults()
+    {
+        $this->owner->LinkLabel = _t(__CLASS__ . '.ReadMore', 'Read more');
+        parent::populateDefaults();
     }
 
     /**

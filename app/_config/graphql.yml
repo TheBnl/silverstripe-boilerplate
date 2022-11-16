@@ -1,0 +1,12 @@
+---
+Name: graphql
+---
+SilverStripe\Control\Director:
+  rules:
+    graphql: '%$SilverStripe\GraphQL\Controller.default'
+
+SilverStripe\GraphQL\Schema\Schema:
+  schemas:
+    default:
+      src: 
+        - app/_graphql

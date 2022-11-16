@@ -1,16 +1,22 @@
-import Vue from 'vue'
-import { createInertiaApp } from '@inertiajs/inertia-vue'
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import Layout from './Layout/Layout'
 
 createInertiaApp({
   resolve: name => {
-    const page = require(`./Pages/${name}`).default;
+    let page;
+    try {
+      page = require(`./Pages/${name}`).default;
+    } catch(e) {
+      page = require(`./Pages/Page`).default;
+    }
+    
     page.layout = page.layout || Layout;
     return page;
   },
-  setup({ el, app, props }) {
-    new Vue({
-      render: h => h(app, props),
-    }).$mount(el)
+  setup({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .mount(el)
   },
 })

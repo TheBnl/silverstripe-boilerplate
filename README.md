@@ -5,9 +5,6 @@ The SilverStripe Boilerplate aims to make it easier to kick of a new SilverStrip
 ## Maintainers
 - Bram de Leeuw [@bramdeleeuw](http://twitter.com/bramdeleeuw)
 
-### Original Fork
-- [Zauberfisch/silverstripe-boilerplate](https://github.com/Zauberfisch/silverstripe-boilerplate) [@Zauberfisch](http://twitter.com/Zauberfisch)
-
 ## how to install
 
     # create the project
