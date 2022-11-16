@@ -1,6 +1,7 @@
 version: "3.8"
 services:
    silverstripe:
+      image: brettt89/silverstripe-web:8.1-apache
       build: .
       volumes:
          - .:/var/www/html
