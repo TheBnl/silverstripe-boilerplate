@@ -70,6 +70,10 @@
     "minimum-stability": "dev",
     "extra": {
         "resources-dir": "_resources",
+        "expose": [
+            "app/client/dist",
+            "app/images"
+        ],
         "project-files": [
             "app/src/*"
         ],

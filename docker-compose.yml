@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  silverstripe:
+    image: brettt89/silverstripe-web:8.1-apache
+    volumes:
+       - .:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+       - database
+    environment:
+       - DOCUMENT_ROOT=/var/www/html
+       - SS_TRUSTED_PROXY_IPS=*
+      #  - SS_ENVIRONMENT_TYPE=dev
+      #  - SS_DATABASE_SERVER=database
+      #  - SS_DATABASE_NAME=SS_mysite
+      #  - SS_DATABASE_USERNAME=root
+      #  - SS_DATABASE_PASSWORD=
+      #  - SS_DEFAULT_ADMIN_USERNAME=admin
+      #  - SS_DEFAULT_ADMIN_PASSWORD=password
+
+  database:
+    image: mysql:5.7
+    environment:
+       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+       - db-data:/var/lib/mysql
+volumes:
+     db-data:
