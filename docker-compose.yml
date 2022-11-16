@@ -5,7 +5,7 @@ services:
     volumes:
        - .:/var/www/html
     ports:
-      - "80:80"
+      - 80:80
     depends_on:
        - database
     environment:
@@ -17,5 +17,14 @@ services:
        - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
        - db-data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    depends_on:
+      - database
+    environment:
+      - PMA_ARBITRARY=1
 volumes:
      db-data:
