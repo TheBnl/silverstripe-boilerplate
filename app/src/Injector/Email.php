@@ -2,12 +2,15 @@
 
 namespace XD\Basic\Injector;
 
+use SilverStripe\Control\Director;
 use SilverStripe\Control\Email\Email as SilverStripeEmail;
 use SilverStripe\View\ArrayData;
 
 class Email extends SilverStripeEmail
 {
     private static $theme = [
+        'MailLogo' => '/favicon-152.png',
+        'MailLogoWidth' => '60px',
         'PrimaryColor' => '#1779ba',
         'SecondaryColor' => '#767676',
         'FontColor' => '#0a0a0a',
