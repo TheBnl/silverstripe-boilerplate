@@ -3,6 +3,7 @@ services:
    silverstripe:
       image: brettt89/silverstripe-web:8.1-apache
       build: .
+      restart: always
       volumes:
          - .:/var/www/html
       ports:
@@ -15,6 +16,7 @@ services:
 
    database:
       image: mysql:5.7
+      restart: always
       environment:
          - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       volumes:
@@ -33,6 +35,7 @@ services:
 
    mailhog:
       image: mailhog/mailhog:v1.0.0
+      restart: always
       ports:
          - 1025:1025
          - 8025:8025
