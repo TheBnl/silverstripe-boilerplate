@@ -10,3 +10,12 @@ SilverStripe\GraphQL\Schema\Schema:
     default:
       src: 
         - app/_graphql
+
+---
+Only:
+  environment: dev
+---
+SilverStripe\GraphQL\Controller:
+  cors:
+    Enabled: true
+    Allow-Origin: '*'

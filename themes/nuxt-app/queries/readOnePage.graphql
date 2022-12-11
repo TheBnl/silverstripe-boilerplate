@@ -1,0 +1,8 @@
+query readOnePage($link: String!) {
+  readOnePage(link: $link) {
+    id
+    className
+    title
+    content
+  }
+}

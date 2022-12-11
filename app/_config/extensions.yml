@@ -28,3 +28,6 @@ DNADesign\Elemental\Models\ElementContent:
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension
+Silverstripe\GraphQL\Controller:
+  extensions:
+    - XD\Basic\Extensions\GraphQLControllerExtension
