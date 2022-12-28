@@ -1,0 +1,1 @@
+import{o as a,a as n,b as t,t as o}from"./entry.cfeb4357.js";const r=["innerHTML"],i={__name:"HomePage",props:{page:{type:Object,readonly:!0}},setup(e){return(l,c)=>(a(),n("div",null,[t("h1",null,o(e.page.title)+" HOMEPAGE",1),t("div",{innerHTML:e.page.content},null,8,r)]))}};export{i as default};

@@ -52,33 +52,33 @@ class PageController extends ContentController
     {
         parent::init();
 
-        Requirements::javascript(project() . '/client/dist/js/app.js');
+        // // Requirements::javascript(project() . '/client/dist/js/app.js');
 
-        $criticalFile = $this->getCriticalCSS();
-        $criticalPath = project() . "/client/dist/styles/$criticalFile";
-        $styleSheet = project() . '/client/dist/styles/app.css';
-        if (file_exists($criticalPath) && $criticalCss = file_get_contents($criticalPath)) {
-            Requirements::insertHeadTags(sprintf('
-                <style type="text/css">%s</style>
-                <link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
-                <noscript><link rel="stylesheet" href="%s"></noscript>
-                ', $criticalCss, $styleSheet, $styleSheet
-            ));
-        } else {
-            Requirements::css($styleSheet);
-        }
+        // $criticalFile = $this->getCriticalCSS();
+        // $criticalPath = project() . "/client/dist/styles/$criticalFile";
+        // $styleSheet = project() . '/client/dist/styles/app.css';
+        // if (file_exists($criticalPath) && $criticalCss = file_get_contents($criticalPath)) {
+        //     Requirements::insertHeadTags(sprintf('
+        //         <style type="text/css">%s</style>
+        //         <link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
+        //         <noscript><link rel="stylesheet" href="%s"></noscript>
+        //         ', $criticalCss, $styleSheet, $styleSheet
+        //     ));
+        // } else {
+        //     Requirements::css($styleSheet);
+        // }
 
-        if ($typeKit = Environment::getEnv('TYPEKIT_ID')) {
-            Requirements::insertHeadTags(sprintf(
-                '<link rel="stylesheet" href="https://use.typekit.net/%s.css">', $typeKit
-            ));
-        }
+        // if ($typeKit = Environment::getEnv('TYPEKIT_ID')) {
+        //     Requirements::insertHeadTags(sprintf(
+        //         '<link rel="stylesheet" href="https://use.typekit.net/%s.css">', $typeKit
+        //     ));
+        // }
 
-        if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
-            Requirements::insertHeadTags(sprintf(
-                '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous"></script>', $fontawesomeKit
-            ));
-        }
+        // if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
+        //     Requirements::insertHeadTags(sprintf(
+        //         '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous"></script>', $fontawesomeKit
+        //     ));
+        // }
 
         // Google Tag Manager
         if (($gtmCode = Environment::getEnv('GTM_CODE')) && CookieConsent::check(CookieConsent::ANALYTICS)) {

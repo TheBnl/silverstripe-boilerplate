@@ -10,6 +10,9 @@ SilverStripe\ORM\FieldType\DBCurrency:
   currency_symbol: '€'
 SilverStripe\View\SSViewer:
   rewrite_hash_links: false
+  themes:
+    - nuxt-app
+    - '$default'
 SilverStripe\Control\Email\Email:
   admin_email:
     mail@mysite.com: 'app'

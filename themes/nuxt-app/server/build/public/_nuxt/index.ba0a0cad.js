@@ -1,0 +1,1 @@
+import{y as e,o,a as t,b as c}from"./entry.cfeb4357.js";const n={},s=c("p",null,"Redirect to /home",-1),r=[s];function a(_,d){return o(),t("div",null,r)}const l=e(n,[["render",a]]);export{l as default};

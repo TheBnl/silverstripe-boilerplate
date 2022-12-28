@@ -72,7 +72,8 @@
         "resources-dir": "_resources",
         "expose": [
             "app/client/dist",
-            "app/images"
+            "app/images",
+            "themes/nuxt-app/dist"
         ],
         "project-files": [
             "app/src/*"

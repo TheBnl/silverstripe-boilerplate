@@ -1,0 +1,23 @@
+{
+    "name": "bramdeleeuw/silverstripe-nuxt-app",
+    "type": "silverstripe-theme",
+    "license": "BSD-3-Clause",
+    "description": "Theme to quickly kick off a new Nuxt app with a SilverStripe backend",
+    "require": {},
+    "require-dev": {},
+    "config": {
+        "process-timeout": 600,
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "extra": {
+        "expose": [
+            "dist",
+            "server/build/public"
+        ]
+    }
+}
