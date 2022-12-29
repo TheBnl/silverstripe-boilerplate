@@ -11,7 +11,8 @@ SilverStripe\ORM\FieldType\DBCurrency:
 SilverStripe\View\SSViewer:
   rewrite_hash_links: false
   themes:
-    - nuxt-app
+    #- nuxt-app
+    - svelte-app
     - '$default'
 SilverStripe\Control\Email\Email:
   admin_email:

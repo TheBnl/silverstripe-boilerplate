@@ -19,3 +19,10 @@ SilverStripe\GraphQL\Controller:
   cors:
     Enabled: true
     Allow-Origin: '*'
+
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\GraphQL\QueryHandler\QueryHandlerInterface.default:
+    class: SilverStripe\GraphQL\QueryHandler\QueryHandler
+    properties:
+      Middlewares:
+        csrf: false
