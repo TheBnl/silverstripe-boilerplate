@@ -1,6 +1,5 @@
 <script>
     export let pages;
-    console.log('load nav data here?', pages);
 </script>
 
 <nav>

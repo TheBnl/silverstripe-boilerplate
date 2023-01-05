@@ -11,6 +11,43 @@ query readOnePage($link: String!) {
     className
     title
     content
+    urlSegment
+    openGraphImage {
+      id
+      url
+    }
+    banners {
+      nodes {
+       id 
+      }
+    }
+    elementalArea {
+      id
+      elements {
+        id
+        className
+        title
+        showTitle
+        ... on GalleryBlock {
+          galleryItems {
+            nodes {
+              id
+              image {
+                url
+              }
+            }
+          }
+        }
+        ... on VideoBlock {
+          videoURL
+        	embedCode
+          videoPreview {
+            id
+            url
+          }
+        }
+      }
+    }
   }
 }
 `;

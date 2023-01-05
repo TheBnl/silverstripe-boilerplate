@@ -38,5 +38,4 @@ class BaseElementExtension extends DataExtension
 
         return null;
     }
-
 }

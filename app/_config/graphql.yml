@@ -1,5 +1,6 @@
 ---
 Name: graphql
+After: 'graphql-middlewares'
 ---
 SilverStripe\Control\Director:
   rules:

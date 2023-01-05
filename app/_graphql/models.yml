@@ -8,6 +8,9 @@ Page:
     title: true
     content: true
     className: true
+    elementalArea: true
+    openGraphImage: true
+    banners: true
     # canViewType: true
     # canEditType: true
     parentID: true
@@ -26,60 +29,61 @@ SilverStripe\Assets\File:
   operations:
     readOne: true
 
-# DNADesign\Elemental\Models\BaseElement:
-#   fields:
-#     id: true
-#     lastEdited: true
-#     absoluteLink: String
-#     title: true
-#     showTitle: true
-#     sort: true
-#     # blockSchema: ObjectType
-#     # obsoleteClassName: String
-#     isPublished: Boolean
-#     isLiveVersion: Boolean
-#   operations:
-#     readOne: true
+DNADesign\Elemental\Models\BaseElement:
+  fields:
+    id: true
+    className: true
+    lastEdited: true
+    absoluteLink: String
+    title: true
+    showTitle: true
+    sort: true
+    # blockSchema: ObjectType
+    # obsoleteClassName: String
+    isPublished: Boolean
+    isLiveVersion: Boolean
+  operations:
+    readOne: true
 
-# XD\Basic\Blocks\VideoBlock:
-#   fields: '*'
-#   operations:
-#     read: true
-#     readOne: true
+XD\Basic\Blocks\VideoBlock:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
 
-# XD\Basic\Blocks\ActionCardsBlock:
-#   fields:
-#     id: true
-#     actionCards: '[ActionCard]'
-#   operations:
-#     read: true
-#     readOne: true
+XD\Basic\Blocks\ActionCardsBlock:
+  fields:
+    id: true
+    actionCards: '[ActionCard]'
+  operations:
+    read: true
+    readOne: true
 
-# XD\Basic\Blocks\GalleryBlock:
-#   fields: '*'
-#   operations:
-#     read: true
-#     readOne: true
+XD\Basic\Blocks\GalleryBlock:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
 
-# XD\Basic\Models\GalleryItem:
-#   fields: '*'
-#   operations:
-#     read: true
-#     readOne: true
+XD\Basic\Models\GalleryItem:
+  fields: '*'
+  operations:
+    read: true
+    readOne: true
 
-# DNADesign\Elemental\Models\ElementalArea:
-#   fields:
-#     id: true
-#     elements:
-#       plugins:
-#         paginateList: false
-#   operations:
-#     readOne: true
+DNADesign\Elemental\Models\ElementalArea:
+  fields:
+    id: true
+    elements:
+      plugins:
+        paginateList: false
+  operations:
+    readOne: true
 
-# XD\Basic\Models\CustomActionCard:
-#   fields: '*'
-#   operations:
-#     readOne: true
+XD\Basic\Models\CustomActionCard:
+  fields: '*'
+  operations:
+    readOne: true
 
 # SilverStripe\Security\Member:
 #   fields:
