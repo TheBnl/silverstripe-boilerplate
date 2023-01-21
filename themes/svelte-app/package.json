@@ -35,7 +35,9 @@
 	"type": "module",
 	"dependencies": {
 		"@rollup/plugin-dynamic-import-vars": "^2.0.2",
+		"@sveltejs/adapter-node": "^1.1.0",
 		"@sveltejs/adapter-static": "^1.0.0",
+		"@sveltejs/adapter-vercel": "^1.0.1",
 		"graphql": "^16.6.0",
 		"graphql-request": "^5.1.0"
 	}

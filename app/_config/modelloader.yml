@@ -1,0 +1,13 @@
+---
+Name: modelloader
+---
+XD\Basic\GraphQL\ModelLoader:
+  included_dataobjects:
+    - Page
+    - SilverStripe\CMS\Model\SiteTree
+    - SilverStripe\SiteConfig\*
+    - SilverStripe\Assets\*
+    - DNADesign\Elemental\Models\*
+    - XD\Basic\Blocks\*
+    - XD\Basic\Models\*
+    - XD\PageContentBlock\Models\*

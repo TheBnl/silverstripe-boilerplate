@@ -1,4 +1,6 @@
 RewriteEngine On
+# add rewrite rule to proxy __data.json to prepend  public/_resources/themes/svelte-app/build/
+RewriteRule __data.json public/_resources/themes/svelte-app/build/$1
 RewriteRule ^(.*)$ public/$1
 
 # ENABLE BROWSER CACHING

@@ -4,6 +4,6 @@
     export let data;
 </script>
 
-<Nav pages={data?.readPages} />
+<Nav pages={data?.readPages?.nodes} />
 
 <slot />

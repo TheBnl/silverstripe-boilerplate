@@ -1,9 +1,26 @@
+execute:
+  - XD\Basic\GraphQL\ModelLoader
+  - XD\Basic\GraphQL\OperationLoader
 modelConfig:
   DataObject:
+    type_formatter: 'SilverStripe\Core\ClassInfo::shortName'
+    base_fields:
+      ID: ID!
+      HashID: String!
+      TypeAncestry: '[[String]]'
+      exists: Boolean!
     plugins:
-      inheritance: true
+      versioning: false
+      inheritance:
+        useUnionQueries: false
     operations:
       read:
         plugins:
-          readVersion: false
-          paginateList: false
+          filter: true
+          getByLink:
+            after: filter
+            before: paginateList
+      readOne:
+        plugins:
+          getByLink:
+            after: filter

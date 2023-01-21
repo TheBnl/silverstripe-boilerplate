@@ -31,3 +31,6 @@ Page:
 Silverstripe\GraphQL\Controller:
   extensions:
     - XD\Basic\Extensions\GraphQLControllerExtension
+SilverStripe\ORM\DataObject:
+  extensions:
+    - XD\Basic\GraphQL\Extensions\DataObjectHashExtension

@@ -1,13 +1,14 @@
 import { GraphQLClient } from 'graphql-request'
-import { PUBLIC_API_URL } from '$env/static/public';
+import { PRIVATE_API_URL, PRIVATE_API_KEY } from '$env/static/private';
 // const endpoint = process.env.API_URL;
 import { browser } from '$app/environment'; 
 
-const client = new GraphQLClient(PUBLIC_API_URL)
+const client = new GraphQLClient(PRIVATE_API_URL)
 
 client.setHeaders({
   "Content-Type": "application/json",
   'Accept': "application/json",
+  'X-API-Key': PRIVATE_API_KEY
 })
 
 if (!browser) {

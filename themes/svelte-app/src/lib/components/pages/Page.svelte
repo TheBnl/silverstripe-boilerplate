@@ -15,4 +15,4 @@
 <h1>Page {title}</h1>
 {@html content}
 
-<ElementalArea elements={elementalArea.elements} />
+<ElementalArea elements={elementalArea?.elements?.nodes} />

@@ -1,10 +1,22 @@
-ActionCard:
+# StaticBuildPayload:
+#   fields:
+#     typeAncestry: '[TypeAncestry!]!'
+#     links:
+#       type: '[StaticBuildLink!]!'
+# StaticBuildLink:
+#   fields:
+#     link: String!
+TypeAncestry:
   fields:
-    label: String
-    title: String
-    content: String
-    link: String
-    linkLabel: String
-    color: String
-    image: Image
-  fieldResolver: [ 'XD\Basic\GraphQL\Resolvers\Resolvers', 'resolveActionCard' ]
+    type: String!
+    hash: String!
+    # type: String!
+    # ancestry: '[String!]!'
+TypeResolution:
+  fields:
+    type: String!
+    link: String!
+# GeneratedFragment:
+#   fields:
+#     type: String!
+#     fragment: String

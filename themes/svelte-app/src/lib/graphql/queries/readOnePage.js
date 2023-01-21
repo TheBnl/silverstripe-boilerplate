@@ -14,7 +14,6 @@ query readOnePage($link: String!) {
     urlSegment
     openGraphImage {
       id
-      url
     }
     banners {
       nodes {
@@ -24,26 +23,27 @@ query readOnePage($link: String!) {
     elementalArea {
       id
       elements {
-        id
-        className
-        title
-        showTitle
-        ... on GalleryBlock {
-          galleryItems {
-            nodes {
-              id
-              image {
-                url
+        nodes {
+          id
+          className
+          title
+          showTitle
+          ... on GalleryBlock {
+            galleryItems {
+              nodes {
+                id
+                image {
+                  id
+                }
               }
             }
           }
-        }
-        ... on VideoBlock {
-          videoURL
-        	embedCode
-          videoPreview {
-            id
-            url
+          ... on VideoBlock {
+            videoURL
+            embedCode
+            videoPreview {
+              id
+            }
           }
         }
       }

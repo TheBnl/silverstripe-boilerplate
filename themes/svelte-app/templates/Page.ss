@@ -2,23 +2,23 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
+		<link rel="icon" href="/_resources/themes/svelte-app/build/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="$ThemeDir/build/_app/immutable/start-e8218b4b.js">
-		<link rel="modulepreload" href="$ThemeDir/build/_app/immutable/chunks/index-1ce6a289.js">
-		<link rel="modulepreload" href="$ThemeDir/build/_app/immutable/chunks/singletons-6ab2e5ce.js">
+		<link rel="modulepreload" href="/_resources/themes/svelte-app/build/_app/immutable/start-619ce612.js">
+		<link rel="modulepreload" href="/_resources/themes/svelte-app/build/_app/immutable/chunks/index-1ce6a289.js">
+		<link rel="modulepreload" href="/_resources/themes/svelte-app/build/_app/immutable/chunks/singletons-6ab2e5ce.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 		<script type="module" data-sveltekit-hydrate="45h">
-			import { start } from "$ThemeDir/build/_app/immutable/start-e8218b4b.js";
+			import { start } from "/_resources/themes/svelte-app/build/_app/immutable/start-619ce612.js";
 
 			start({
-				env: {"PUBLIC_API_URL":"http://localhost/graphql"},
-				paths: {"base":"","assets":""},
+				env: {},
+				paths: {"base":"/_resources/themes/svelte-app/build","assets":"/_resources/themes/svelte-app/build"},
 				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-				version: "1672954564710"
+				version: "1673266322275"
 			});
 		</script></div>
 	</body>

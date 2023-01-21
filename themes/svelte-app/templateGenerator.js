@@ -14,8 +14,9 @@ fs.readFile(buildEntryFile, 'utf-8', (err, file) => {
         return;
     }
 
-    console.log('Change all /_app to $ThemeDir/build/_app');
-    const replaced = file.replaceAll(fromAppFolder, toAppFolder);
+    // console.log('Change all /_app to $ThemeDir/build/_app');
+    // const replaced = file.replaceAll(fromAppFolder, toAppFolder);
+    const replaced = file;
 
     console.log('Write to:', templateFile);
     fs.writeFile(templateFile, replaced, 'utf-8', function (err) {

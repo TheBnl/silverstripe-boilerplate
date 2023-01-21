@@ -24,7 +24,6 @@
         "dorsetdigital/silverstripe-enhanced-requirements": "*",
         "guzzlehttp/guzzle": "*",
         "jonom/focuspoint": "*",
-        "jonom/silverstripe-betternavigator": "*",
         "jonom/silverstripe-share-care": "*",
         "jonom/silverstripe-text-target-length": "*",
         "lekoala/silverstripe-excel-import-export": "*",
@@ -43,11 +42,12 @@
         "xddesigners/page-content-block": "*",
         "xddesigners/honeypotfield": "*",
         "xddesigners/iconselectfield": "*",
-        "xddesigners/silverstripe-urlsegment-copy-button": "*"
+        "xddesigners/silverstripe-urlsegment-copy-button": "*",
+        "silverstripe/login-forms": "^4.8",
+        "sminnee/silverstripe-apikey": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "lekoala/silverstripe-debugbar": "*",
         "silverstripe/graphql-devtools": "dev-master"
     },
     "autoload": {
