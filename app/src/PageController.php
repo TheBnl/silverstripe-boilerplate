@@ -73,6 +73,12 @@ class PageController extends ContentController
                 '<link rel="stylesheet" href="https://use.typekit.net/%s.css">', $typeKit
             ));
         }
+        
+        if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
+            Requirements::insertHeadTags(sprintf(
+                '<script src="https://kit.fontawesome.com/%s.js" crossorigin="anonymous"></script>', $fontawesomeKit
+            ));
+        }
 
         if ($fontawesomeKit = Environment::getEnv('FONTAWESOME_ID')) {
             Requirements::insertHeadTags(sprintf(
