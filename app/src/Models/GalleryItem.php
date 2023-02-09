@@ -36,6 +36,8 @@ class GalleryItem extends DataObject
         'Image'
     ];
 
+    private static $default_sort = 'Sort ASC';
+    
     private static $extensions = [
         Versioned::class
     ];
