@@ -2,7 +2,7 @@
 
 namespace XD\Basic\Extensions;
 
-use Mobile_Detect;
+use Detection\MobileDetect;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Extension;
@@ -28,7 +28,7 @@ class MobileDetectExtension extends Extension
      */
     public function onBeforeInit()
     {
-        $detect = new Mobile_Detect();
+        $detect = new MobileDetect();
         $this->setIsMobile($detect->isMobile());
         $this->setIsPhone($detect->isMobile() && !$detect->isTablet());
         $this->setIsTablet($detect->isTablet());
