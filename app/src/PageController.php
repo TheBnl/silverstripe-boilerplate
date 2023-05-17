@@ -8,6 +8,7 @@ use SilverStripe\Core\Environment;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\Requirements;
+use SilverStripe\View\SSViewer;
 
 class PageController extends ContentController
 {
@@ -115,7 +116,7 @@ class PageController extends ContentController
     public function getGTMFallback()
     {
         if (($gtmCode = Environment::getEnv('GTM_CODE')) && CookieConsent::check(CookieConsent::ANALYTICS)) {
-            return $this->customise(['GTMCode' => $gtmCode])->renderWith('Includes\GTMFallback');
+            return SSViewer::execute_template('Includes\GTMFallback', new ArrayData(['GTMCode' => $gtmCode]));
         }
 
         return null;
