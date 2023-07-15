@@ -2,17 +2,17 @@ FROM brettt89/silverstripe-web:8.1-apache
 
 RUN echo 'date.timezone = Europe/Amsterdam' > "/usr/local/etc/php/conf.d/timezone.ini"
 
-# setup mailhog
-RUN apt-get update &&\
-    apt-get install --no-install-recommends --assume-yes --quiet ca-certificates curl git &&\
-    rm -rf /var/lib/apt/lists/*
-RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
-ENV PATH /usr/local/go/bin:$PATH
-RUN go get github.com/mailhog/mhsendmail
-RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
-RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > "/usr/local/etc/php/conf.d/mailhog.ini"
+# setup imagic
+RUN apt-get update && apt-get install -y \
+    imagemagick libmagickwand-dev --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
 
-# ENV DOCUMENT_ROOT /usr/src/myapp
+# install mailpit
+RUN curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh | bash -
+RUN echo 'sendmail_path = /usr/local/bin/mailpit sendmail -S mailpit:1025' > "/usr/local/etc/php/conf.d/mailpit.ini"
+
 ENV DOCUMENT_ROOT /var/www/html
 
 COPY . $DOCUMENT_ROOT
