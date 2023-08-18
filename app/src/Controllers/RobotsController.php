@@ -20,12 +20,20 @@ class RobotsController extends Controller
         'Crawl-delay' => 15
     ];
 
+    private static $devParams = [
+        'User-agent' => '*',
+        'Disallow' => '/'
+    ];
+    
     public function index()
     {
-        $this->getResponse()->addHeader('Content-Type', 'text/plain; charset="utf-8"');
-        $params = array_merge(self::config()->get('params'), [
-            'Sitemap' => Director::absoluteURL('sitemap.xml')
-        ]);
+        if (Director::isLive()) {
+            $params = array_merge(self::config()->get('params'), [
+                'Sitemap' => Director::absoluteURL('sitemap.xml')
+            ]);
+        } else {
+            $params = self::config()->get('devParams');
+        }
 
         $out = new ArrayList();
         foreach ($params as $param => $value) {
@@ -34,6 +42,8 @@ class RobotsController extends Controller
                 'Value' => $value
             ]));
         }
+
+        $this->getResponse()->addHeader('Content-Type', 'text/plain; charset="utf-8"');
 
         return $this->customise(new ArrayData([
             'Params' => $out
