@@ -7,6 +7,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\NumericField;
+use SilverStripe\Forms\TreeDropdownField;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\HasManyList;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
@@ -70,6 +71,8 @@ class ActionCardsBlock extends BaseElement
                     ->setDescription(_t(__CLASS__ . '.ItemLimitDescription', 'Wanneer het max aantal items is ingesteld op 0, zal er geen limiet ingesteld worden.')),
                 Colors::getField('CardColor')->setTitle('Card color override')
             ]);
+            
+            $fields->insertAfter('Title', TreeDropdownField::create('ActionCardParentID', _t(__CLASS__ . '.ActionCardParent', 'Toon items uit menu'), SiteTree::class));
         });
 
         return parent::getCMSFields();
