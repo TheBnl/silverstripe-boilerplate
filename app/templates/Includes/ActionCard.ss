@@ -1,22 +1,23 @@
-<a class="action-card action-card--$Color<% if $Image %> action-card--image<% end_if %><% if not $Link %> action-card--no-link<% end_if %>"
-    <% if $Link %> href="$Link"<% end_if %>
-    <% if $ExternalLink %> target="_blank"<% end_if %>
-    <% if $Image %> style="background-image: url('$Image.FocusFill(800,600).Link');"<% end_if %>>
-    <div class="action-card__content">
-        <% if $Label %><label class="action-card__label">$Label</label><% end_if %>
-        <header class="action-card__header">
-            <% if $Icon %>
-                $Icon
-            <% else %>
-                <i class="fas fa-arrow-right"></i>
-            <% end_if %>
-            <h3>$Title</h3>
-        </header>
-        <div class="action-card__description">
-            $Content
-        </div>
-        <footer class="action-card__footer">
-            <strong>$LinkLabel</strong>
-        </footer>
+<div class="card w-100 flex-grow mb-3 bg-{$Color} text-bg-{$Color} action-card">
+    <% if $Image %>
+        <img src="$Image.FocusFill(400,300).Link" class="card-img" alt="$Image.Title">
+    <% end_if %>
+    <div class="<% if $Image %>card-img-overlay text-white<% else %>card-body<% end_if %>">
+        <h5 class="card-title">$Title</h5>
+        <p class="card-text">$Content</p>
+        <% if $Image %>
+            <a href="$Link" class="btn btn-primary"<% if $ExternalLink %> target="_blank"<% end_if %>>
+                $LinkLabel
+            </a>
+        <% end_if %>
     </div>
-</a>
+    <% if not $Image %>
+        <div class="card-footer text-body-secondary">
+            <% if $Link %>
+                <a href="$Link" class="btn btn-primary"<% if $ExternalLink %> target="_blank"<% end_if %>>
+                    $LinkLabel
+                </a>
+            <% end_if %>
+        </div>
+    <% end_if %>
+</div>

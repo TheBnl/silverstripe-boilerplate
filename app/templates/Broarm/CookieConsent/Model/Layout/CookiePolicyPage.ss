@@ -1,15 +1,11 @@
-<section class="element">
-    <div class="grid-container">
-        <header class="grid-x grid-padding-x">
-            <div class="cell">
-                <h1>$Title</h1>
-            </div>
-        </header>
-        <section class="grid-x grid-padding-x">
-            <div class="cell">
+<div class="block">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="block__title">$Title</h1>
                 $Content
                 $Form
             </div>
-        </section>
+        </div>
     </div>
-</section>
+</div>

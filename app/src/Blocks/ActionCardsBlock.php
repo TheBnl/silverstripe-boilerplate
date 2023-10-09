@@ -10,6 +10,7 @@ use SilverStripe\Forms\NumericField;
 use SilverStripe\Forms\TreeDropdownField;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\HasManyList;
+use SilverStripe\View\Requirements;
 use XD\Basic\GridField\GridFieldConfig_Sortable;
 use XD\Basic\Models\CustomActionCard;
 use XD\Basic\Util\Colors;
@@ -34,6 +35,10 @@ class ActionCardsBlock extends BaseElement
         'ItemLimit' => 'Int'
     ];
 
+    private static $defaults = [
+        'CardColor' => 'auto'
+    ];
+
     private static $has_one = [
         'ActionCardParent' => SiteTree::class
     ];
@@ -52,6 +57,17 @@ class ActionCardsBlock extends BaseElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Action cards');
+    }
+
+
+    public function init()
+    {
+        if ($this->Style === 'Carousel') {
+            Requirements::css('https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+            Requirements::javascript('https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', ['defer' => true]);
+            Requirements::javascript(project() . '/client/dist/js/blocks/actioncardsblockcarousel.js', ['defer' => true]);
+        }
+        Requirements::css(project() . '/client/dist/styles/blocks/actioncardsblock.css'); 
     }
 
     public function getCMSFields()

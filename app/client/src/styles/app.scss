@@ -1,19 +1,8 @@
-// Import foundation
-@import "~foundation-sites/scss/util/util";
+// Import bootstrap
+@import "bootstrap/scss/functions";
 @import "settings";
-@import "~foundation-sites/scss/foundation";
-@import "~hamburgers/_sass/hamburgers/hamburgers";
+@import "bootstrap/scss/bootstrap";
 
-// Photoswipe
-// @import "photoswipeSettings";
-// @import "~photoswipe/src/css/main";
-// @import "~photoswipe/src/css/default-skin/default-skin";
-
-// Swiper
-@import "~swiper/dist/css/swiper.min";
-
-// Get everything or only the modules you need
-@include foundation-everything;
 
 /* purgecss start ignore */
 
@@ -22,20 +11,17 @@
 @import "modules/footer";
 @import "modules/forms";
 @import "modules/cookieGroupTable";
-@import "modules/betterNavigator";
+@import "modules/cookieConsent";
 @import "modules/message";
-@import "modules/siteNav";
 @import "modules/dropzone";
-@import "modules/actionCard";
 
 // Blocks
 @import "blocks/block";
-@import "blocks/bannerBlock";
 @import "blocks/elementContent";
 // @import "blocks/galleryBlock";
-// @import "blocks/videoBlock";
 
 // Layout
 @import "layout/page";
+@import "layout/cookieConsent";
 
 /* purgecss end ignore */

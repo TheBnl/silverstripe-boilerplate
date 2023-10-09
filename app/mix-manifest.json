@@ -1,6 +1,14 @@
 {
     "/client/dist/js/app.js": "/client/dist/js/app.js",
-    "/client/dist/styles/editor.css": "/client/dist/styles/editor.css",
+    "/client/dist/js/blocks/actioncardsblockcarousel.js": "/client/dist/js/blocks/actioncardsblockcarousel.js",
+    "/client/dist/js/blocks/galleryblockcarousel.js": "/client/dist/js/blocks/galleryblockcarousel.js",
+    "/client/dist/js/blocks/galleryblockgrid.js": "/client/dist/js/blocks/galleryblockgrid.js",
+    "/client/dist/js/blocks/videoblock.js": "/client/dist/js/blocks/videoblock.js",
+    "/client/dist/js/modules/cookieconsent.js": "/client/dist/js/modules/cookieconsent.js",
     "/client/dist/styles/cms.css": "/client/dist/styles/cms.css",
-    "/client/dist/styles/app.css": "/client/dist/styles/app.css"
+    "/client/dist/styles/blocks/videoblock.css": "/client/dist/styles/blocks/videoblock.css",
+    "/client/dist/styles/blocks/galleryblock.css": "/client/dist/styles/blocks/galleryblock.css",
+    "/client/dist/styles/blocks/actioncardsblock.css": "/client/dist/styles/blocks/actioncardsblock.css",
+    "/client/dist/styles/app.css": "/client/dist/styles/app.css",
+    "/client/dist/styles/editor.css": "/client/dist/styles/editor.css"
 }

@@ -1,1 +1,1 @@
-<img <% if $Lazy %>class="lazy" data-<% end_if %>src="$URL.ATT" style="transform-origin: {$PercentageX}% {$PercentageY}%;" alt="$Title.ATT" />
+<img src="$URL.ATT" loading="lazy" class="img-fluid" style="transform-origin: {$PercentageX}% {$PercentageY}%;" alt="$Title.ATT" />

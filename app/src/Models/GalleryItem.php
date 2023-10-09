@@ -56,9 +56,9 @@ class GalleryItem extends DataObject
     {
         return [
             'src' => $this->Image()->Link(),
-            'w' => $this->Image()->getWidth(),
-            'h' => $this->Image()->getHeight(),
-            'title' => htmlentities($this->Title, ENT_QUOTES)
+            'width' => $this->Image()->getWidth(),
+            'height' => $this->Image()->getHeight(),
+            'alt' => htmlentities($this->Title ?? '', ENT_QUOTES)
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace XD\Basic\Blocks;
 
 use DNADesign\Elemental\Models\BaseElement;
+use SilverStripe\View\Requirements;
 use XD\Basic\Extensions\EmbedableVideo;
 
 /**
@@ -29,6 +30,14 @@ class VideoBlock extends BaseElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Video');
+    }
+
+    public function init()
+    {
+        // Requirements::javascript('bramdeleeuw/cookieconsent:javascript/dist/cookieconsent.js');
+        Requirements::javascript(project() . '/client/dist/js/modules/cookieconsent.js');
+        Requirements::javascript(project() . '/client/dist/js/blocks/videoblock.js');
+        Requirements::css(project() . '/client/dist/styles/blocks/videoblock.css');
     }
 
     protected function provideBlockSchema()

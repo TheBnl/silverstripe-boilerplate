@@ -10,8 +10,8 @@ DNADesign\ElementalVirtual\Model\ElementVirtual:
 
 # Remove this if you want to make use of the Gallery or Video block
 # Dont forget to include the scss and js files as well
-Page:
-  disallowed_elements:
-    - XD\Basic\Blocks\GalleryBlock
-    - XD\Basic\Blocks\VideoBlock
-    - XD\Basic\Blocks\MapBlock
+# Page:
+#   disallowed_elements:
+#     - XD\Basic\Blocks\GalleryBlock
+#     - XD\Basic\Blocks\VideoBlock
+#     - XD\Basic\Blocks\MapBlock

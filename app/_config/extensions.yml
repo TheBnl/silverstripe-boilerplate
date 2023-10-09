@@ -25,6 +25,13 @@ DNADesign\Elemental\Models\ElementContent:
   extensions:
     - XD\Basic\Extensions\ContentBlockExtension
     - XD\Basic\Extensions\HasLink
+DNADesign\Elemental\Controllers\ElementController:
+  extensions:
+    - XD\Basic\Extensions\ElementControllerExtension
+
+SilverStripe\Forms\Form:
+  extensions:
+    - XD\Basic\Extensions\FormExtension
 Page:
   extensions:
     - DNADesign\Elemental\Extensions\ElementalPageExtension

@@ -1,23 +1,26 @@
-@import '~foundation-sites/scss/util/util';
-@import "settings";
-@import "~foundation-sites/scss/foundation";
-@import "~foundation-sites/scss/typography/typography";
-
-// Import TypeKit fonts
-@if $typeKitId {
-  @import url("https://use.typekit.net/#{$typeKitId}.css");
-}
-
-body {
-  font-family: $body-font-family;
-  color: $body-font-color;
-  font-weight: 400;
-  line-height: 1.6;
-  text-rendering: optimizeLegibility;
-}
 
 .mce-content-body {
-  @include foundation-typography-base;
+
+  // @import "bootstrap/scss/bootstrap";
+  @import "bootstrap/scss/functions";
+  @import "settings";
+  @import "bootstrap/scss/variables-dark";
+  @import "bootstrap/scss/maps";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/utilities";
+  @import "bootstrap/scss/root";
+  @import "bootstrap/scss/reboot";
+  @import "bootstrap/scss/type";
+
+
+  // body {
+  // font-family: $font-family-base;
+  // color: $body-color;
+  // font-weight: $font-weight-base;
+  // line-height: $line-height-base;
+  // }
+
+  // @include foundation-typography-base;
 }
 
-@include foundation-typography-helpers;
+// @include foundation-typography-helpers;

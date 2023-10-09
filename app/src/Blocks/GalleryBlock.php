@@ -10,6 +10,7 @@ use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldDataColumns;
 use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\ORM\HasManyList;
+use SilverStripe\View\Requirements;
 use Symbiote\GridFieldExtensions\GridFieldEditableColumns;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use XD\Basic\Models\GalleryItem;
@@ -50,6 +51,18 @@ class GalleryBlock extends BaseElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Gallery');
+    }
+
+    public function init()
+    {
+        Requirements::css(project() . '/client/dist/styles/blocks/galleryblock.css');
+        if ($this->Style === 'Carousel') {
+            Requirements::css('https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css');
+            Requirements::javascript('https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', ['defer' => true]);
+            Requirements::javascript(project() . '/client/dist/js/blocks/galleryblockcarousel.js', ['defer' => true]);
+        } else {
+            Requirements::javascript(project() . '/client/dist/js/blocks/galleryblockgrid.js', ['defer' => true]);
+        }
     }
 
     public function getCMSFields()

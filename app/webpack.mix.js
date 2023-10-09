@@ -1,25 +1,46 @@
+let fs = require('fs');
 const mix = require('laravel-mix');
 require('laravel-mix-polyfill');
 require('laravel-mix-critical');
 
-mix.webpackConfig({
-  stats: {
-      children: true,
-  },
-});
-
 mix
   .setResourceRoot('/app/')
-  .js('client/src/js/app.js', 'client/dist/js')
-  .sass('client/src/styles/app.scss', 'client/dist/styles')
-  .sass('client/src/styles/cms.scss', 'client/dist/styles')
-  .sass('client/src/styles/editor.scss', 'client/dist/styles')
-  // .sourceMaps()
   .polyfill({
     enabled: mix.inProduction(),
     useBuiltIns: "usage",
     targets: {"ie": 11}
   });
+
+let getFiles = function (dir) {
+  let files = [];
+  fs.readdirSync(dir).forEach(file => {
+    let filePath = `${dir}/${file}`;
+    let fileInfo = fs.statSync(filePath);
+    
+    if (fileInfo.isDirectory()) {
+      files = files.concat(getFiles(filePath));
+    }
+
+    if (fileInfo.isFile() && file[0] !== '_') {
+      files.push({
+        src: filePath,
+        dist: dir.replace('src', 'dist')
+      });
+    }
+  });
+
+  return files;
+};
+
+getFiles('client/src/js').forEach(function (entry) {
+  const {src, dist} = entry;
+  mix.js(src, dist);
+});
+
+getFiles('client/src/styles').forEach(function (entry) {
+  const {src, dist} = entry;
+  mix.sass(src, dist);
+});
 
   // .purgeCss({
   //   content: [

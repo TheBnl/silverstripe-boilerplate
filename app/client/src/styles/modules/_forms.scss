@@ -1,179 +1,19 @@
-.btn-toolbar {
-  flex-direction: column;
-  display: flex;
-  @include breakpoint(medium) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .button.clear {
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-
-  [name="action_goBack"] {
-    @include breakpoint(small only) {
-      order: 66;
-    }
-  }
+.middleColumn {
+    margin-bottom: $spacer;
 }
 
-.field {
-  &.optionset legend.left,
-  &.nocaptcha label.left,
-  &.optionset label.left {
-    display: block;
-    float: none;
-  }
-  &.nocaptcha {
-    margin-bottom: 1rem;
-  }
-  ul.optionset {
-    list-style: none;
-    margin: 0 0 $global-margin 0;
-    li {
-      display: flex;
+// handle server validation
+.requiredField {
+    &.holder-required,
+    .holder-required {
+        @extend .is-invalid;
+
+        input {
+            @extend .is-invalid;
+        }
+
+        .message.required {
+            display: none;
+        }
     }
-  }
-}
-
-.field {
-  &.holder-required,
-  &.error {
-    label {
-      @extend .is-invalid-label;
-    }
-
-    textarea,
-    select,
-    input {
-      @extend .is-invalid-input;
-    }
-
-    .form-error {
-      display: block;
-    }
-  }
-
-  
-  .message {
-    // reset callout styles
-    position: relative;
-    margin: 0 0 1rem 0;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
-    color: $body-font-color;
-
-    &.bad,
-    &.required {
-      @extend .form-error;
-      display: block;
-    }
-  }
-}
-
-[type='checkbox'],
-[type='radio'] {
-  &.error {
-    margin: 0 0 $global-margin;
-  }
-  + label[for].error {
-    display: none !important;
-    + label[for] {
-      color: $alert-color;
-      display: inline-block;
-      margin-left: calc($global-margin / 2);
-      margin-right: $global-margin;
-      margin-bottom: 0;
-    }
-  }
-}
-
-.required-star{
-  font-size: $small-font-size;
-  color: $alert-color;
-  position: relative;
-  top: -.1rem;
-  left: -.1rem;
-}
-
-label,
-legend {
-  // font-size: $small-font-size;
-  margin: 0 0 .25rem 0;
-}
-
-.field.termsandconditions,
-.field.checkbox {
-  margin-bottom: $form-spacing;
-  input, label {
-    margin-bottom: 0;
-  }
-}
-
-.field.termsandconditions {
-  a {
-    color: $anchor-color;
-    &:hover,
-    &:focus {
-        color: $anchor-color-hover;
-    }
-  }
-}
-
-button,
-input[type="button"],
-input[type="submit"] {
-  @include button;
-  display: inline-block;
-  position: relative;
-  &[disabled] {
-    background-color: $medium-gray;
-    pointer-events: none;
-  }
-}
-
-.input-group-button {
-  a, input, button, label {
-    align-self: stretch;
-    height: auto;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0;
-    white-space: nowrap;
-  }
-}
-
-input:disabled ~ .switch-paddle {
-  background-color: $dark-gray;
-  cursor: not-allowed;
-}
-
-.fieldgroup {
-  // .groupeddatefield
-  &.middleColumn {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -#{calc($form-spacing / 2)};
-  }
-
-  &-field {
-    padding: 0 calc($form-spacing / 2);
-    flex-grow: 1;
-    label {
-      font-weight: $global-weight-normal;
-    }
-  }
-
-  .form-error {
-    padding: 0 calc($form-spacing / 2);
-    // make sure the error message wraps to the next line
-    flex-basis: 100%;
-  }
 }

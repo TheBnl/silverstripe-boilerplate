@@ -1,0 +1,1 @@
+new Swiper(".gallery-block__carousel",{autoplay:{delay:5e3},slidesPerView:2,spaceBetween:0,breakpointsInverse:!0,breakpoints:{640:{slidesPerView:3}}});

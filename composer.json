@@ -4,51 +4,47 @@
     "license": "BSD-3-Clause",
     "description": "Boilerplate template to quickly kick off a new SilverStripe project",
     "require": {
-        "silverstripe/recipe-plugin": "^1.5",
-        "silverstripe/recipe-cms": "4.x@stable",
+        "silverstripe/recipe-plugin": "2.x@stable",
+        "silverstripe/vendor-plugin": "2.x@stable",
+        "silverstripe/recipe-cms": "5.x@stable",
         "silverstripe/googlesitemaps": "*",
         "silverstripe/userforms": "*",
-        "silverstripe/spamprotection": "*",
-        "silverstripe/html5": "*",
+        "silverstripe/spamprotection": "^4",
         "silverstripe/redirectedurls": "*",
         "silverstripe/tagfield": "*",
+        "silverstripe/login-forms": "*",
         "axllent/silverstripe-scaled-uploads": "*",
         "axllent/silverstripe-image-optimiser": "dev-master",
-        "bramdeleeuw/silverstripe-schema": "*",
-        "bramdeleeuw/cookieconsent": "*",
+        "axllent/silverstripe-bootstrap-forms": "dev-master",
+        "bramdeleeuw/silverstripe-schema": "dev-master",
+        "bramdeleeuw/cookieconsent": "dev-master",
         "colymba/gridfield-bulk-editing-tools": "*",
-        "dnadesign/silverstripe-elemental-userforms": "*",
-        "dnadesign/silverstripe-elemental-virtual": "*",
         "dnadesign/silverstripe-elemental": "*",
-        "dorsetdigital/silverstripe-htmlminifier": "*",
         "dorsetdigital/silverstripe-enhanced-requirements": "*",
         "guzzlehttp/guzzle": "*",
-        "jonom/focuspoint": "*",
-        "jonom/silverstripe-betternavigator": "*",
-        "jonom/silverstripe-share-care": "*",
-        "jonom/silverstripe-text-target-length": "*",
+        "jonom/focuspoint": "^5.0",
         "lekoala/silverstripe-excel-import-export": "*",
-        "lekoala/silverstripe-cms-actions": "*",
-        "mobiledetect/mobiledetectlib": "*",
+        "lekoala/silverstripe-cms-actions": "dev-master as 1.4.1",
+        "mobiledetect/mobiledetectlib": "^3",
         "php-http/message": "*",
         "php-http/guzzle7-adapter": "^1.0",
         "rosell-dk/webp-convert": "*",
         "ryanpotter/silverstripe-cms-theme": "*",
         "swisnl/geocoder-php-nationaal-georegister-provider": "*",
         "symbiote/silverstripe-gridfieldextensions": "*",
-        "symbiote/silverstripe-addressable": "dev-master",
+        "symbiote/silverstripe-addressable": "dev-patch-3",
         "tractorcow/silverstripe-opengraph": "*",
         "undefinedoffset/silverstripe-nocaptcha": "*",
-        "xddesigners/silverstripe-dropzonefield": "*",
-        "xddesigners/page-content-block": "*",
-        "xddesigners/honeypotfield": "*",
-        "xddesigners/iconselectfield": "*",
-        "xddesigners/silverstripe-urlsegment-copy-button": "*"
+        "xddesigners/silverstripe-dropzonefield": "dev-master",
+        "xddesigners/page-content-block": "dev-master",
+        "xddesigners/honeypotfield": "dev-main",
+        "xddesigners/iconselectfield": "dev-main",
+        "xddesigners/silverstripe-urlsegment-copy-button": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
         "lekoala/silverstripe-debugbar": "*",
-        "silverstripe/graphql-devtools": "dev-master"
+        "silverstripe/graphql-devtools": "*"
     },
     "autoload": {
         "psr-4": {
@@ -59,11 +55,13 @@
         "post-create-project-cmd": "cd ./app && yarn install"
     },
     "config": {
+        "sort-packages": false,
         "process-timeout": 600,
         "allow-plugins": {
             "composer/installers": true,
             "silverstripe/recipe-plugin": true,
-            "silverstripe/vendor-plugin": true
+            "silverstripe/vendor-plugin": true,
+            "php-http/discovery": true
         }
     },
     "prefer-stable": true,
@@ -97,7 +95,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/vyg/silverstripe-addressable"
+            "url": "https://github.com/TheBnl/silverstripe-addressable"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/TheBnl/silverstripe-bootstrap-forms"
         }
     ]
 }

@@ -53,9 +53,11 @@ class Colors
     {
         $colors = self::getColors();
         if (count(array_filter($colors, 'is_array'))) {
-            return GroupedColorPaletteField::create($field, $label ?: _t(__CLASS__ . '.Color', 'Color'), $colors);
+            return GroupedColorPaletteField::create($field, $label ?: _t(__CLASS__ . '.Color', 'Color'), $colors)
+                ->setHasEmptyDefault(true);
         } else {
-            return ColorPaletteField::create($field, $label ?: _t(__CLASS__ . '.Color', 'Color'), $colors);
+            return ColorPaletteField::create($field, $label ?: _t(__CLASS__ . '.Color', 'Color'), $colors)
+                ->setHasEmptyDefault(true);
         }
     }
 

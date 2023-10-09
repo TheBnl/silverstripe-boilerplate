@@ -1,4 +1,4 @@
-export const initScrollTo = function() {
+{
   const anchors = document.getElementsByClassName('anchor');
   for (let anchor of anchors) {
     anchor.addEventListener('click', (event) => {

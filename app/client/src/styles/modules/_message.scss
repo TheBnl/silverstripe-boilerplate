@@ -1,19 +1,23 @@
-.message {
-  @extend .callout;
+.message.info {
+  @extend .alert;
+  @extend .alert-info;
+}
 
-  &.info {
-    @extend .primary;
-  }
+.message.good {
+  @extend .alert;
+  @extend .alert-success;
+}
 
-  &.good {
-    @extend .success;
-  }
+.message.warning {
+  @extend .alert;
+  @extend .alert-warning;
+}
 
-  &.warning {
-    @extend .warning;
-  }
+.message.bad {
+  @extend .alert;
+  @extend .alert-danger;
+}
 
-  &.bad {
-    @extend .alert;
-  }
+.message.required {
+  @extend .invalid-feedback;
 }

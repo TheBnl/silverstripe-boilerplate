@@ -1,13 +1,13 @@
-<div class="grid-container">
-    <div class="grid-x grid-padding-x">
-        <div class="cell medium-4 element-content__image element-content__image--image-pos-{$ImagePosition.Lowercase}">
-            <% if $Image %>
+<div class="container">
+    <div class="row">
+        <% if $Image %>
+            <div class="col<% if $ImagePosition == Right %> order-md-2<% end_if %>">
                 <figure>
-                    <img src="$Image.ScaleWidth(600).Link" alt="$Image.Title">
+                    $Image.ScaleWidth(600)
                 </figure>
-            <% end_if %>
-        </div>
-        <div class="cell medium-8 element-content__content element-content__content--image-pos-{$ImagePosition.Lowercase}">
+            </div>
+        <% end_if %>    
+        <div class="col-md-8<% if $ImagePosition == Right %> order-md-1<% end_if %>">
             <% if $ShowTitle %>
                 <h3 class="block__title">$Title</h3>
             <% end_if %>

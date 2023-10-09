@@ -3,7 +3,7 @@ Name: mycookieconsent
 ---
 Broarm\CookieConsent\Forms\CookieConsentCheckBoxField:
   default_classes:
-    - 'switch-input'
+    - 'form-check-input'
 
 Broarm\CookieConsent\CookieConsent:
   cookies:

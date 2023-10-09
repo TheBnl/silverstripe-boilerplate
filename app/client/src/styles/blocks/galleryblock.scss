@@ -1,0 +1,18 @@
+.gallery-block {
+  &__item {
+    &--grid {
+      cursor: pointer;
+    }
+  }
+
+  &__carousel {
+    overflow: hidden;
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+
+    .swiper-slide {
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+  }
+}

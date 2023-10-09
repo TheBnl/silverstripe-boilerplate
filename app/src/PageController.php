@@ -1,10 +1,12 @@
 <?php
 
 use Broarm\CookieConsent\CookieConsent;
+use Broarm\CookieConsent\Forms\CookieConsentForm;
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Environment;
+use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 use SilverStripe\Versioned\Versioned;
 use SilverStripe\View\Requirements;
@@ -27,7 +29,9 @@ class PageController extends ContentController
      *
      * @var array
      */
-    private static $allowed_actions = [];
+    private static $allowed_actions = [
+        'CookieConsentForm'
+    ];
 
     /**
      * Define files for each class you've rendered critical css for
@@ -142,6 +146,21 @@ class PageController extends ContentController
         }
 
         return $criticalFile;
+    }
+
+    public function CookieConsentForm()
+    {
+        $form = CookieConsentForm::create($this, 'CookieConsentForm');
+        $label = _t(CookieConsent::class . '.AcceptAllCookies', 'Accept all cookies');
+        $actions = $form->Actions();
+        $submit = $actions->fieldByName('action_submitConsent');
+        $submit->addExtraClass('btn-link');
+        $actions->insertBefore('action_submitConsent', LiteralField::create(
+            'AcceptAll',
+            "<a class='btn btn-primary' href='{$this->getAcceptAllCookiesLink()}'>{$label}</a>"
+        ));
+
+        return $form;
     }
 
     public function PageCacheKey()

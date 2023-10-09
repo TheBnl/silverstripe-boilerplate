@@ -1,10 +1,10 @@
-<div class="grid-container">
-    <section class="grid-x grid-padding-x">
-        <div class="cell">
+<div class="container">
+    <div class="row">
+        <div class="col col-md-8">
             <% if $ShowTitle %>
-                <h2>$Title</h2>
+                <h3 class="block__title">$Title</h3>
             <% end_if %>
             $OnCompleteMessage
         </div>
-    </section>
+    </div>
 </div>

@@ -1,7 +1,7 @@
 .element-content {
   &__content {
     &--image-pos-right {
-      @include breakpoint(medium) {
+      @include media-breakpoint-up(md) {
         order: 1;
       }
     }
@@ -9,7 +9,7 @@
 
   &__image {
     &--image-pos-right {
-      @include breakpoint(medium) {
+      @include media-breakpoint-up(md) {
         order: 2;
       }
     }
