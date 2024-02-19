@@ -52,7 +52,10 @@
         }
     },
     "scripts": {
-        "post-create-project-cmd": "cd ./app && yarn install"
+        "post-create-project-cmd": [
+            "cp .env.example .env",
+            "cd ./app && yarn install"
+        ]
     },
     "config": {
         "sort-packages": false,
