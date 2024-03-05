@@ -157,7 +157,7 @@ class PageController extends ContentController
         $submit->addExtraClass('btn-link');
         $actions->insertBefore('action_submitConsent', LiteralField::create(
             'AcceptAll',
-            "<a class='btn btn-primary' href='{$this->getAcceptAllCookiesLink()}'>{$label}</a>"
+            "<a class='btn btn-primary' id='accept-all-cookies' href='{$this->getAcceptAllCookiesLink()}'>{$label}</a>"
         ));
 
         return $form;
